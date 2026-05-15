@@ -173,7 +173,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-2xl">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between text-white">
           <a href={route("/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-ai-logo.png" alt="RFALA" className="h-12 w-36 rounded-lg border border-white/10 object-cover object-center shadow-glow" />
+            <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-12 w-44 object-contain" />
           </a>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
             <a href={route("/about")} className="transition hover:text-mint">{t.nav.about}</a>
@@ -478,7 +478,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
         <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
           <div>
             <a href={route("/")} className="mb-5 flex items-center gap-3 font-extrabold">
-              <img src="/assets/logos/rfala-ai-logo.png" alt="RFALA" className="h-12 w-36 rounded-lg border border-white/10 object-cover object-center shadow-glow" />
+              <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-12 w-44 object-contain" />
             </a>
             <p className="max-w-md text-slate-400">{t.footer.description}</p>
             <div className="mt-6 flex gap-3">
