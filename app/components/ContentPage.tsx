@@ -24,12 +24,6 @@ type PageKind = "about" | "ecosystem" | "institute" | "services" | "vision";
 
 const ecosystemAssets = [
   {
-    href: "/institute",
-    logo: "/assets/logos/rfala-institute.svg",
-    logoClassName: "bg-ink",
-    icon: GraduationCap
-  },
-  {
     href: "https://xenovastudio.com",
     logo: "/assets/logos/xenova-studio.svg",
     logoClassName: "bg-ink",
@@ -46,6 +40,12 @@ const ecosystemAssets = [
     logo: "/assets/logos/islamic-school-review.svg",
     logoClassName: "bg-white",
     icon: SearchCheck
+  },
+  {
+    href: "/institute",
+    logo: "/assets/logos/rfala-institute.svg",
+    logoClassName: "bg-ink",
+    icon: GraduationCap
   }
 ];
 

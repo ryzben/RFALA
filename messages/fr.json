@@ -37,10 +37,6 @@
     "learnMore": "En savoir plus",
     "items": [
       {
-        "name": "RFALA Institute",
-        "description": "Branche éducative axée sur l’IA, la technologie, le mentorat et les compétences d’avenir."
-      },
-      {
         "name": "Xenova Studio",
         "description": "Marketing digital, branding, développement web, génération de prospects et solutions créatives."
       },
@@ -51,6 +47,10 @@
       {
         "name": "Islamic School Review (ISR)",
         "description": "Annuaire et plateforme d’avis aidant les familles musulmanes à découvrir des écoles islamiques aux États-Unis."
+      },
+      {
+        "name": "RFALA Institute",
+        "description": "Branche éducative axée sur l’IA, la technologie, le mentorat et les compétences d’avenir."
       }
     ]
   },

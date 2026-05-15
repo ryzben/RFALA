@@ -32,14 +32,6 @@ type Locale = "en" | "fr";
 
 const ecosystem = [
   {
-    name: "RFALA Institute",
-    href: "/institute",
-    icon: GraduationCap,
-    logo: "/assets/logos/rfala-institute.svg",
-    logoClassName: "bg-ink",
-    description: "Educational branch focused on AI, technology, mentorship, and future-ready learning."
-  },
-  {
     name: "Xenova Studio",
     href: "https://xenovastudio.com",
     icon: Palette,
@@ -61,6 +53,14 @@ const ecosystem = [
     logo: "/assets/logos/islamic-school-review.svg",
     logoClassName: "bg-white",
     description: "Directory and review platform helping Muslim families discover Islamic schools across America."
+  },
+  {
+    name: "RFALA Institute",
+    href: "/institute",
+    icon: GraduationCap,
+    logo: "/assets/logos/rfala-institute.svg",
+    logoClassName: "bg-ink",
+    description: "Educational branch focused on AI, technology, mentorship, and future-ready learning."
   }
 ];
 

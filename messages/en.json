@@ -37,10 +37,6 @@
     "learnMore": "Learn More",
     "items": [
       {
-        "name": "RFALA Institute",
-        "description": "Educational branch focused on AI, technology, mentorship, and future-ready learning."
-      },
-      {
         "name": "Xenova Studio",
         "description": "Digital marketing, branding, web development, lead generation, and creative solutions."
       },
@@ -51,6 +47,10 @@
       {
         "name": "Islamic School Review (ISR)",
         "description": "Directory and review platform helping Muslim families discover Islamic schools across America."
+      },
+      {
+        "name": "RFALA Institute",
+        "description": "Educational branch focused on AI, technology, mentorship, and future-ready learning."
       }
     ]
   },
