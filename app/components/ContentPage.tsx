@@ -194,15 +194,17 @@ function AboutBody({ dictionary }: { dictionary: Messages }) {
   const t = dictionary;
 
   return (
-    <section className="bg-white py-24">
+    <section className="relative isolate overflow-hidden bg-ink py-24 text-white">
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_16%,rgba(47,178,132,0.22),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(109,200,255,0.16),transparent_26%),linear-gradient(135deg,#071426_0%,#102c3b_52%,#0f172a_100%)]" />
+      <div className="absolute inset-0 -z-10 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:72px_72px]" />
       <div className="mx-auto grid w-[min(1120px,calc(100%-32px))] gap-12 lg:grid-cols-[.8fr_1.2fr]">
         <div>
-          <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-emerald">{t.about.label}</p>
-          <h1 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">{t.about.title}</h1>
+          <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.about.label}</p>
+          <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">{t.about.title}</h1>
         </div>
-        <div className="space-y-6 text-lg leading-8 text-slate-600">
+        <div className="space-y-6 rounded-2xl border border-white/10 bg-white/[0.08] p-6 text-lg leading-8 text-slate-300 shadow-[0_24px_90px_rgba(0,0,0,0.28)] backdrop-blur-2xl sm:p-8">
           {t.about.paragraphs.map((paragraph, index) => (
-            <p key={paragraph} className={index === t.about.paragraphs.length - 1 ? "font-extrabold text-ink" : undefined}>{paragraph}</p>
+            <p key={paragraph} className={index === t.about.paragraphs.length - 1 ? "font-extrabold text-white" : undefined}>{paragraph}</p>
           ))}
         </div>
       </div>
@@ -214,25 +216,27 @@ function EcosystemBody({ dictionary, locale }: { dictionary: Messages; locale: L
   const t = dictionary;
 
   return (
-    <section className="bg-slate-100 py-24">
+    <section className="relative isolate overflow-hidden bg-ink py-24 text-white">
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_16%,rgba(47,178,132,0.22),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(109,200,255,0.16),transparent_26%),linear-gradient(135deg,#071426_0%,#102c3b_52%,#0f172a_100%)]" />
+      <div className="absolute inset-0 -z-10 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:72px_72px]" />
       <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
         <div className="mb-12 max-w-4xl">
-          <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-emerald">{t.ecosystem.label}</p>
-          <h1 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">{t.ecosystem.title}</h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">{t.ecosystem.description}</p>
+          <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.ecosystem.label}</p>
+          <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">{t.ecosystem.title}</h1>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">{t.ecosystem.description}</p>
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {t.ecosystem.items.map((item, index) => {
             const asset = ecosystemAssets[index];
             const href = asset.href.startsWith("/") ? localizedPath(locale, asset.href) : asset.href;
             return (
-              <article key={item.name} className="group flex min-h-[310px] flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-emerald/40 hover:shadow-soft">
+              <article key={item.name} className="group flex min-h-[310px] flex-col rounded-lg border border-white/10 bg-white/[0.08] p-6 shadow-[0_24px_90px_rgba(0,0,0,0.22)] backdrop-blur-2xl transition hover:-translate-y-1 hover:border-mint/40 hover:bg-white/[0.12]">
                 <div className={`mb-6 flex h-28 items-center justify-center overflow-hidden rounded-lg border border-slate-200 p-4 shadow-sm ${asset.logoClassName}`}>
                   <img src={asset.logo} alt={`${item.name} logo`} className="max-h-20 max-w-full object-contain" />
                 </div>
-                <h2 className="text-xl font-black text-ink">{item.name}</h2>
-                <p className="mt-3 flex-1 text-slate-600">{item.description}</p>
-                <Link href={href} target={asset.href.startsWith("http") ? "_blank" : undefined} rel={asset.href.startsWith("http") ? "noopener" : undefined} className="mt-6 inline-flex items-center gap-2 font-extrabold text-emerald">
+                <h2 className="text-xl font-black text-white">{item.name}</h2>
+                <p className="mt-3 flex-1 text-slate-300">{item.description}</p>
+                <Link href={href} target={asset.href.startsWith("http") ? "_blank" : undefined} rel={asset.href.startsWith("http") ? "noopener" : undefined} className="mt-6 inline-flex items-center gap-2 font-extrabold text-mint">
                   {t.ecosystem.learnMore} {asset.href.startsWith("http") ? <ExternalLink className="size-4" /> : <ArrowRight className="size-4" />}
                 </Link>
               </article>
@@ -307,34 +311,35 @@ function ServicesBody({ dictionary }: { dictionary: Messages }) {
   const t = dictionary;
 
   return (
-    <section className="relative isolate overflow-hidden bg-white py-24">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_18%,rgba(47,178,132,0.12),transparent_28%),radial-gradient(circle_at_84%_38%,rgba(109,200,255,0.12),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)]" />
+    <section className="relative isolate overflow-hidden bg-ink py-24 text-white">
+      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_16%,rgba(47,178,132,0.22),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(109,200,255,0.16),transparent_26%),linear-gradient(135deg,#071426_0%,#102c3b_52%,#0f172a_100%)]" />
+      <div className="absolute inset-0 -z-10 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:72px_72px]" />
       <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
         <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-4xl">
-            <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-emerald">{t.services.label}</p>
-            <h1 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">{t.services.title}</h1>
+            <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.services.label}</p>
+            <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">{t.services.title}</h1>
           </div>
-          <p className="max-w-xl text-lg leading-8 text-slate-600">{t.services.description}</p>
+          <p className="max-w-xl text-lg leading-8 text-slate-300">{t.services.description}</p>
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {t.services.items.map((service, index) => {
             const asset = serviceAssets[index];
             const Icon = asset.icon;
             return (
-              <article key={service.name} className="group relative flex min-h-[300px] overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-emerald/40 hover:shadow-soft">
+              <article key={service.name} className="group relative flex min-h-[300px] overflow-hidden rounded-xl border border-white/10 bg-white/[0.08] p-6 shadow-[0_24px_90px_rgba(0,0,0,0.22)] backdrop-blur-2xl transition hover:-translate-y-1 hover:border-mint/40 hover:bg-white/[0.12]">
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${asset.accent}`} />
                 <div className="relative flex h-full w-full flex-col">
                   <div className="mb-7 flex items-start justify-between gap-5">
                     <div className={`grid size-14 place-items-center rounded-xl bg-gradient-to-br ${asset.accent} text-ink shadow-[0_0_36px_rgba(47,178,132,0.18)]`}>
                       <Icon className="size-7" />
                     </div>
-                    <span className="rounded-full border border-slate-200 px-3 py-1 text-xs font-black text-slate-400">0{index + 1}</span>
+                    <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-black text-slate-300">0{index + 1}</span>
                   </div>
-                  <h2 className="text-2xl font-black tracking-tight text-ink">{service.name}</h2>
-                  <p className="mt-4 flex-1 text-base leading-7 text-slate-600">{service.description}</p>
-                  <div className="mt-7 flex items-center gap-3 text-sm font-extrabold text-emerald">
-                    <span className="h-px flex-1 bg-gradient-to-r from-emerald/50 to-transparent" />
+                  <h2 className="text-2xl font-black tracking-tight text-white">{service.name}</h2>
+                  <p className="mt-4 flex-1 text-base leading-7 text-slate-300">{service.description}</p>
+                  <div className="mt-7 flex items-center gap-3 text-sm font-extrabold text-mint">
+                    <span className="h-px flex-1 bg-gradient-to-r from-mint/50 to-transparent" />
                     <span className="inline-flex items-center gap-2">{t.services.capability} <ArrowRight className="size-4" /></span>
                   </div>
                 </div>
@@ -364,7 +369,7 @@ function VisionBody({ dictionary }: { dictionary: Messages }) {
 
 export function ContentPage({ dictionary, locale, kind }: { dictionary: Messages; locale: Locale; kind: PageKind }) {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-950">
+    <main className="min-h-screen bg-ink text-white">
       <Header dictionary={dictionary} locale={locale} />
       {kind === "about" ? <AboutBody dictionary={dictionary} /> : null}
       {kind === "ecosystem" ? <EcosystemBody dictionary={dictionary} locale={locale} /> : null}
