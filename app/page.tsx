@@ -240,7 +240,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                     </div>
                   </div>
                 </motion.div>
-                <motion.div animate={{ y: [0, 12, 0] }} transition={{ repeat: Infinity, duration: 6 }} className="absolute bottom-6 right-5 w-64 rounded-lg border border-white/15 bg-white/12 p-4 backdrop-blur-xl">
+                <motion.div animate={{ y: [0, 12, 0] }} transition={{ repeat: Infinity, duration: 6 }} className="absolute left-5 top-6 w-64 rounded-lg border border-white/15 bg-white/12 p-4 backdrop-blur-xl">
                   <div className="mb-3 flex items-center justify-between">
                     <p className="text-sm font-extrabold">{t.hero.growth}</p>
                     <LineChart className="size-5 text-gold" />
