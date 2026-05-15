@@ -13,7 +13,8 @@ import {
   Palette,
   Rocket,
   SearchCheck,
-  Sparkles
+  Sparkles,
+  UsersRound
 } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import enMessages from "../../messages/en.json";
@@ -53,9 +54,10 @@ const serviceAssets = [
   { icon: BrainCircuit, accent: "from-emerald to-sky" },
   { icon: Code2, accent: "from-sky to-mint" },
   { icon: Megaphone, accent: "from-gold to-emerald" },
+  { icon: MonitorSmartphone, accent: "from-emerald to-gold" },
   { icon: Sparkles, accent: "from-mint to-sky" },
   { icon: Rocket, accent: "from-sky to-gold" },
-  { icon: MonitorSmartphone, accent: "from-emerald to-gold" }
+  { icon: UsersRound, accent: "from-mint to-emerald" }
 ];
 
 const instituteAssets = [

@@ -10,13 +10,14 @@
     "contact": "Contact"
   },
   "hero": {
-    "label": "Technologie + IA + Innovation + Éducation",
-    "title": "Construire l’avenir grâce à la technologie, l’IA, l’innovation et l’éducation",
-    "description": "RFALA est un écosystème moderne qui crée des plateformes éducatives, des initiatives IA, des solutions numériques et des projets d’innovation pour les communautés, les apprenants et les entreprises.",
-    "primary": "Explorer les projets",
-    "secondary": "RFALA Institute",
+    "label": "Écosystème Technologie + IA + Innovation",
+    "title": "Connecter technologie, innovation et éducation",
+    "description": "RFALA est un écosystème global de technologie et d’innovation qui construit des initiatives IA, des ventures digitales, des plateformes créatives et des expériences tournées vers l’avenir à travers plusieurs marques.",
+    "primary": "Explorer l’écosystème",
+    "secondary": "Découvrir les projets",
+    "tertiary": "Contactez-nous",
     "aiLabel": "Couche IA",
-    "aiText": "Intelligence d’apprentissage",
+    "aiText": "Intelligence d’écosystème",
     "growth": "Croissance de l’écosystème"
   },
   "about": {
@@ -99,6 +100,10 @@
         "description": "Croissance de marque, SEO, stratégie de contenu, réseaux sociaux et génération de prospects."
       },
       {
+        "name": "Technologies d’apprentissage",
+        "description": "Systèmes d’apprentissage modernes, programmes de mentorat et plateformes de connaissance numériques."
+      },
+      {
         "name": "Branding & Media",
         "description": "Identité créative, storytelling numérique, production média et expériences visuelles de marque."
       },
@@ -107,8 +112,8 @@
         "description": "Initiatives de technologies émergentes, laboratoires d’innovation et projets digitaux tournés vers l’avenir."
       },
       {
-        "name": "Technologies d’apprentissage",
-        "description": "Systèmes d’apprentissage modernes, programmes de mentorat et plateformes de connaissance numériques."
+        "name": "Projets communautaires",
+        "description": "Plateformes et initiatives conçues pour créer un impact communautaire et social significatif."
       }
     ]
   },
@@ -215,6 +220,10 @@
     "description": "RFALA LLC est un écosystème de technologie, IA, médias numériques, innovation et éducation qui construit des plateformes pour les apprenants, les communautés et les entreprises.",
     "quickLinks": "Liens rapides",
     "connect": "Contact",
+    "brands": "Marques de l’écosystème",
+    "newsletterTitle": "Construire avec RFALA",
+    "newsletterText": "Rejoignez l’écosystème RFALA pour la technologie, l’IA, les ventures digitales et les projets tournés vers l’avenir.",
+    "newsletterButton": "Démarrer une conversation",
     "privacy": "Politique de confidentialité",
     "contact": "Contactez-nous",
     "copyright": "Copyright 2026 RFALA LLC. Tous droits réservés."

@@ -10,13 +10,14 @@
     "contact": "Contact"
   },
   "hero": {
-    "label": "Technology + AI + Innovation + Education",
-    "title": "Building the Future Through Technology, AI, Innovation, and Education",
-    "description": "RFALA is a modern ecosystem creating educational platforms, AI initiatives, digital solutions, and innovation-driven projects for communities, learners, and businesses.",
-    "primary": "Explore Projects",
-    "secondary": "RFALA Institute",
+    "label": "Technology + AI + Innovation Ecosystem",
+    "title": "Connecting Technology, Innovation, and Education",
+    "description": "RFALA is a global technology and innovation ecosystem building AI initiatives, digital ventures, creative platforms, and future-focused experiences across multiple brands.",
+    "primary": "Explore Ecosystem",
+    "secondary": "Discover Projects",
+    "tertiary": "Contact Us",
     "aiLabel": "AI Layer",
-    "aiText": "Learning intelligence",
+    "aiText": "Ecosystem intelligence",
     "growth": "Ecosystem Growth"
   },
   "about": {
@@ -99,6 +100,10 @@
         "description": "Brand growth, SEO, content strategy, social media, and lead generation solutions."
       },
       {
+        "name": "Learning Technologies",
+        "description": "Future-focused learning systems, mentorship programs, and digital knowledge platforms."
+      },
+      {
         "name": "Branding & Media",
         "description": "Creative identity, digital storytelling, media production, and visual brand experiences."
       },
@@ -107,8 +112,8 @@
         "description": "Emerging technology initiatives, innovation labs, and future-driven digital projects."
       },
       {
-        "name": "Learning Technologies",
-        "description": "Future-focused learning systems, mentorship programs, and digital knowledge platforms."
+        "name": "Community Projects",
+        "description": "Platforms and initiatives designed to create meaningful community and social impact."
       }
     ]
   },
@@ -215,6 +220,10 @@
     "description": "RFALA LLC is a technology, AI, digital media, innovation, and education ecosystem building platforms for learners, communities, and businesses.",
     "quickLinks": "Quick Links",
     "connect": "Connect",
+    "brands": "Ecosystem Brands",
+    "newsletterTitle": "Build with RFALA",
+    "newsletterText": "Join the RFALA ecosystem for technology, AI, digital ventures, and future-focused projects.",
+    "newsletterButton": "Start a Conversation",
     "privacy": "Privacy Policy",
     "contact": "Contact Us",
     "copyright": "Copyright 2026 RFALA LLC. All rights reserved."
