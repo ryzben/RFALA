@@ -8,15 +8,15 @@ export const metadata = {
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-950">
-      <header className="border-b border-slate-200 bg-white">
+      <header className="border-b border-white/10 bg-ink">
         <nav className="mx-auto flex h-20 w-[min(1120px,calc(100%-32px))] items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 font-extrabold text-ink" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-14 w-52 object-contain mix-blend-screen" />
+          <Link href="/" className="flex items-center gap-3 font-extrabold text-white" aria-label="RFALA home">
+            <img src="/assets/logos/rfala-mountain-ai-logo-ink.png" alt="RFALA" className="h-14 w-52 object-contain" />
           </Link>
-          <div className="flex items-center gap-5 text-sm font-bold text-slate-600">
-            <Link href="/#about" className="hover:text-emerald">About</Link>
-            <Link href="/#projects" className="hover:text-emerald">Projects</Link>
-            <Link href="/contact" className="hover:text-emerald">Contact</Link>
+          <div className="flex items-center gap-5 text-sm font-bold text-white/70">
+            <Link href="/about" className="hover:text-mint">About</Link>
+            <Link href="/ecosystem" className="hover:text-mint">Ecosystem</Link>
+            <Link href="/contact" className="hover:text-mint">Contact</Link>
           </div>
         </nav>
       </header>
