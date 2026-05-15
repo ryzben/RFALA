@@ -13,7 +13,6 @@ import {
   GraduationCap,
   Layers3,
   LineChart,
-  Mail,
   Megaphone,
   MonitorSmartphone,
   Network,
@@ -85,12 +84,6 @@ const services = [
     accent: "from-gold to-emerald"
   },
   {
-    name: "Learning Technologies",
-    description: "Future-focused learning systems, mentorship programs, and digital knowledge platforms.",
-    icon: MonitorSmartphone,
-    accent: "from-emerald to-gold"
-  },
-  {
     name: "Branding & Media",
     description: "Creative identity, digital storytelling, media production, and visual brand experiences.",
     icon: Sparkles,
@@ -103,10 +96,10 @@ const services = [
     accent: "from-sky to-gold"
   },
   {
-    name: "Community Projects",
-    description: "Platforms and initiatives designed to create meaningful community and social impact.",
-    icon: UsersRound,
-    accent: "from-mint to-emerald"
+    name: "Learning Technologies",
+    description: "Future-focused learning systems, mentorship programs, and digital knowledge platforms.",
+    icon: MonitorSmartphone,
+    accent: "from-emerald to-gold"
   }
 ];
 
@@ -137,13 +130,6 @@ const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 }
 };
-
-const innovationSignals = [
-  { label: "AI systems", icon: BrainCircuit },
-  { label: "Digital ventures", icon: Layers3 },
-  { label: "Creative growth", icon: Sparkles },
-  { label: "Global communities", icon: Globe2 }
-];
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-emerald">{children}</p>;
@@ -206,29 +192,8 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
       </header>
 
       <section id="top" className="relative isolate min-h-screen bg-ink pt-24 text-white">
-        <motion.div
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_16%_18%,rgba(47,178,132,0.28),transparent_30%),radial-gradient(circle_at_78%_16%,rgba(109,200,255,0.22),transparent_26%),radial-gradient(circle_at_62%_78%,rgba(215,168,71,0.16),transparent_30%),linear-gradient(135deg,#06101f_0%,#102c3b_54%,#0f172a_100%)]"
-          animate={{ filter: ["hue-rotate(0deg)", "hue-rotate(10deg)", "hue-rotate(0deg)"] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 opacity-[0.28] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:72px_72px]"
-          animate={{ backgroundPosition: ["0px 0px", "72px 72px"] }}
-          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-        />
-        <div className="pointer-events-none absolute inset-0 -z-10">
-          {[16, 28, 43, 58, 74, 86].map((left, index) => (
-            <motion.span
-              key={left}
-              className="absolute size-1.5 rounded-full bg-mint/70 shadow-[0_0_26px_rgba(114,223,189,0.9)]"
-              style={{ left: `${left}%`, top: `${20 + (index % 4) * 17}%` }}
-              animate={{ y: [0, -24, 0], opacity: [0.25, 1, 0.25] }}
-              transition={{ duration: 5 + index * 0.5, repeat: Infinity, delay: index * 0.3 }}
-            />
-          ))}
-        </div>
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_18%,rgba(47,178,132,0.24),transparent_28%),radial-gradient(circle_at_82%_16%,rgba(109,200,255,0.2),transparent_24%),linear-gradient(135deg,#071426_0%,#102c3b_54%,#0f172a_100%)]" />
+        <div className="absolute inset-0 -z-10 opacity-[0.24] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:72px_72px]" />
         <div className="mx-auto grid min-h-[calc(100vh-96px)] w-[min(1180px,calc(100%-32px))] items-center gap-12 py-20 lg:grid-cols-[1fr_.92fr]">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.7 }}>
             <SectionLabel>{t.hero.label}</SectionLabel>
@@ -238,119 +203,47 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
               {t.hero.description}
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a href={route("/ecosystem")} className="group inline-flex items-center justify-center gap-2 rounded-xl bg-mint px-6 py-4 font-extrabold text-ink shadow-glow transition hover:-translate-y-1 hover:bg-white">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a href={route("/ecosystem")} className="group inline-flex items-center justify-center gap-2 rounded-lg bg-emerald px-6 py-4 font-extrabold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-mint hover:text-ink">
                 {t.hero.primary} <ArrowRight className="size-5 transition group-hover:translate-x-1" />
               </a>
-              <a href={route("/ecosystem")} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-6 py-4 font-extrabold text-white backdrop-blur-xl transition hover:-translate-y-1 hover:border-mint hover:text-mint">
+              <a href={route("/institute")} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-4 font-extrabold text-white transition hover:-translate-y-0.5 hover:border-mint hover:bg-white/10">
                 {t.hero.secondary}
               </a>
-              <a href={route("/contact")} className="inline-flex items-center justify-center gap-2 rounded-xl border border-gold/30 bg-gold/15 px-6 py-4 font-extrabold text-white backdrop-blur-xl transition hover:-translate-y-1 hover:border-gold hover:bg-gold hover:text-ink">
-                {t.hero.tertiary}
-              </a>
-            </div>
-            <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {innovationSignals.map((signal, index) => {
-                const Icon = signal.icon;
-                return (
-                  <motion.div
-                    key={signal.label}
-                    className="rounded-xl border border-white/10 bg-white/[0.08] p-3 backdrop-blur-xl"
-                    initial={{ opacity: 0, y: 18 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.25 + index * 0.08 }}
-                  >
-                    <Icon className="mb-3 size-5 text-mint" />
-                    <p className="text-sm font-extrabold text-white/85">{signal.label}</p>
-                  </motion.div>
-                );
-              })}
             </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15 }} className="relative min-h-[520px]">
-            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-sky/20 via-emerald/15 to-gold/20 blur-3xl" />
-            <div className="relative flex h-[540px] items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-white/[0.08] p-8 shadow-soft backdrop-blur-2xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(114,223,189,0.14),transparent_32%),linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] [background-size:100%_100%,56px_56px,56px_56px]" />
-              <motion.div
-                className="absolute size-80 rounded-full border border-mint/25"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="absolute size-60 rounded-full border border-sky/25"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
-                className="relative grid size-44 place-items-center rounded-full bg-[radial-gradient(circle_at_35%_28%,#ffffff,rgba(114,223,189,0.9)_24%,rgba(47,178,132,0.5)_52%,rgba(109,200,255,0.18)_76%,transparent_100%)] shadow-[0_0_90px_rgba(114,223,189,0.38)]"
-                animate={{ y: [0, -12, 0], scale: [1, 1.03, 1] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            <div className="absolute inset-8 rounded-[1.25rem] bg-gradient-to-br from-sky/20 via-emerald/15 to-gold/20 blur-3xl" />
+            <div className="relative overflow-hidden rounded-xl border border-white/15 bg-white/[0.08] p-5 shadow-soft backdrop-blur-xl">
+              <div
+                className="relative h-[450px] overflow-hidden rounded-lg bg-cover bg-center"
+                style={{ backgroundImage: "url('/assets/rfala-hero.png')" }}
               >
-                <BrainCircuit className="size-16 text-ink/80" />
-              </motion.div>
-              {[
-                { label: "Xenova", top: "14%", left: "10%", icon: Palette },
-                { label: "Maroclist", top: "22%", right: "8%", icon: Building2 },
-                { label: "ISR", bottom: "18%", right: "14%", icon: SearchCheck },
-                { label: "Institute", bottom: "14%", left: "12%", icon: GraduationCap }
-              ].map((node, index) => {
-                const Icon = node.icon;
-                return (
-                  <motion.div
-                    key={node.label}
-                    className="absolute rounded-xl border border-white/15 bg-slate-950/70 p-4 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.28)]"
-                    style={node}
-                    animate={{ y: [0, index % 2 === 0 ? -10 : 10, 0] }}
-                    transition={{ duration: 5 + index, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="grid size-10 place-items-center rounded-lg bg-mint/15 text-mint">
-                        <Icon className="size-5" />
-                      </span>
-                      <span className="text-sm font-black text-white">{node.label}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
+                <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 5 }} className="absolute left-5 top-6 rounded-lg border border-white/15 bg-ink/70 p-4 backdrop-blur-xl">
+                  <div className="flex items-center gap-3">
+                    <BrainCircuit className="size-8 text-mint" />
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">{t.hero.aiLabel}</p>
+                      <p className="font-extrabold">{t.hero.aiText}</p>
                     </div>
-                  </motion.div>
-                );
-              })}
-              <div className="absolute bottom-6 left-6 right-6 rounded-xl border border-white/10 bg-slate-950/70 p-4 backdrop-blur-xl">
-                <div className="mb-3 flex items-center justify-between">
-                  <p className="text-sm font-extrabold">{t.hero.growth}</p>
-                  <LineChart className="size-5 text-gold" />
-                </div>
-                <div className="grid gap-2 sm:grid-cols-3">
-                  <div className="h-2 rounded-full bg-white/15"><div className="h-2 w-10/12 rounded-full bg-emerald" /></div>
-                  <div className="h-2 rounded-full bg-white/15"><div className="h-2 w-8/12 rounded-full bg-sky" /></div>
-                  <div className="h-2 rounded-full bg-white/15"><div className="h-2 w-9/12 rounded-full bg-gold" /></div>
-                </div>
+                  </div>
+                </motion.div>
+                <motion.div animate={{ y: [0, 12, 0] }} transition={{ repeat: Infinity, duration: 6 }} className="absolute bottom-6 right-5 w-64 rounded-lg border border-white/15 bg-white/12 p-4 backdrop-blur-xl">
+                  <div className="mb-3 flex items-center justify-between">
+                    <p className="text-sm font-extrabold">{t.hero.growth}</p>
+                    <LineChart className="size-5 text-gold" />
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-2 rounded-full bg-white/15"><div className="h-2 w-10/12 rounded-full bg-emerald" /></div>
+                    <div className="h-2 rounded-full bg-white/15"><div className="h-2 w-8/12 rounded-full bg-sky" /></div>
+                    <div className="h-2 rounded-full bg-white/15"><div className="h-2 w-9/12 rounded-full bg-gold" /></div>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      <section className="relative isolate overflow-hidden bg-slate-950 py-10 text-white">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(47,178,132,0.14),transparent_32%,rgba(109,200,255,0.12)_68%,rgba(215,168,71,0.12))]" />
-        <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-4 md:grid-cols-4">
-          {innovationSignals.map((signal, index) => {
-            const Icon = signal.icon;
-            return (
-              <motion.div
-                key={signal.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="group rounded-xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-mint/40 hover:bg-white/[0.1]"
-              >
-                <div className="mb-4 flex items-center justify-between">
-                  <Icon className="size-6 text-mint transition group-hover:scale-110" />
-                  <span className="text-xs font-black text-white/35">0{index + 1}</span>
-                </div>
-                <p className="text-lg font-black">{signal.label}</p>
-              </motion.div>
-            );
-          })}
         </div>
       </section>
 
@@ -507,16 +400,15 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
         </div>
       </section>
 
-      <section id="services" className="relative isolate overflow-hidden bg-ink py-24 text-white">
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_16%_18%,rgba(47,178,132,0.22),transparent_30%),radial-gradient(circle_at_84%_38%,rgba(109,200,255,0.18),transparent_32%),linear-gradient(180deg,#071426_0%,#0b1726_100%)]" />
-        <div className="absolute inset-0 -z-10 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.07)_1px,transparent_1px)] [background-size:70px_70px]" />
+      <section id="services" className="relative isolate overflow-hidden bg-white py-24">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_18%,rgba(47,178,132,0.12),transparent_28%),radial-gradient(circle_at_84%_38%,rgba(109,200,255,0.12),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)]" />
         <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
           <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-4xl">
               <SectionLabel>{t.services.label}</SectionLabel>
-              <h2 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl">{t.services.title}</h2>
+              <h2 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">{t.services.title}</h2>
             </div>
-            <p className="max-w-xl text-lg leading-8 text-slate-300">
+            <p className="max-w-xl text-lg leading-8 text-slate-600">
               {t.services.description}
             </p>
           </div>
@@ -532,10 +424,10 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   whileHover={{ y: -7 }}
-                  className="group relative flex min-h-[300px] overflow-hidden rounded-xl border border-white/10 bg-white/[0.07] p-6 shadow-[0_22px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl transition hover:border-mint/40 hover:bg-white/[0.1]"
+                  className="group relative flex min-h-[300px] overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-emerald/40 hover:shadow-soft"
                 >
                   <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${service.accent}`} />
-                  <div className="absolute -right-16 -top-16 size-40 rounded-full bg-emerald/0 blur-3xl transition group-hover:bg-emerald/20" />
+                  <div className="absolute -right-16 -top-16 size-40 rounded-full bg-emerald/0 blur-3xl transition group-hover:bg-emerald/15" />
                   <div className="relative flex h-full w-full flex-col">
                     <div className="mb-7 flex items-start justify-between gap-5">
                       <motion.div
@@ -545,12 +437,12 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                       >
                         <Icon className="size-7" />
                       </motion.div>
-                      <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-black text-white/45 transition group-hover:border-mint/30 group-hover:text-mint">
+                      <span className="rounded-full border border-slate-200 px-3 py-1 text-xs font-black text-slate-400 transition group-hover:border-emerald/30 group-hover:text-emerald">
                         0{index + 1}
                       </span>
                     </div>
-                    <h3 className="text-2xl font-black tracking-tight text-white">{service.name}</h3>
-                    <p className="mt-4 flex-1 text-base leading-7 text-slate-300">{service.description}</p>
+                    <h3 className="text-2xl font-black tracking-tight text-ink">{service.name}</h3>
+                    <p className="mt-4 flex-1 text-base leading-7 text-slate-600">{service.description}</p>
                     <div className="mt-7 flex items-center gap-3 text-sm font-extrabold text-emerald">
                       <span className="h-px flex-1 bg-gradient-to-r from-emerald/50 to-transparent" />
                       <span className="inline-flex items-center gap-2">{t.services.capability} <ArrowRight className="size-4 transition group-hover:translate-x-1" /></span>
@@ -572,17 +464,16 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
         </motion.div>
       </section>
 
-      <footer className="relative isolate overflow-hidden bg-slate-950 py-16 text-white">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_16%,rgba(47,178,132,0.18),transparent_30%),radial-gradient(circle_at_82%_82%,rgba(109,200,255,0.12),transparent_30%)]" />
-        <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-10 lg:grid-cols-[1.15fr_.85fr_.75fr_1fr]">
-          <div className="lg:pr-8">
+      <footer className="bg-slate-950 py-12 text-white">
+        <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
+          <div>
             <a href={route("/")} className="mb-5 flex items-center gap-3 font-extrabold">
               <span className="grid size-11 place-items-center rounded-lg bg-gradient-to-br from-emerald to-gold">R</span>
               <span className="text-lg">RFALA</span>
             </a>
             <p className="max-w-md text-slate-400">{t.footer.description}</p>
             <div className="mt-6 flex gap-3">
-              {[Globe2, Share2, Mail].map((Icon, index) => (
+              {[Globe2, Share2, UsersRound].map((Icon, index) => (
                 <a key={index} href="#top" aria-label="RFALA social link" className="grid size-10 place-items-center rounded-lg border border-white/10 text-slate-300 transition hover:border-mint hover:text-mint">
                   <Icon className="size-5" />
                 </a>
@@ -603,30 +494,12 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             </div>
           </div>
           <div>
-            <h3 className="mb-4 font-black">{t.footer.brands}</h3>
-            <div className="grid gap-2 text-slate-400">
-              {localizedEcosystem.map((item) => (
-                <a key={item.name} href={item.href.startsWith("/") ? route(item.href) : item.href} className="hover:text-mint">
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-          <div>
             <h3 className="mb-4 font-black">{t.footer.connect}</h3>
             <div className="grid gap-2 text-slate-400">
               <a href="mailto:hello@rfala.com" className="hover:text-mint">hello@rfala.com</a>
               <a href="https://rfala.com" target="_blank" rel="noopener" className="hover:text-mint">rfala.com</a>
               <p className="pt-4 text-sm">{t.footer.copyright}</p>
             </div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-xl">
-            <h3 className="font-black">{t.footer.newsletterTitle}</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-400">{t.footer.newsletterText}</p>
-            <a href={route("/contact")} className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-mint px-5 py-3 text-sm font-black text-ink shadow-glow transition hover:-translate-y-1 hover:bg-white">
-              {t.footer.newsletterButton}
-              <ArrowRight className="size-4" />
-            </a>
           </div>
         </div>
       </footer>
