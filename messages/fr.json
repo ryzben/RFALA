@@ -1,0 +1,222 @@
+{
+  "locale": "fr",
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "ecosystem": "Écosystème",
+    "institute": "Institut",
+    "services": "Services",
+    "vision": "Vision",
+    "contact": "Contact"
+  },
+  "hero": {
+    "label": "Technologie + IA + Innovation + Éducation",
+    "title": "Construire l’avenir grâce à la technologie, l’IA, l’innovation et l’éducation",
+    "description": "RFALA est un écosystème moderne qui crée des plateformes éducatives, des initiatives IA, des solutions numériques et des projets d’innovation pour les communautés, les apprenants et les entreprises.",
+    "primary": "Explorer les projets",
+    "secondary": "RFALA Institute",
+    "aiLabel": "Couche IA",
+    "aiText": "Intelligence d’apprentissage",
+    "growth": "Croissance de l’écosystème"
+  },
+  "about": {
+    "label": "À propos de RFALA",
+    "title": "Un écosystème technologique, d’innovation et numérique conçu pour un impact réel.",
+    "paragraphs": [
+      "RFALA est un écosystème technologique, d’innovation et numérique axé sur la création de solutions, plateformes et expériences utiles pour l’avenir.",
+      "Porté par la créativité, l’intelligence artificielle, la transformation numérique et les technologies modernes, RFALA développe des projets innovants dans plusieurs domaines, dont les médias numériques, le web et les applications, les solutions IA, la croissance des entreprises, l’éducation et les plateformes communautaires.",
+      "À travers ses initiatives et ses marques, RFALA aide les entreprises, créateurs, étudiants et communautés à se connecter aux technologies modernes de manière pratique et significative.",
+      "Du marketing digital et des services créatifs aux initiatives IA, laboratoires d’innovation, projets éducatifs et plateformes technologiques évolutives, RFALA relie les idées, la technologie et l’impact réel.",
+      "RFALA n’est pas seulement une entreprise. C’est un écosystème créé pour construire, innover et façonner l’avenir."
+    ]
+  },
+  "ecosystem": {
+    "label": "Écosystème RFALA",
+    "title": "Une même vision. Plusieurs plateformes. Une innovation partagée.",
+    "description": "RFALA se développe à travers des marques ciblées qui répondent à des besoins concrets dans l’apprentissage, les médias, la technologie, les marketplaces et l’accompagnement communautaire.",
+    "learnMore": "En savoir plus",
+    "items": [
+      {
+        "name": "RFALA Institute",
+        "description": "Branche éducative axée sur l’IA, la technologie, le mentorat et les compétences d’avenir."
+      },
+      {
+        "name": "Xenova Studio",
+        "description": "Marketing digital, branding, développement web, génération de prospects et solutions créatives."
+      },
+      {
+        "name": "Maroclist",
+        "description": "Plateforme moderne pour les annonces, locations et services marketplace centrés sur le Maroc."
+      },
+      {
+        "name": "Islamic School Review (ISR)",
+        "description": "Annuaire et plateforme d’avis aidant les familles musulmanes à découvrir des écoles islamiques aux États-Unis."
+      }
+    ]
+  },
+  "institute": {
+    "title": "Parcours d’apprentissage pour l’ère de l’IA",
+    "paragraphs": [
+      "RFALA Institute combine des ressources éducatives de grandes universités et plateformes d’apprentissage avec du mentorat en direct, un accompagnement guidé et des parcours orientés marché.",
+      "Au lieu de dépendre d’une seule institution, RFALA crée des expériences d’apprentissage personnalisées en utilisant le meilleur contenu de plateformes comme MIT Open Learning, Harvard Online, Coursera et d’autres fournisseurs éducatifs reconnus."
+    ],
+    "human": "Les étudiants n’apprennent plus seuls. RFALA Institute combine des ressources d’apprentissage de niveau mondial avec du mentorat, de la responsabilisation et un véritable accompagnement humain.",
+    "resources": "Avec des ressources d’apprentissage provenant de plateformes telles que",
+    "dashboardLabel": "Tableau de bord IA",
+    "dashboardTitle": "Parcours étudiant guidé",
+    "humanAi": "Humain + IA",
+    "signals": [
+      { "label": "Carte des compétences", "value": "Évaluer" },
+      { "label": "Mentorat", "value": "Guider" },
+      { "label": "Projets appliqués", "value": "Créer" },
+      { "label": "Parcours carrière", "value": "Lancer" }
+    ],
+    "items": [
+      "Accompagnement par instructeur",
+      "Mentorat individuel",
+      "Sessions d’apprentissage en groupe",
+      "Parcours orientés marché",
+      "Compétences pratiques prêtes pour la carrière",
+      "Suivi des progrès et responsabilisation"
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "title": "Créer des solutions digitales, IA et innovation pour l’avenir",
+    "description": "RFALA combine technologie, intelligence artificielle, médias numériques, innovation et solutions d’apprentissage pour créer des plateformes, services et expériences à fort impact pour les entreprises, communautés et écosystèmes numériques modernes.",
+    "capability": "Explorer",
+    "items": [
+      {
+        "name": "Solutions IA",
+        "description": "Systèmes IA sur mesure, automatisation, workflows intelligents et solutions technologiques prêtes pour l’avenir."
+      },
+      {
+        "name": "Développement Web & App",
+        "description": "Sites modernes, plateformes évolutives, applications mobiles et développement de produits digitaux."
+      },
+      {
+        "name": "Marketing Digital",
+        "description": "Croissance de marque, SEO, stratégie de contenu, réseaux sociaux et génération de prospects."
+      },
+      {
+        "name": "Branding & Media",
+        "description": "Identité créative, storytelling numérique, production média et expériences visuelles de marque."
+      },
+      {
+        "name": "Recherche & Innovation",
+        "description": "Initiatives de technologies émergentes, laboratoires d’innovation et projets digitaux tournés vers l’avenir."
+      },
+      {
+        "name": "Technologies d’apprentissage",
+        "description": "Systèmes d’apprentissage modernes, programmes de mentorat et plateformes de connaissance numériques."
+      }
+    ]
+  },
+  "vision": {
+    "title": "Connecter technologie, innovation et éducation",
+    "description": "RFALA construit des communautés prêtes pour l’avenir grâce à l’IA, la transformation numérique, l’apprentissage pratique, les médias créatifs et des plateformes technologiques évolutives."
+  },
+  "contact": {
+    "label": "Contact RFALA",
+    "title": "Construisons la suite.",
+    "description": "Contactez RFALA pour des solutions IA, des plateformes digitales, des projets d’innovation, des services média, des technologies d’apprentissage ou des collaborations au sein de l’écosystème.",
+    "primary": "Envoyer un email",
+    "secondary": "Explorer l’écosystème",
+    "emailLabel": "Email",
+    "email": "hello@rfala.com",
+    "phoneLabel": "Telephone",
+    "phone": "(917) 582-2768",
+    "whatsapp": "WhatsApp",
+    "call": "Appeler",
+    "response": "Nous étudions chaque message et revenons avec la meilleure prochaine étape pour votre projet, votre marque ou votre initiative d’apprentissage.",
+    "cards": [
+      {
+        "title": "IA & Technologie",
+        "description": "Automatisation, workflows intelligents, applications, plateformes et systèmes prêts pour l’avenir."
+      },
+      {
+        "title": "Marque & Croissance digitale",
+        "description": "Direction créative, sites web, stratégie de contenu, marketing et génération de prospects."
+      },
+      {
+        "title": "RFALA Institute",
+        "description": "Parcours d’apprentissage guidés, mentorat, culture IA et développement de compétences pratiques."
+      }
+    ],
+    "details": [
+      "Écosystème technologique",
+      "Racines marocaines",
+      "Ambitions internationales"
+    ]
+  },
+  "pages": {
+    "common": {
+      "backHome": "Retour à l’accueil",
+      "contact": "Contact RFALA",
+      "explore": "Explorer",
+      "strategicFocus": "Axes stratégiques",
+      "builtUnder": "Développé sous RFALA LLC"
+    },
+    "ecosystem": {
+      "label": "Écosystème RFALA",
+      "title": "Un portefeuille connecté de plateformes technologie, média, marketplace et éducation.",
+      "description": "RFALA fonctionne comme une société ombrelle avec plusieurs initiatives ciblées conçues pour servir les apprenants, les entreprises, les créateurs, les familles et les communautés.",
+      "highlights": [
+        "Structure d’écosystème parent",
+        "Plusieurs marques évolutives",
+        "Stratégie d’innovation partagée"
+      ]
+    },
+    "institute": {
+      "label": "RFALA Institute",
+      "title": "Des parcours d’apprentissage guidés pour l’ère de l’IA.",
+      "description": "RFALA Institute combine des ressources d’apprentissage de niveau mondial avec du mentorat, de la responsabilisation et des parcours pratiques qui aident les étudiants à passer de l’apprentissage à la création.",
+      "highlights": [
+        "Mentorat humain",
+        "Culture IA et technologie",
+        "Compétences pratiques prêtes pour la carrière"
+      ]
+    },
+    "services": {
+      "label": "Services RFALA",
+      "title": "Capacités digitales, IA et innovation pour les organisations modernes.",
+      "description": "RFALA aide les entreprises, créateurs et communautés à construire des produits digitaux, automatiser des workflows, développer des marques et transformer des idées en expériences technologiques évolutives.",
+      "highlights": [
+        "Systèmes alimentés par l’IA",
+        "Développement de produits digitaux",
+        "Croissance de marque et innovation"
+      ]
+    },
+    "vision": {
+      "label": "Vision RFALA",
+      "title": "Racines marocaines, ambitions technologiques globales et impact réel.",
+      "description": "RFALA existe pour relier les idées, la technologie moderne, l’éducation et les besoins communautaires à travers un écosystème tourné vers l’avenir capable de grandir entre les industries et les frontières.",
+      "pillars": [
+        {
+          "title": "Technologie utile",
+          "description": "Construire des plateformes, outils et workflows utiles qui répondent à des problèmes concrets."
+        },
+        {
+          "title": "Innovation entre les marques",
+          "description": "Connecter les initiatives RFALA grâce à une stratégie, des standards et une dynamique partagés."
+        },
+        {
+          "title": "L’éducation comme fondation",
+          "description": "Utiliser l’apprentissage et le mentorat pour aider chacun à participer à l’économie du futur."
+        },
+        {
+          "title": "Impact communautaire",
+          "description": "Créer des produits et expériences qui soutiennent les communautés locales et globales."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "description": "RFALA LLC est un écosystème de technologie, IA, médias numériques, innovation et éducation qui construit des plateformes pour les apprenants, les communautés et les entreprises.",
+    "quickLinks": "Liens rapides",
+    "connect": "Contact",
+    "privacy": "Politique de confidentialité",
+    "contact": "Contactez-nous",
+    "copyright": "Copyright 2026 RFALA LLC. Tous droits réservés."
+  }
+}

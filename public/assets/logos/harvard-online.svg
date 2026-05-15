@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="72" viewBox="0 0 260 72" role="img" aria-labelledby="title">
+  <title id="title">Harvard Online</title>
+  <rect width="260" height="72" rx="14" fill="#FFFFFF"/>
+  <path d="M24 18h44v27c0 7-4 13-11 17l-11 6-11-6c-7-4-11-10-11-17V18Z" fill="#111827"/>
+  <path d="M33 27h8v11h10V27h8v30h-8V45H41v12h-8V27Z" fill="#FFFFFF"/>
+  <text x="86" y="35" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700">Harvard</text>
+  <text x="87" y="54" fill="#4B5563" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800">Online</text>
+</svg>

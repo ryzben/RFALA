@@ -1,0 +1,222 @@
+{
+  "locale": "en",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "ecosystem": "Ecosystem",
+    "institute": "Institute",
+    "services": "Services",
+    "vision": "Vision",
+    "contact": "Contact"
+  },
+  "hero": {
+    "label": "Technology + AI + Innovation + Education",
+    "title": "Building the Future Through Technology, AI, Innovation, and Education",
+    "description": "RFALA is a modern ecosystem creating educational platforms, AI initiatives, digital solutions, and innovation-driven projects for communities, learners, and businesses.",
+    "primary": "Explore Projects",
+    "secondary": "RFALA Institute",
+    "aiLabel": "AI Layer",
+    "aiText": "Learning intelligence",
+    "growth": "Ecosystem Growth"
+  },
+  "about": {
+    "label": "About RFALA",
+    "title": "A technology, innovation, and digital ecosystem built for real-world impact.",
+    "paragraphs": [
+      "RFALA is a technology, innovation, and digital ecosystem focused on building impactful solutions, platforms, and experiences for the future.",
+      "Driven by creativity, artificial intelligence, digital transformation, and modern technology, RFALA develops innovative projects across multiple industries including digital media, web and app development, AI solutions, business growth, education, and community-focused platforms.",
+      "Through its different initiatives and brands, RFALA helps businesses, creators, students, and communities connect with modern technology in practical and meaningful ways.",
+      "From digital marketing and creative services to AI initiatives, innovation labs, educational projects, and scalable technology platforms, RFALA is designed to bridge ideas, technology, and real-world impact.",
+      "RFALA is not just a company. It is an ecosystem built to create, innovate, and shape the future."
+    ]
+  },
+  "ecosystem": {
+    "label": "RFALA Ecosystem",
+    "title": "One Umbrella. Multiple Platforms. Shared Innovation.",
+    "description": "RFALA grows through focused brands that solve real problems across learning, media, technology, marketplace services, and community support.",
+    "learnMore": "Learn More",
+    "items": [
+      {
+        "name": "RFALA Institute",
+        "description": "Educational branch focused on AI, technology, mentorship, and future-ready learning."
+      },
+      {
+        "name": "Xenova Studio",
+        "description": "Digital marketing, branding, web development, lead generation, and creative solutions."
+      },
+      {
+        "name": "Maroclist",
+        "description": "Modern platform for listings, rentals, and marketplace services focused on Morocco."
+      },
+      {
+        "name": "Islamic School Review (ISR)",
+        "description": "Directory and review platform helping Muslim families discover Islamic schools across America."
+      }
+    ]
+  },
+  "institute": {
+    "title": "Learning Pathways for the AI Era",
+    "paragraphs": [
+      "RFALA Institute combines top educational resources from leading universities and learning platforms with live mentorship, guided instruction, and market-focused learning pathways.",
+      "Instead of depending on a single institution, RFALA creates customized learning experiences using the best content from platforms such as MIT Open Learning, Harvard Online, Coursera, and other world-class educational providers."
+    ],
+    "human": "Students no longer learn alone. RFALA Institute combines world-class learning resources with mentorship, accountability, and real human guidance.",
+    "resources": "Using learning resources from leading platforms such as",
+    "dashboardLabel": "AI Learning Dashboard",
+    "dashboardTitle": "Guided student pathway",
+    "humanAi": "Human + AI",
+    "signals": [
+      { "label": "Skill Map", "value": "Assess" },
+      { "label": "Mentor Sync", "value": "Guide" },
+      { "label": "Applied Builds", "value": "Build" },
+      { "label": "Career Path", "value": "Launch" }
+    ],
+    "items": [
+      "Live instructor support",
+      "One-on-one mentorship",
+      "Group learning sessions",
+      "Market-focused pathways",
+      "Career-ready practical skills",
+      "Accountability and progress tracking"
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "title": "Building Digital, AI, and Innovation Solutions for the Future",
+    "description": "RFALA combines technology, artificial intelligence, digital media, innovation, and learning solutions to create impactful platforms, services, and future-focused experiences for businesses, communities, and modern digital ecosystems.",
+    "capability": "Explore capability",
+    "items": [
+      {
+        "name": "AI Solutions",
+        "description": "Custom AI systems, automation, intelligent workflows, and future-ready technology solutions."
+      },
+      {
+        "name": "Web & App Development",
+        "description": "Modern websites, scalable platforms, mobile apps, and digital product development."
+      },
+      {
+        "name": "Digital Marketing",
+        "description": "Brand growth, SEO, content strategy, social media, and lead generation solutions."
+      },
+      {
+        "name": "Branding & Media",
+        "description": "Creative identity, digital storytelling, media production, and visual brand experiences."
+      },
+      {
+        "name": "Research & Innovation",
+        "description": "Emerging technology initiatives, innovation labs, and future-driven digital projects."
+      },
+      {
+        "name": "Learning Technologies",
+        "description": "Future-focused learning systems, mentorship programs, and digital knowledge platforms."
+      }
+    ]
+  },
+  "vision": {
+    "title": "Connecting Technology, Innovation, and Education",
+    "description": "RFALA is building future-ready communities through AI, digital transformation, practical learning, creative media, and scalable technology platforms that connect opportunity with real-world needs."
+  },
+  "contact": {
+    "label": "Contact RFALA",
+    "title": "Let’s build what comes next.",
+    "description": "Connect with RFALA for AI solutions, digital platforms, innovation projects, media work, learning technologies, or ecosystem partnerships.",
+    "primary": "Email RFALA",
+    "secondary": "Explore the ecosystem",
+    "emailLabel": "Email",
+    "email": "hello@rfala.com",
+    "phoneLabel": "Phone",
+    "phone": "(917) 582-2768",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "response": "We review every message and respond with the right next step for your project, brand, or learning initiative.",
+    "cards": [
+      {
+        "title": "AI & Technology",
+        "description": "Automation, intelligent workflows, apps, platforms, and future-ready systems."
+      },
+      {
+        "title": "Brand & Digital Growth",
+        "description": "Creative direction, websites, content strategy, marketing, and lead generation."
+      },
+      {
+        "title": "RFALA Institute",
+        "description": "Guided learning pathways, mentorship, AI literacy, and practical skill development."
+      }
+    ],
+    "details": [
+      "Technology ecosystem",
+      "Moroccan roots",
+      "International ambitions"
+    ]
+  },
+  "pages": {
+    "common": {
+      "backHome": "Back to home",
+      "contact": "Contact RFALA",
+      "explore": "Explore",
+      "strategicFocus": "Strategic focus",
+      "builtUnder": "Built under RFALA LLC"
+    },
+    "ecosystem": {
+      "label": "RFALA Ecosystem",
+      "title": "A connected portfolio of technology, media, marketplace, and education platforms.",
+      "description": "RFALA operates as one umbrella company with multiple focused initiatives designed to serve learners, businesses, creators, families, and communities.",
+      "highlights": [
+        "Parent ecosystem structure",
+        "Multiple scalable brands",
+        "Shared innovation strategy"
+      ]
+    },
+    "institute": {
+      "label": "RFALA Institute",
+      "title": "Guided learning pathways built for the AI era.",
+      "description": "RFALA Institute combines curated world-class learning resources with mentorship, accountability, and practical pathways that help students move from learning to building.",
+      "highlights": [
+        "Human mentorship",
+        "AI and technology literacy",
+        "Career-ready practical skills"
+      ]
+    },
+    "services": {
+      "label": "RFALA Services",
+      "title": "Digital, AI, and innovation capabilities for modern organizations.",
+      "description": "RFALA helps businesses, creators, and communities build digital products, automate workflows, grow brands, and turn ideas into scalable technology experiences.",
+      "highlights": [
+        "AI-powered systems",
+        "Digital product development",
+        "Brand growth and innovation"
+      ]
+    },
+    "vision": {
+      "label": "RFALA Vision",
+      "title": "Moroccan roots, global technology ambitions, and real-world impact.",
+      "description": "RFALA exists to bridge ideas, modern technology, education, and community needs through a future-focused ecosystem that can grow across industries and borders.",
+      "pillars": [
+        {
+          "title": "Technology with purpose",
+          "description": "Build useful platforms, tools, and workflows that solve practical problems."
+        },
+        {
+          "title": "Innovation across brands",
+          "description": "Connect RFALA initiatives through shared strategy, standards, and momentum."
+        },
+        {
+          "title": "Education as a foundation",
+          "description": "Use learning and mentorship to help people participate in the future economy."
+        },
+        {
+          "title": "Community impact",
+          "description": "Create products and experiences that support local and global communities."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "description": "RFALA LLC is a technology, AI, digital media, innovation, and education ecosystem building platforms for learners, communities, and businesses.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "privacy": "Privacy Policy",
+    "contact": "Contact Us",
+    "copyright": "Copyright 2026 RFALA LLC. All rights reserved."
+  }
+}

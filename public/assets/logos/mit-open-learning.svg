@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="72" viewBox="0 0 260 72" role="img" aria-labelledby="title">
+  <title id="title">MIT Open Learning</title>
+  <rect width="260" height="72" rx="14" fill="#FFFFFF"/>
+  <g fill="#111827">
+    <rect x="20" y="18" width="7" height="36"/>
+    <rect x="30" y="18" width="7" height="22"/>
+    <rect x="40" y="18" width="7" height="36"/>
+    <rect x="53" y="18" width="7" height="36"/>
+    <rect x="63" y="18" width="7" height="36"/>
+    <rect x="76" y="18" width="7" height="12"/>
+    <rect x="86" y="18" width="7" height="36"/>
+  </g>
+  <text x="106" y="35" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="900">MIT</text>
+  <text x="106" y="53" fill="#4B5563" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800">Open Learning</text>
+</svg>

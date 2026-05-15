@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="72" viewBox="0 0 260 72" role="img" aria-labelledby="title">
+  <title id="title">Coursera</title>
+  <rect width="260" height="72" rx="14" fill="#FFFFFF"/>
+  <circle cx="44" cy="36" r="23" fill="#111827"/>
+  <path d="M55 45c-4 5-12 7-19 4-9-4-13-14-9-23 4-9 15-13 24-8 3 1 5 3 7 6l-8 5c-1-2-2-3-4-4-4-2-9 0-11 5-2 5 0 10 5 12 3 1 6 0 8-2l7 5Z" fill="#FFFFFF"/>
+  <text x="84" y="44" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="900">Coursera</text>
+</svg>

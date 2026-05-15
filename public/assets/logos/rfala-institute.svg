@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="120" viewBox="0 0 320 120" role="img" aria-labelledby="title">
+  <title id="title">RFALA Institute logo</title>
+  <rect width="320" height="120" rx="18" fill="#071426"/>
+  <circle cx="60" cy="60" r="31" fill="#102C3B"/>
+  <path d="M60 34 31 48l29 14 29-14-29-14Z" fill="#72DFBD"/>
+  <path d="M43 56v16c7 10 27 10 34 0V56l-17 8-17-8Z" fill="none" stroke="#72DFBD" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M88 49v21" stroke="#D7A847" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="88" cy="75" r="4" fill="#D7A847"/>
+  <text x="112" y="55" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="900">RFALA</text>
+  <text x="113" y="82" fill="#72DFBD" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="800" letter-spacing="3">INSTITUTE</text>
+</svg>

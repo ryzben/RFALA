@@ -1,0 +1,35 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "Privacy Policy | RFALA",
+  description: "RFALA privacy policy."
+};
+
+export default function PrivacyPage() {
+  return (
+    <main className="min-h-screen bg-slate-50 text-slate-950">
+      <header className="border-b border-slate-200 bg-white">
+        <nav className="mx-auto flex h-20 w-[min(1120px,calc(100%-32px))] items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 font-extrabold text-ink" aria-label="RFALA home">
+            <span className="grid size-11 place-items-center rounded-lg bg-gradient-to-br from-emerald to-gold text-white">R</span>
+            <span className="text-lg">RFALA</span>
+          </Link>
+          <div className="flex items-center gap-5 text-sm font-bold text-slate-600">
+            <Link href="/#about" className="hover:text-emerald">About</Link>
+            <Link href="/#projects" className="hover:text-emerald">Projects</Link>
+            <Link href="/contact" className="hover:text-emerald">Contact</Link>
+          </div>
+        </nav>
+      </header>
+      <section className="mx-auto w-[min(820px,calc(100%-32px))] py-20">
+        <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-emerald">Privacy Policy</p>
+        <h1 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-6xl">RFALA Privacy Policy</h1>
+        <div className="mt-8 space-y-6 text-lg leading-8 text-slate-600">
+          <p>RFALA respects your privacy. Information submitted through this website is used only to respond to your message, support RFALA services, and improve future educational and innovation initiatives.</p>
+          <p>We do not sell personal information. If third-party services are added in the future, this page should be updated to explain how those services collect and process information.</p>
+          <p>For privacy questions, contact <a className="font-extrabold text-emerald" href="mailto:hello@rfala.com">hello@rfala.com</a>.</p>
+        </div>
+      </section>
+    </main>
+  );
+}
