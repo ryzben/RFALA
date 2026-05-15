@@ -85,8 +85,7 @@ function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }
     <header className="border-b border-white/10 bg-ink/90 text-white backdrop-blur-2xl">
       <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between">
         <Link href={localizedPath(locale, "/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-          <span className="grid size-11 place-items-center rounded-lg bg-gradient-to-br from-emerald to-gold text-white shadow-glow">R</span>
-          <span className="text-lg tracking-tight">RFALA</span>
+          <img src="/assets/logos/rfala-ai-logo.png" alt="RFALA" className="h-12 w-36 rounded-lg border border-white/10 object-cover object-center shadow-glow" />
         </Link>
         <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
           <Link href={localizedPath(locale, "/about")} className="transition hover:text-mint">{t.nav.about}</Link>
@@ -162,8 +161,7 @@ function Footer({ dictionary, locale }: { dictionary: Messages; locale: Locale }
       <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
         <div>
           <Link href={localizedPath(locale, "/")} className="mb-5 flex items-center gap-3 font-extrabold">
-            <span className="grid size-11 place-items-center rounded-lg bg-gradient-to-br from-emerald to-gold">R</span>
-            <span className="text-lg">RFALA</span>
+            <img src="/assets/logos/rfala-ai-logo.png" alt="RFALA" className="h-12 w-36 rounded-lg border border-white/10 object-cover object-center shadow-glow" />
           </Link>
           <p className="max-w-md text-slate-400">{t.footer.description}</p>
         </div>
