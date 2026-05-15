@@ -20,7 +20,7 @@ import enMessages from "../../messages/en.json";
 
 type Messages = typeof enMessages;
 type Locale = "en" | "fr";
-type PageKind = "ecosystem" | "institute" | "services" | "vision";
+type PageKind = "about" | "ecosystem" | "institute" | "services" | "vision";
 
 const ecosystemAssets = [
   {
@@ -89,7 +89,7 @@ function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }
           <span className="text-lg tracking-tight">RFALA</span>
         </Link>
         <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
-          <Link href={`${localizedPath(locale, "/")}#about`} className="transition hover:text-mint">{t.nav.about}</Link>
+          <Link href={localizedPath(locale, "/about")} className="transition hover:text-mint">{t.nav.about}</Link>
           <Link href={localizedPath(locale, "/ecosystem")} className="transition hover:text-mint">{t.nav.ecosystem}</Link>
           <Link href={localizedPath(locale, "/institute")} className="transition hover:text-mint">{t.nav.institute}</Link>
           <Link href={localizedPath(locale, "/services")} className="transition hover:text-mint">{t.nav.services}</Link>
@@ -105,7 +105,7 @@ function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }
   );
 }
 
-function PageHero({ dictionary, locale, kind }: { dictionary: Messages; locale: Locale; kind: PageKind }) {
+function PageHero({ dictionary, locale, kind }: { dictionary: Messages; locale: Locale; kind: Exclude<PageKind, "about"> }) {
   const t = dictionary;
   const page = t.pages[kind];
 
@@ -171,6 +171,7 @@ function Footer({ dictionary, locale }: { dictionary: Messages; locale: Locale }
           <h3 className="mb-4 font-black">{t.footer.quickLinks}</h3>
           <div className="grid gap-2 text-slate-400">
             <Link href={localizedPath(locale, "/")} className="hover:text-mint">{t.nav.home}</Link>
+            <Link href={localizedPath(locale, "/about")} className="hover:text-mint">{t.nav.about}</Link>
             <Link href={localizedPath(locale, "/ecosystem")} className="hover:text-mint">{t.nav.ecosystem}</Link>
             <Link href={localizedPath(locale, "/institute")} className="hover:text-mint">{t.nav.institute}</Link>
             <Link href={localizedPath(locale, "/services")} className="hover:text-mint">{t.nav.services}</Link>
@@ -188,6 +189,26 @@ function Footer({ dictionary, locale }: { dictionary: Messages; locale: Locale }
         </div>
       </div>
     </footer>
+  );
+}
+
+function AboutBody({ dictionary }: { dictionary: Messages }) {
+  const t = dictionary;
+
+  return (
+    <section className="bg-white py-24">
+      <div className="mx-auto grid w-[min(1120px,calc(100%-32px))] gap-12 lg:grid-cols-[.8fr_1.2fr]">
+        <div>
+          <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-emerald">{t.about.label}</p>
+          <h1 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">{t.about.title}</h1>
+        </div>
+        <div className="space-y-6 text-lg leading-8 text-slate-600">
+          {t.about.paragraphs.map((paragraph, index) => (
+            <p key={paragraph} className={index === t.about.paragraphs.length - 1 ? "font-extrabold text-ink" : undefined}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -347,6 +368,7 @@ export function ContentPage({ dictionary, locale, kind }: { dictionary: Messages
   return (
     <main className="min-h-screen bg-slate-50 text-slate-950">
       <Header dictionary={dictionary} locale={locale} />
+      {kind === "about" ? <AboutBody dictionary={dictionary} /> : null}
       {kind === "ecosystem" ? <EcosystemBody dictionary={dictionary} locale={locale} /> : null}
       {kind === "institute" ? <InstituteBody dictionary={dictionary} /> : null}
       {kind === "services" ? <ServicesBody dictionary={dictionary} /> : null}

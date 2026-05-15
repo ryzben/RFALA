@@ -24,7 +24,7 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
             <span className="text-lg tracking-tight">RFALA</span>
           </Link>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
-            <Link href={`${homeHref}#about`} className="transition hover:text-mint">{t.nav.about}</Link>
+            <Link href={locale === "fr" ? "/fr/about" : "/about"} className="transition hover:text-mint">{t.nav.about}</Link>
             <Link href={locale === "fr" ? "/fr/ecosystem" : "/ecosystem"} className="transition hover:text-mint">{t.nav.ecosystem}</Link>
             <Link href={locale === "fr" ? "/fr/institute" : "/institute"} className="transition hover:text-mint">{t.nav.institute}</Link>
             <Link href={locale === "fr" ? "/fr/services" : "/services"} className="transition hover:text-mint">{t.nav.services}</Link>

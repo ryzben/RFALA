@@ -177,7 +177,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <span className="text-lg tracking-tight">RFALA</span>
           </a>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
-            <a href="#about" className="transition hover:text-mint">{t.nav.about}</a>
+            <a href={route("/about")} className="transition hover:text-mint">{t.nav.about}</a>
             <a href={route("/ecosystem")} className="transition hover:text-mint">{t.nav.ecosystem}</a>
             <a href={route("/institute")} className="transition hover:text-mint">{t.nav.institute}</a>
             <a href={route("/services")} className="transition hover:text-mint">{t.nav.services}</a>
@@ -484,7 +484,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <h3 className="mb-4 font-black">{t.footer.quickLinks}</h3>
             <div className="grid gap-2 text-slate-400">
               <a href={route("/")} className="hover:text-mint">{t.nav.home}</a>
-              <a href="#about" className="hover:text-mint">{t.nav.about}</a>
+              <a href={route("/about")} className="hover:text-mint">{t.nav.about}</a>
               <a href={route("/ecosystem")} className="hover:text-mint">{t.nav.ecosystem}</a>
               <a href={route("/institute")} className="hover:text-mint">{t.nav.institute}</a>
               <a href={route("/services")} className="hover:text-mint">{t.nav.services}</a>
