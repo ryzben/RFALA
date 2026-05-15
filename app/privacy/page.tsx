@@ -11,7 +11,7 @@ export default function PrivacyPage() {
       <header className="border-b border-slate-200 bg-white">
         <nav className="mx-auto flex h-20 w-[min(1120px,calc(100%-32px))] items-center justify-between">
           <Link href="/" className="flex items-center gap-3 font-extrabold text-ink" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-12 w-44 object-contain" />
+            <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-14 w-52 object-contain mix-blend-screen" />
           </Link>
           <div className="flex items-center gap-5 text-sm font-bold text-slate-600">
             <Link href="/#about" className="hover:text-emerald">About</Link>

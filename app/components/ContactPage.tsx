@@ -20,7 +20,7 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
       <header className="border-b border-white/10 bg-ink/80 backdrop-blur-2xl">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between">
           <Link href={homeHref} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-12 w-44 object-contain" />
+            <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-14 w-52 object-contain mix-blend-screen" />
           </Link>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
             <Link href={locale === "fr" ? "/fr/about" : "/about"} className="transition hover:text-mint">{t.nav.about}</Link>
