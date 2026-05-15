@@ -215,17 +215,28 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
           <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15 }} className="relative min-h-[520px]">
             <div className="absolute inset-8 rounded-[1.25rem] bg-gradient-to-br from-sky/20 via-emerald/15 to-gold/20 blur-3xl" />
             <div className="relative overflow-hidden rounded-xl border border-white/15 bg-white/[0.08] p-5 shadow-soft backdrop-blur-xl">
-              <div
-                className="relative h-[450px] overflow-hidden rounded-lg bg-cover bg-center"
-                style={{ backgroundImage: "url('/assets/rfala-hero.png')" }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
-                <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 5 }} className="absolute left-5 top-6 rounded-lg border border-white/15 bg-ink/70 p-4 backdrop-blur-xl">
+              <div className="relative h-[450px] overflow-hidden rounded-lg bg-ink">
+                <img src="/assets/rfala-hero.png" alt="Mountain landscape with digital innovation network" className="absolute inset-0 h-full w-full object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_24%,rgba(114,223,189,0.22),transparent_18%),radial-gradient(circle_at_62%_54%,rgba(109,200,255,0.12),transparent_22%)]" />
+                <motion.div
+                  aria-hidden="true"
+                  className="absolute right-10 top-10 h-px w-40 origin-left bg-gradient-to-r from-mint/70 to-transparent"
+                  animate={{ scaleX: [0.65, 1, 0.65], opacity: [0.35, 0.9, 0.35] }}
+                  transition={{ duration: 5, repeat: Infinity }}
+                />
+                <motion.div
+                  aria-hidden="true"
+                  className="absolute right-28 top-24 size-2 rounded-full bg-mint shadow-[0_0_26px_rgba(114,223,189,0.9)]"
+                  animate={{ scale: [1, 1.5, 1], opacity: [0.55, 1, 0.55] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                />
+                <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 6 }} className="absolute bottom-6 left-5 max-w-[260px] rounded-lg border border-white/15 bg-ink/45 p-4 backdrop-blur-xl">
                   <div className="flex items-center gap-3">
-                    <BrainCircuit className="size-8 text-mint" />
+                    <Layers3 className="size-7 text-mint" />
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">{t.hero.aiLabel}</p>
-                      <p className="font-extrabold">{t.hero.aiText}</p>
+                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">Mountain roots</p>
+                      <p className="font-extrabold">Digital innovation</p>
                     </div>
                   </div>
                 </motion.div>
