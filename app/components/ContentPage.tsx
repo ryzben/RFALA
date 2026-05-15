@@ -82,6 +82,7 @@ function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }
           <span className="text-lg tracking-tight">RFALA</span>
         </Link>
         <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
+          <Link href={`${localizedPath(locale, "/")}#about`} className="transition hover:text-mint">{t.nav.about}</Link>
           <Link href={localizedPath(locale, "/ecosystem")} className="transition hover:text-mint">{t.nav.ecosystem}</Link>
           <Link href={localizedPath(locale, "/institute")} className="transition hover:text-mint">{t.nav.institute}</Link>
           <Link href={localizedPath(locale, "/services")} className="transition hover:text-mint">{t.nav.services}</Link>
