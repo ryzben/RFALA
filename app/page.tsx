@@ -24,6 +24,7 @@ import {
   UsersRound
 } from "lucide-react";
 import { LanguageSwitcher } from "./components/LanguageSwitcher";
+import { MobileMenu } from "./components/MobileMenu";
 import enMessages from "../messages/en.json";
 
 type IconType = ComponentType<{ className?: string }>;
@@ -167,13 +168,21 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
     label: t.institute.signals[index]?.label ?? item.label,
     value: t.institute.signals[index]?.value ?? item.value
   }));
+  const navItems = [
+    { href: route("/about"), label: t.nav.about },
+    { href: route("/ecosystem"), label: t.nav.ecosystem },
+    { href: route("/institute"), label: t.nav.institute },
+    { href: route("/services"), label: t.nav.services },
+    { href: route("/vision"), label: t.nav.vision },
+    { href: route("/contact"), label: t.nav.contact }
+  ];
 
   return (
     <main className="min-h-screen overflow-hidden bg-slate-50 text-slate-950">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-2xl">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between text-white">
           <a href={route("/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-14 w-52 object-contain" />
+            <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
           </a>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
             <a href={route("/about")} className="transition hover:text-mint">{t.nav.about}</a>
@@ -184,9 +193,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <a href={route("/contact")} className="transition hover:text-mint">{t.nav.contact}</a>
             <LanguageSwitcher locale={locale} />
           </div>
-          <div className="md:hidden">
-            <LanguageSwitcher locale={locale} />
-          </div>
+          <MobileMenu items={navItems} locale={locale} />
         </nav>
       </header>
 

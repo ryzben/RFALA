@@ -16,6 +16,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { MobileMenu } from "./MobileMenu";
 import enMessages from "../../messages/en.json";
 
 type Messages = typeof enMessages;
@@ -80,12 +81,20 @@ function localizedPath(locale: Locale, path: string) {
 
 function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }) {
   const t = dictionary;
+  const navItems = [
+    { href: localizedPath(locale, "/about"), label: t.nav.about },
+    { href: localizedPath(locale, "/ecosystem"), label: t.nav.ecosystem },
+    { href: localizedPath(locale, "/institute"), label: t.nav.institute },
+    { href: localizedPath(locale, "/services"), label: t.nav.services },
+    { href: localizedPath(locale, "/vision"), label: t.nav.vision },
+    { href: localizedPath(locale, "/contact"), label: t.nav.contact }
+  ];
 
   return (
     <header className="border-b border-white/10 bg-ink/90 text-white backdrop-blur-2xl">
       <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between">
         <Link href={localizedPath(locale, "/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-          <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-14 w-52 object-contain" />
+          <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
         </Link>
         <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
           <Link href={localizedPath(locale, "/about")} className="transition hover:text-mint">{t.nav.about}</Link>
@@ -96,9 +105,7 @@ function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }
           <Link href={localizedPath(locale, "/contact")} className="transition hover:text-mint">{t.nav.contact}</Link>
           <LanguageSwitcher locale={locale} />
         </div>
-        <div className="md:hidden">
-          <LanguageSwitcher locale={locale} />
-        </div>
+        <MobileMenu items={navItems} locale={locale} />
       </nav>
     </header>
   );

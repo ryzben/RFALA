@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MobileMenu } from "../components/MobileMenu";
 
 export const metadata = {
   title: "Privacy Policy | RFALA",
@@ -6,18 +7,28 @@ export const metadata = {
 };
 
 export default function PrivacyPage() {
+  const navItems = [
+    { href: "/about", label: "About" },
+    { href: "/ecosystem", label: "Ecosystem" },
+    { href: "/institute", label: "Institute" },
+    { href: "/services", label: "Services" },
+    { href: "/vision", label: "Vision" },
+    { href: "/contact", label: "Contact" }
+  ];
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-950">
       <header className="border-b border-white/10 bg-ink">
         <nav className="mx-auto flex h-20 w-[min(1120px,calc(100%-32px))] items-center justify-between">
           <Link href="/" className="flex items-center gap-3 font-extrabold text-white" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-14 w-52 object-contain" />
+            <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
           </Link>
-          <div className="flex items-center gap-5 text-sm font-bold text-white/70">
+          <div className="hidden items-center gap-5 text-sm font-bold text-white/70 md:flex">
             <Link href="/about" className="hover:text-mint">About</Link>
             <Link href="/ecosystem" className="hover:text-mint">Ecosystem</Link>
             <Link href="/contact" className="hover:text-mint">Contact</Link>
           </div>
+          <MobileMenu items={navItems} locale="en" />
         </nav>
       </header>
       <section className="mx-auto w-[min(820px,calc(100%-32px))] py-20">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, BrainCircuit, Globe2, Mail, MessageCircle, Network, Phone, Sparkles } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { MobileMenu } from "./MobileMenu";
 import enMessages from "../../messages/en.json";
 
 type Messages = typeof enMessages;
@@ -14,13 +15,21 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
   const contactHref = `mailto:${t.contact.email}?subject=RFALA%20Project%20Inquiry`;
   const phoneHref = "tel:+19175822768";
   const whatsappHref = "https://wa.me/19175822768";
+  const navItems = [
+    { href: locale === "fr" ? "/fr/about" : "/about", label: t.nav.about },
+    { href: locale === "fr" ? "/fr/ecosystem" : "/ecosystem", label: t.nav.ecosystem },
+    { href: locale === "fr" ? "/fr/institute" : "/institute", label: t.nav.institute },
+    { href: locale === "fr" ? "/fr/services" : "/services", label: t.nav.services },
+    { href: locale === "fr" ? "/fr/vision" : "/vision", label: t.nav.vision },
+    { href: locale === "fr" ? "/fr/contact" : "/contact", label: t.nav.contact }
+  ];
 
   return (
     <main className="min-h-screen overflow-hidden bg-ink text-white">
       <header className="border-b border-white/10 bg-ink/80 backdrop-blur-2xl">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between">
           <Link href={homeHref} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-14 w-52 object-contain" />
+            <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
           </Link>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
             <Link href={locale === "fr" ? "/fr/about" : "/about"} className="transition hover:text-mint">{t.nav.about}</Link>
@@ -30,9 +39,7 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
             <Link href={locale === "fr" ? "/fr/vision" : "/vision"} className="transition hover:text-mint">{t.nav.vision}</Link>
             <LanguageSwitcher locale={locale} />
           </div>
-          <div className="md:hidden">
-            <LanguageSwitcher locale={locale} />
-          </div>
+          <MobileMenu items={navItems} locale={locale} />
         </nav>
       </header>
 
