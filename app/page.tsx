@@ -9,7 +9,6 @@ import {
   Code2,
   Compass,
   ExternalLink,
-  Globe2,
   GraduationCap,
   Layers3,
   LineChart,
@@ -19,7 +18,6 @@ import {
   Palette,
   Rocket,
   SearchCheck,
-  Share2,
   Sparkles,
   UsersRound
 } from "lucide-react";
@@ -182,7 +180,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-2xl">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between text-white">
           <a href={route("/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
+            <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
           </a>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
             <a href={route("/about")} className="transition hover:text-mint">{t.nav.about}</a>
@@ -265,17 +263,47 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
       </section>
 
       <section id="about" className="bg-white py-24">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} variants={fadeUp} transition={{ duration: 0.6 }} className="mx-auto grid w-[min(1120px,calc(100%-32px))] gap-12 lg:grid-cols-[.8fr_1.2fr]">
-          <div>
-            <SectionLabel>{t.about.label}</SectionLabel>
-            <h2 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">{t.about.title}</h2>
-          </div>
-          <div className="space-y-6 text-lg leading-8 text-slate-600">
-            {t.about.paragraphs.map((paragraph, index) => (
-              <p key={paragraph} className={index === t.about.paragraphs.length - 1 ? "font-extrabold text-ink" : undefined}>{paragraph}</p>
-            ))}
-          </div>
-        </motion.div>
+        <div className="mx-auto w-[min(1120px,calc(100%-32px))]">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} variants={fadeUp} transition={{ duration: 0.6 }} className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
+            <div>
+              <SectionLabel>{t.about.label}</SectionLabel>
+              <h2 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">{t.about.title}</h2>
+            </div>
+            <div className="space-y-6 text-lg leading-8 text-slate-600">
+              {t.about.paragraphs.map((paragraph, index) => (
+                <p key={paragraph} className={index === t.about.paragraphs.length - 1 ? "font-extrabold text-ink" : undefined}>{paragraph}</p>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Stats + domain tags */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp} transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-16 border-t border-slate-100 pt-12"
+          >
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+              {[
+                { value: "4", label: "Initiatives" },
+                { value: "2", label: "Continents" },
+                { value: "AI+", label: "Core Focus" },
+                { value: "∞", label: "Ambition" }
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <p className="text-4xl font-black tracking-tight text-ink sm:text-5xl">{stat.value}</p>
+                  <p className="mt-1 text-sm font-bold uppercase tracking-widest text-emerald">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-3">
+              {["Artificial Intelligence", "Digital Media", "Web & App Dev", "Education", "Business Growth", "Community Platforms", "Innovation Labs", "Branding"].map((tag) => (
+                <span key={tag} className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-bold text-slate-600 transition hover:border-emerald/40 hover:bg-emerald/5 hover:text-emerald">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       <section id="projects" className="bg-slate-100 py-24">
@@ -485,16 +513,9 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
         <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
           <div>
             <a href={route("/")} className="mb-5 flex items-center gap-3 font-extrabold">
-              <img src="/assets/logos/rfala-mountain-ai-logo-black.png" alt="RFALA" className="h-14 w-52 object-contain" />
+              <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-14 w-52 object-contain" />
             </a>
             <p className="max-w-md text-slate-400">{t.footer.description}</p>
-            <div className="mt-6 flex gap-3">
-              {[Globe2, Share2, UsersRound].map((Icon, index) => (
-                <a key={index} href="#top" aria-label="RFALA social link" className="grid size-10 place-items-center rounded-lg border border-white/10 text-slate-300 transition hover:border-mint hover:text-mint">
-                  <Icon className="size-5" />
-                </a>
-              ))}
-            </div>
           </div>
           <div>
             <h3 className="mb-4 font-black">{t.footer.quickLinks}</h3>
