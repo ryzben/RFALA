@@ -10,24 +10,23 @@
     "contact": "Contact"
   },
   "hero": {
-    "label": "Technology + AI + Innovation + Education",
-    "title": "Building the Future Through Technology, AI, Innovation, and Education",
-    "description": "RFALA is a modern technology and innovation ecosystem building AI initiatives, digital platforms, creative solutions, and future-focused projects for businesses, communities, and learners.",
+    "label": "Est. 2006 · Technology + AI + Innovation",
+    "title": "20 Years of Building Digital Futures",
+    "description": "From ryztech.com to RFALA — two decades of technology, innovation, and digital transformation across platforms, communities, and businesses worldwide.",
     "primary": "Explore Projects",
-    "secondary": "RFALA Institute",
+    "secondary": "Get In Touch",
     "aiLabel": "AI Layer",
     "aiText": "Learning intelligence",
     "growth": "Ecosystem Growth"
   },
   "about": {
     "label": "About RFALA",
-    "title": "A technology, innovation, and digital ecosystem built for real-world impact.",
+    "title": "Two decades of technology. One ecosystem built for the future.",
     "paragraphs": [
-      "RFALA is a technology, innovation, and digital ecosystem focused on building impactful solutions, platforms, and experiences for the future.",
-      "Driven by creativity, artificial intelligence, digital transformation, and modern technology, RFALA develops innovative projects across multiple industries including digital media, web and app development, AI solutions, business growth, education, and community-focused platforms.",
-      "Through its different initiatives and brands, RFALA helps businesses, creators, students, and communities connect with modern technology in practical and meaningful ways.",
-      "From digital marketing and creative services to AI initiatives, innovation labs, educational projects, and scalable technology platforms, RFALA is designed to bridge ideas, technology, and real-world impact.",
-      "RFALA is not just a company. It is an ecosystem built to create, innovate, and shape the future."
+      "What started in 2006 as ryztech.com has grown into RFALA — a full technology and innovation ecosystem with Moroccan roots and global ambitions.",
+      "Over 20 years, we have built digital products, helped businesses grow online, developed platforms, and invested in education and community impact across multiple industries.",
+      "Today, RFALA operates through focused initiatives — Xenova Studio, Maroclist, Islamic School Review, and RFALA Institute — each solving real problems for businesses, learners, and communities.",
+      "RFALA is not just a company. It is an ecosystem built on two decades of experience, designed to create, innovate, and shape the future."
     ]
   },
   "ecosystem": {

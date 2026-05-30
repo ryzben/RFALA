@@ -211,7 +211,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
               <a href={route("/ecosystem")} className="group inline-flex items-center justify-center gap-2 rounded-lg bg-emerald px-6 py-4 font-extrabold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-mint hover:text-ink">
                 {t.hero.primary} <ArrowRight className="size-5 transition group-hover:translate-x-1" />
               </a>
-              <a href={route("/institute")} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-4 font-extrabold text-white transition hover:-translate-y-0.5 hover:border-mint hover:bg-white/10">
+              <a href={route("/contact")} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-4 font-extrabold text-white transition hover:-translate-y-0.5 hover:border-mint hover:bg-white/10">
                 {t.hero.secondary}
               </a>
             </div>
@@ -496,6 +496,59 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                 </motion.article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section id="team" className="bg-white py-24">
+        <div className="mx-auto w-[min(1120px,calc(100%-32px))]">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }} variants={fadeUp} transition={{ duration: 0.6 }}>
+            <SectionLabel>The Team</SectionLabel>
+            <h2 className="mb-4 text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">People behind RFALA</h2>
+            <p className="mb-14 max-w-2xl text-lg leading-8 text-slate-600">A small, focused team with over 20 years of combined experience in technology, business, and digital innovation.</p>
+          </motion.div>
+
+          <div className="grid gap-8 sm:grid-cols-3">
+            {[
+              {
+                name: "Abdellah",
+                role: "Founder",
+                description: "Visionary behind RFALA. Leading the ecosystem strategy, partnerships, and long-term direction since ryztech.com in 2006.",
+                initials: "AB",
+                gradient: "from-emerald to-sky"
+              },
+              {
+                name: "Houda",
+                role: "VP Customer Satisfaction",
+                description: "Ensures every client, partner, and community member has an exceptional experience across all RFALA initiatives.",
+                initials: "HO",
+                gradient: "from-sky to-mint"
+              },
+              {
+                name: "Ilyass",
+                role: "IT Director",
+                description: "Drives the technical architecture and engineering across RFALA's platforms, products, and digital infrastructure.",
+                initials: "IL",
+                gradient: "from-gold to-emerald"
+              }
+            ].map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group rounded-xl border border-slate-200 bg-slate-50 p-8 transition hover:border-emerald/40 hover:bg-white hover:shadow-soft"
+              >
+                <div className={`mb-6 grid size-16 place-items-center rounded-xl bg-gradient-to-br ${member.gradient} text-xl font-black text-white shadow-sm`}>
+                  {member.initials}
+                </div>
+                <h3 className="text-xl font-black text-ink">{member.name}</h3>
+                <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald">{member.role}</p>
+                <p className="text-slate-600 leading-7">{member.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
