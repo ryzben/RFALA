@@ -91,7 +91,7 @@ function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }
   ];
 
   return (
-    <header className="border-b border-white/10 bg-ink/90 text-white backdrop-blur-2xl">
+    <header className="border-b border-white/10 bg-black/95 text-white backdrop-blur-2xl">
       <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between">
         <Link href={localizedPath(locale, "/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
           <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-12 w-44 object-contain mix-blend-screen sm:h-14 sm:w-52" />
@@ -164,7 +164,7 @@ function Footer({ dictionary, locale }: { dictionary: Messages; locale: Locale }
   const t = dictionary;
 
   return (
-    <footer className="border-t border-white/10 bg-ink py-12 text-white">
+    <footer className="border-t border-white/10 bg-black py-12 text-white">
       <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
         <div>
           <Link href={localizedPath(locale, "/")} className="mb-5 flex items-center gap-3 font-extrabold">
