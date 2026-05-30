@@ -540,17 +540,17 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <p className="mb-14 max-w-2xl text-lg leading-8 text-slate-600">A small, focused team with over 20 years of combined experience in technology, business, and digital innovation.</p>
           </motion.div>
 
-          <div className="grid gap-8 sm:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
             {[
               {
-                name: "Abdellah",
+                name: "Dr. Abdellah",
                 role: "Founder",
                 description: "Visionary behind RFALA. Leading the ecosystem strategy, partnerships, and long-term direction since ryztech.com in 2006.",
                 initials: "AB",
                 gradient: "from-emerald to-sky"
               },
               {
-                name: "Houda",
+                name: "Dr. Houda",
                 role: "VP Customer Satisfaction",
                 description: "Ensures every client, partner, and community member has an exceptional experience across all RFALA initiatives.",
                 initials: "HO",
@@ -558,10 +558,17 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
               },
               {
                 name: "Ilyass",
-                role: "IT Director",
-                description: "Drives the technical architecture and engineering across RFALA's platforms, products, and digital infrastructure.",
+                role: "Digital Marketing Director",
+                description: "Leads RFALA's digital marketing strategy, brand growth, and online presence across all platforms and initiatives.",
                 initials: "IL",
                 gradient: "from-gold to-emerald"
+              },
+              {
+                name: "Yahya",
+                role: "IT Director",
+                description: "Drives the technical architecture and engineering across RFALA's platforms, products, and digital infrastructure.",
+                initials: "YA",
+                gradient: "from-sky to-emerald"
               }
             ].map((member, index) => (
               <motion.div

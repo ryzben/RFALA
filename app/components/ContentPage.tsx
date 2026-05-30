@@ -197,25 +197,54 @@ function Footer({ dictionary, locale }: { dictionary: Messages; locale: Locale }
   );
 }
 
+const teamMembers = [
+  { name: "Dr. Abdellah", role: "Founder", description: "Visionary behind RFALA. Leading the ecosystem strategy, partnerships, and long-term direction since ryztech.com in 2006.", initials: "AB", gradient: "from-emerald to-sky" },
+  { name: "Dr. Houda", role: "VP Customer Satisfaction", description: "Ensures every client, partner, and community member has an exceptional experience across all RFALA initiatives.", initials: "HO", gradient: "from-sky to-mint" },
+  { name: "Ilyass", role: "Digital Marketing Director", description: "Leads RFALA's digital marketing strategy, brand growth, and online presence across all platforms and initiatives.", initials: "IL", gradient: "from-gold to-emerald" },
+  { name: "Yahya", role: "IT Director", description: "Drives the technical architecture and engineering across RFALA's platforms, products, and digital infrastructure.", initials: "YA", gradient: "from-sky to-emerald" }
+];
+
 function AboutBody({ dictionary }: { dictionary: Messages }) {
   const t = dictionary;
 
   return (
-    <section className="relative isolate overflow-hidden bg-ink py-24 text-white">
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_16%,rgba(47,178,132,0.22),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(109,200,255,0.16),transparent_26%),linear-gradient(135deg,#071426_0%,#102c3b_52%,#0f172a_100%)]" />
-      <div className="absolute inset-0 -z-10 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:72px_72px]" />
-      <div className="mx-auto grid w-[min(1120px,calc(100%-32px))] gap-12 lg:grid-cols-[.8fr_1.2fr]">
-        <div>
-          <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.about.label}</p>
-          <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">{t.about.title}</h1>
+    <>
+      <section className="relative isolate overflow-hidden bg-ink py-24 text-white">
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_16%,rgba(47,178,132,0.22),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(109,200,255,0.16),transparent_26%),linear-gradient(135deg,#071426_0%,#102c3b_52%,#0f172a_100%)]" />
+        <div className="absolute inset-0 -z-10 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:72px_72px]" />
+        <div className="mx-auto grid w-[min(1120px,calc(100%-32px))] gap-12 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.about.label}</p>
+            <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">{t.about.title}</h1>
+          </div>
+          <div className="space-y-6 rounded-2xl border border-white/10 bg-white/[0.08] p-6 text-lg leading-8 text-slate-300 shadow-[0_24px_90px_rgba(0,0,0,0.28)] backdrop-blur-2xl sm:p-8">
+            {t.about.paragraphs.map((paragraph, index) => (
+              <p key={paragraph} className={index === t.about.paragraphs.length - 1 ? "font-extrabold text-white" : undefined}>{paragraph}</p>
+            ))}
+          </div>
         </div>
-        <div className="space-y-6 rounded-2xl border border-white/10 bg-white/[0.08] p-6 text-lg leading-8 text-slate-300 shadow-[0_24px_90px_rgba(0,0,0,0.28)] backdrop-blur-2xl sm:p-8">
-          {t.about.paragraphs.map((paragraph, index) => (
-            <p key={paragraph} className={index === t.about.paragraphs.length - 1 ? "font-extrabold text-white" : undefined}>{paragraph}</p>
-          ))}
+      </section>
+
+      <section className="bg-white py-24">
+        <div className="mx-auto w-[min(1120px,calc(100%-32px))]">
+          <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-emerald">The Team</p>
+          <h2 className="mb-4 text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">People behind RFALA</h2>
+          <p className="mb-14 max-w-2xl text-lg leading-8 text-slate-600">A small, focused team with over 20 years of combined experience in technology, business, and digital innovation.</p>
+          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+            {teamMembers.map((member) => (
+              <div key={member.name} className="group rounded-xl border border-slate-200 bg-slate-50 p-8 transition hover:border-emerald/40 hover:bg-white hover:shadow-lg">
+                <div className={`mb-6 grid size-16 place-items-center rounded-xl bg-gradient-to-br ${member.gradient} text-xl font-black text-white shadow-sm`}>
+                  {member.initials}
+                </div>
+                <h3 className="text-xl font-black text-ink">{member.name}</h3>
+                <p className="mb-3 text-sm font-bold uppercase tracking-widest text-emerald">{member.role}</p>
+                <p className="leading-7 text-slate-600">{member.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
