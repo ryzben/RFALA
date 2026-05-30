@@ -450,17 +450,17 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   whileHover={{ y: -7 }}
-                  className="group relative flex min-h-[300px] overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-emerald/40 hover:shadow-soft"
+                  className="group relative flex min-h-[420px] overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-emerald/40 hover:shadow-soft"
                 >
                   {/* Photo header */}
-                  <div className="absolute inset-x-0 top-0 h-40 overflow-hidden">
+                  <div className="absolute inset-x-0 top-0 h-56 overflow-hidden">
                     <img src={service.photo} alt={service.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white" />
                     <span className="absolute right-4 top-4 rounded-full border border-white/60 bg-white/80 px-3 py-1 text-xs font-black text-slate-500 backdrop-blur-sm">
                       0{index + 1}
                     </span>
                   </div>
-                  <div className="relative mt-36 flex h-full w-full flex-col">
+                  <div className="relative mt-52 flex h-full w-full flex-col">
                     <h3 className="text-xl font-black tracking-tight text-ink">{service.name}</h3>
                     <p className="mt-3 flex-1 text-base leading-7 text-slate-600">{service.description}</p>
                     <div className="mt-6 flex items-center gap-3 text-sm font-extrabold text-emerald">
