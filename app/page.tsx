@@ -67,42 +67,42 @@ const services = [
     description: "Custom AI systems, automation, intelligent workflows, and future-ready technology solutions.",
     icon: BrainCircuit,
     accent: "from-emerald to-sky",
-    photo: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=300&fit=crop&auto=format"
+    photo: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Web & App Development",
     description: "Modern websites, scalable platforms, mobile apps, and digital product development.",
     icon: Code2,
     accent: "from-sky to-mint",
-    photo: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=300&fit=crop&auto=format"
+    photo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Digital Marketing",
     description: "Brand growth, SEO, content strategy, social media, and lead generation solutions.",
     icon: Megaphone,
     accent: "from-gold to-emerald",
-    photo: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=300&fit=crop&auto=format"
+    photo: "https://images.unsplash.com/photo-1551135049-8a33b5883817?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Branding & Media",
     description: "Creative identity, digital storytelling, media production, and visual brand experiences.",
     icon: Sparkles,
     accent: "from-mint to-sky",
-    photo: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=300&fit=crop&auto=format"
+    photo: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Research & Innovation",
     description: "Emerging technology initiatives, innovation labs, and future-driven digital projects.",
     icon: Rocket,
     accent: "from-sky to-gold",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=300&fit=crop&auto=format"
+    photo: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Learning Technologies",
     description: "Future-focused learning systems, mentorship programs, and digital knowledge platforms.",
     icon: MonitorSmartphone,
     accent: "from-emerald to-gold",
-    photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=300&fit=crop&auto=format"
+    photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=300&fit=crop&auto=format"
   }
 ];
 
@@ -184,7 +184,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between text-white">
           <a href={route("/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
+            <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain sm:h-16 sm:w-60" />
           </a>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
             <a href={route("/about")} className="transition hover:text-mint">{t.nav.about}</a>
@@ -199,34 +199,86 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
         </nav>
       </header>
 
-      <section id="top" className="relative isolate min-h-screen bg-ink pt-24 text-white">
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_18%,rgba(47,178,132,0.24),transparent_28%),radial-gradient(circle_at_82%_16%,rgba(109,200,255,0.2),transparent_24%),linear-gradient(135deg,#071426_0%,#102c3b_54%,#0f172a_100%)]" />
-        <div className="absolute inset-0 -z-10 opacity-[0.24] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:72px_72px]" />
-        <div className="mx-auto flex min-h-[calc(100vh-96px)] w-[min(900px,calc(100%-32px))] flex-col items-center justify-center py-24 text-center">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.7 }}>
-            <SectionLabel>{t.hero.label}</SectionLabel>
-            <h1 className="text-5xl font-black leading-[0.96] tracking-tight sm:text-6xl lg:text-8xl">
-              {t.hero.title}
-            </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              {t.hero.description}
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <a href={route("/ecosystem")} className="group inline-flex items-center justify-center gap-2 rounded-lg bg-emerald px-8 py-4 font-extrabold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-mint hover:text-ink">
-                {t.hero.primary} <ArrowRight className="size-5 transition group-hover:translate-x-1" />
-              </a>
-              <a href={route("/contact")} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-8 py-4 font-extrabold text-white transition hover:-translate-y-0.5 hover:border-mint hover:bg-white/10">
-                {t.hero.secondary}
-              </a>
+      <section id="top" className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#050d1a] pt-20 text-white">
+        {/* Ambient orbs — large, soft, layered */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute left-[-20%] top-[-10%] h-[700px] w-[700px] rounded-full bg-emerald/10 blur-[120px]" />
+          <div className="absolute right-[-15%] top-[10%] h-[500px] w-[500px] rounded-full bg-sky-400/8 blur-[100px]" />
+          <div className="absolute bottom-[-10%] left-[30%] h-[400px] w-[600px] rounded-full bg-mint/6 blur-[90px]" />
+        </div>
+        {/* Dot grid overlay */}
+        <div className="pointer-events-none absolute inset-0 -z-10 [background-image:radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:28px_28px]" />
+        {/* Top edge vignette */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-[#050d1a] to-transparent" />
+        {/* Bottom edge vignette */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-[#050d1a] to-transparent" />
+
+        <div className="mx-auto flex w-[min(860px,calc(100%-32px))] flex-col items-center text-center">
+
+          {/* Eyebrow pill */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald/25 bg-emerald/8 px-4 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald" />
+              <span className="text-[0.7rem] font-extrabold uppercase tracking-[0.25em] text-emerald">{t.hero.label}</span>
             </div>
           </motion.div>
 
-          {/* Stats row */}
+          {/* Headline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-20 flex w-full flex-col items-center gap-8 border-t border-white/10 pt-12 sm:flex-row sm:justify-center sm:gap-16"
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
+            <h1 className="text-[clamp(3rem,8.5vw,6.5rem)] font-black leading-[0.9] tracking-[-0.04em]">
+              <span className="block text-white">{t.hero.title.split(" ").slice(0, Math.ceil(t.hero.title.split(" ").length / 2)).join(" ")}</span>
+              <span className="block bg-gradient-to-r from-[#2FB284] via-[#00e5a0] to-[#38bdf8] bg-clip-text text-transparent pb-2 [filter:saturate(1.3)]">
+                {t.hero.title.split(" ").slice(Math.ceil(t.hero.title.split(" ").length / 2)).join(" ")}
+              </span>
+            </h1>
+          </motion.div>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="mt-8 max-w-xl text-[1.05rem] leading-[1.75] text-slate-400"
+          >
+            {t.hero.description}
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
+          >
+            <a
+              href={route("/ecosystem")}
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-emerald px-8 py-4 text-sm font-extrabold text-white shadow-[0_0_32px_rgba(47,178,132,0.35)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_48px_rgba(47,178,132,0.5)]"
+            >
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+              {t.hero.primary} <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </a>
+            <a
+              href={route("/contact")}
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/35 bg-white/5 px-8 py-4 text-sm font-extrabold text-white backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-emerald/60 hover:bg-white/10"
+            >
+              {t.hero.secondary}
+            </a>
+          </motion.div>
+
+          {/* Stats strip */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-20 flex w-full items-center justify-center divide-x divide-white/10 border-t border-white/[0.07] pt-10"
           >
             {[
               { value: "20+", label: "Years of Experience" },
@@ -234,12 +286,13 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
               { value: "2", label: "Continents" },
               { value: "∞", label: "Ambition" }
             ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-3xl font-black text-mint sm:text-4xl">{stat.value}</p>
-                <p className="mt-1 text-xs font-bold uppercase tracking-widest text-white/45">{stat.label}</p>
+              <div key={stat.label} className="flex-1 px-6 text-center first:pl-0 last:pr-0">
+                <p className="text-3xl font-black tabular-nums text-white sm:text-4xl">{stat.value}</p>
+                <p className="mt-1.5 text-[0.62rem] font-bold uppercase tracking-[0.22em] text-white/35">{stat.label}</p>
               </div>
             ))}
           </motion.div>
+
         </div>
       </section>
 
@@ -455,8 +508,10 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                   <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${service.accent}`} />
                   <div className="relative flex h-full w-full flex-col">
                     <div className="mb-7 flex items-start justify-between gap-5">
-                      <div className="size-16 overflow-hidden rounded-xl border border-white/10">
-                        <img src={service.photo} alt={service.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+                      <div className={`grid size-16 place-items-center rounded-xl bg-gradient-to-br ${service.accent} shadow-[0_0_28px_rgba(47,178,132,0.2)]`}>
+                        <span className="text-[1.1rem] font-black tracking-tight text-ink leading-none text-center">
+                          {service.name.split(" ").map(w => w === "&" ? "&" : /^[A-Z]{2,}$/.test(w) ? w : /^[A-Za-z]/.test(w) ? w[0] : "").join("")}
+                        </span>
                       </div>
                       <span className="rounded-full border border-white/20 px-3 py-1 text-xs font-black text-white/50 transition group-hover:border-emerald/40 group-hover:text-emerald">
                         0{index + 1}

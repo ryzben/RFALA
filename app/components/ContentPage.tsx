@@ -94,7 +94,7 @@ function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }
     <header className="border-b border-white/10 bg-black text-white backdrop-blur-2xl">
       <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between">
         <Link href={localizedPath(locale, "/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-          <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
+          <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain sm:h-16 sm:w-60" />
         </Link>
         <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
           <Link href={localizedPath(locale, "/about")} className="transition hover:text-mint">{t.nav.about}</Link>
@@ -339,7 +339,9 @@ function ServicesBody({ dictionary }: { dictionary: Messages }) {
                 <div className="relative flex h-full w-full flex-col">
                   <div className="mb-7 flex items-start justify-between gap-5">
                     <div className={`grid size-14 place-items-center rounded-xl bg-gradient-to-br ${asset.accent} text-ink shadow-[0_0_36px_rgba(47,178,132,0.18)]`}>
-                      <Icon className="size-7" />
+                      <span className="text-[1rem] font-black leading-none tracking-tight text-center">
+                        {service.name.split(" ").map(w => w === "&" ? "&" : /^[A-Z]{2,}$/.test(w) ? w : /^[A-Za-z]/.test(w) ? w[0] : "").join("")}
+                      </span>
                     </div>
                     <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-black text-slate-300">0{index + 1}</span>
                   </div>
