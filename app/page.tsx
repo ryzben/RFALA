@@ -10,8 +10,6 @@ import {
   Compass,
   ExternalLink,
   GraduationCap,
-  Layers3,
-  LineChart,
   Megaphone,
   MonitorSmartphone,
   Network,
@@ -198,66 +196,43 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
       <section id="top" className="relative isolate min-h-screen bg-ink pt-24 text-white">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_18%,rgba(47,178,132,0.24),transparent_28%),radial-gradient(circle_at_82%_16%,rgba(109,200,255,0.2),transparent_24%),linear-gradient(135deg,#071426_0%,#102c3b_54%,#0f172a_100%)]" />
         <div className="absolute inset-0 -z-10 opacity-[0.24] [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:72px_72px]" />
-        <div className="mx-auto grid min-h-[calc(100vh-96px)] w-[min(1180px,calc(100%-32px))] items-center gap-12 py-20 lg:grid-cols-[1fr_.92fr]">
+        <div className="mx-auto flex min-h-[calc(100vh-96px)] w-[min(900px,calc(100%-32px))] flex-col items-center justify-center py-24 text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.7 }}>
             <SectionLabel>{t.hero.label}</SectionLabel>
-            <h1 className="max-w-4xl text-5xl font-black leading-[0.96] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="text-5xl font-black leading-[0.96] tracking-tight sm:text-6xl lg:text-8xl">
               {t.hero.title}
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
               {t.hero.description}
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href={route("/ecosystem")} className="group inline-flex items-center justify-center gap-2 rounded-lg bg-emerald px-6 py-4 font-extrabold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-mint hover:text-ink">
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <a href={route("/ecosystem")} className="group inline-flex items-center justify-center gap-2 rounded-lg bg-emerald px-8 py-4 font-extrabold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-mint hover:text-ink">
                 {t.hero.primary} <ArrowRight className="size-5 transition group-hover:translate-x-1" />
               </a>
-              <a href={route("/contact")} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-4 font-extrabold text-white transition hover:-translate-y-0.5 hover:border-mint hover:bg-white/10">
+              <a href={route("/contact")} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-8 py-4 font-extrabold text-white transition hover:-translate-y-0.5 hover:border-mint hover:bg-white/10">
                 {t.hero.secondary}
               </a>
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15 }} className="relative min-h-[520px]">
-            <div className="absolute inset-8 rounded-[1.25rem] bg-gradient-to-br from-sky/20 via-emerald/15 to-gold/20 blur-3xl" />
-            <div className="relative overflow-hidden rounded-xl border border-white/15 bg-white/[0.08] p-5 shadow-soft backdrop-blur-xl">
-              <div className="relative h-[450px] overflow-hidden rounded-lg bg-ink">
-                <img src="/assets/rfala-hero.png" alt="RFALA digital innovation network" className="absolute inset-0 h-full w-full object-cover object-center" />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_24%,rgba(114,223,189,0.22),transparent_18%),radial-gradient(circle_at_62%_54%,rgba(109,200,255,0.12),transparent_22%)]" />
-                <motion.div
-                  aria-hidden="true"
-                  className="absolute right-10 top-10 h-px w-40 origin-left bg-gradient-to-r from-mint/70 to-transparent"
-                  animate={{ scaleX: [0.65, 1, 0.65], opacity: [0.35, 0.9, 0.35] }}
-                  transition={{ duration: 5, repeat: Infinity }}
-                />
-                <motion.div
-                  aria-hidden="true"
-                  className="absolute right-28 top-24 size-2 rounded-full bg-mint shadow-[0_0_26px_rgba(114,223,189,0.9)]"
-                  animate={{ scale: [1, 1.5, 1], opacity: [0.55, 1, 0.55] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                />
-                <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 6 }} className="absolute bottom-6 left-5 max-w-[260px] rounded-lg border border-white/15 bg-ink/45 p-4 backdrop-blur-xl">
-                  <div className="flex items-center gap-3">
-                    <Layers3 className="size-7 text-mint" />
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">Mountain roots</p>
-                      <p className="font-extrabold">Digital innovation</p>
-                    </div>
-                  </div>
-                </motion.div>
-                <motion.div animate={{ y: [0, 12, 0] }} transition={{ repeat: Infinity, duration: 6 }} className="absolute left-5 top-6 w-64 rounded-lg border border-white/15 bg-white/12 p-4 backdrop-blur-xl">
-                  <div className="mb-3 flex items-center justify-between">
-                    <p className="text-sm font-extrabold">{t.hero.growth}</p>
-                    <LineChart className="size-5 text-gold" />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-2 rounded-full bg-white/15"><div className="h-2 w-10/12 rounded-full bg-emerald" /></div>
-                    <div className="h-2 rounded-full bg-white/15"><div className="h-2 w-8/12 rounded-full bg-sky" /></div>
-                    <div className="h-2 rounded-full bg-white/15"><div className="h-2 w-9/12 rounded-full bg-gold" /></div>
-                  </div>
-                </motion.div>
+          {/* Stats row */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="mt-20 flex w-full flex-col items-center gap-8 border-t border-white/10 pt-12 sm:flex-row sm:justify-center sm:gap-16"
+          >
+            {[
+              { value: "20+", label: "Years of Experience" },
+              { value: "4", label: "Active Platforms" },
+              { value: "2", label: "Continents" },
+              { value: "∞", label: "Ambition" }
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-3xl font-black text-mint sm:text-4xl">{stat.value}</p>
+                <p className="mt-1 text-xs font-bold uppercase tracking-widest text-white/45">{stat.label}</p>
               </div>
-            </div>
+            ))}
           </motion.div>
         </div>
       </section>
