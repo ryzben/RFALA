@@ -66,37 +66,43 @@ const services = [
     name: "AI Solutions",
     description: "Custom AI systems, automation, intelligent workflows, and future-ready technology solutions.",
     icon: BrainCircuit,
-    accent: "from-emerald to-sky"
+    accent: "from-emerald to-sky",
+    photo: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Web & App Development",
     description: "Modern websites, scalable platforms, mobile apps, and digital product development.",
     icon: Code2,
-    accent: "from-sky to-mint"
+    accent: "from-sky to-mint",
+    photo: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Digital Marketing",
     description: "Brand growth, SEO, content strategy, social media, and lead generation solutions.",
     icon: Megaphone,
-    accent: "from-gold to-emerald"
+    accent: "from-gold to-emerald",
+    photo: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Branding & Media",
     description: "Creative identity, digital storytelling, media production, and visual brand experiences.",
     icon: Sparkles,
-    accent: "from-mint to-sky"
+    accent: "from-mint to-sky",
+    photo: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Research & Innovation",
     description: "Emerging technology initiatives, innovation labs, and future-driven digital projects.",
     icon: Rocket,
-    accent: "from-sky to-gold"
+    accent: "from-sky to-gold",
+    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=300&fit=crop&auto=format"
   },
   {
     name: "Learning Technologies",
     description: "Future-focused learning systems, mentorship programs, and digital knowledge platforms.",
     icon: MonitorSmartphone,
-    accent: "from-emerald to-gold"
+    accent: "from-emerald to-gold",
+    photo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=300&fit=crop&auto=format"
   }
 ];
 
@@ -446,24 +452,18 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                   whileHover={{ y: -7 }}
                   className="group relative flex min-h-[300px] overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-emerald/40 hover:shadow-soft"
                 >
-                  <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${service.accent}`} />
-                  <div className="absolute -right-16 -top-16 size-40 rounded-full bg-emerald/0 blur-3xl transition group-hover:bg-emerald/15" />
-                  <div className="relative flex h-full w-full flex-col">
-                    <div className="mb-7 flex items-start justify-between gap-5">
-                      <motion.div
-                        className={`grid size-14 place-items-center rounded-xl bg-gradient-to-br ${service.accent} text-ink shadow-[0_0_36px_rgba(47,178,132,0.18)]`}
-                        whileHover={{ rotate: -4, scale: 1.06 }}
-                        transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                      >
-                        <Icon className="size-7" />
-                      </motion.div>
-                      <span className="rounded-full border border-slate-200 px-3 py-1 text-xs font-black text-slate-400 transition group-hover:border-emerald/30 group-hover:text-emerald">
-                        0{index + 1}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-black tracking-tight text-ink">{service.name}</h3>
-                    <p className="mt-4 flex-1 text-base leading-7 text-slate-600">{service.description}</p>
-                    <div className="mt-7 flex items-center gap-3 text-sm font-extrabold text-emerald">
+                  {/* Photo header */}
+                  <div className="absolute inset-x-0 top-0 h-40 overflow-hidden">
+                    <img src={service.photo} alt={service.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white" />
+                    <span className="absolute right-4 top-4 rounded-full border border-white/60 bg-white/80 px-3 py-1 text-xs font-black text-slate-500 backdrop-blur-sm">
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <div className="relative mt-36 flex h-full w-full flex-col">
+                    <h3 className="text-xl font-black tracking-tight text-ink">{service.name}</h3>
+                    <p className="mt-3 flex-1 text-base leading-7 text-slate-600">{service.description}</p>
+                    <div className="mt-6 flex items-center gap-3 text-sm font-extrabold text-emerald">
                       <span className="h-px flex-1 bg-gradient-to-r from-emerald/50 to-transparent" />
                       <span className="inline-flex items-center gap-2">{t.services.capability} <ArrowRight className="size-4 transition group-hover:translate-x-1" /></span>
                     </div>
