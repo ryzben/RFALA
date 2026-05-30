@@ -184,7 +184,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between text-white">
           <a href={route("/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-12 w-44 object-contain mix-blend-screen sm:h-14 sm:w-52" />
+            <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
           </a>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
             <a href={route("/about")} className="transition hover:text-mint">{t.nav.about}</a>
@@ -426,15 +426,15 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
         </div>
       </section>
 
-      <section id="services" className="relative isolate overflow-hidden bg-white py-24">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_18%,rgba(47,178,132,0.12),transparent_28%),radial-gradient(circle_at_84%_38%,rgba(109,200,255,0.12),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)]" />
+      <section id="services" className="relative isolate overflow-hidden bg-ink py-24 text-white">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_18%,rgba(47,178,132,0.12),transparent_28%),radial-gradient(circle_at_84%_38%,rgba(109,200,255,0.12),transparent_30%)]" />
         <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
           <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-4xl">
               <SectionLabel>{t.services.label}</SectionLabel>
-              <h2 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">{t.services.title}</h2>
+              <h2 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl">{t.services.title}</h2>
             </div>
-            <p className="max-w-xl text-lg leading-8 text-slate-600">
+            <p className="max-w-xl text-lg leading-8 text-slate-400">
               {t.services.description}
             </p>
           </div>
@@ -450,20 +450,21 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   whileHover={{ y: -7 }}
-                  className="group relative flex min-h-[420px] overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-emerald/40 hover:shadow-soft"
+                  className="group relative flex min-h-[300px] overflow-hidden rounded-xl border border-white/10 bg-white/[0.06] p-6 shadow-sm transition hover:border-emerald/40 hover:bg-white/[0.09]"
                 >
-                  {/* Photo header */}
-                  <div className="absolute inset-x-0 top-0 h-56 overflow-hidden">
-                    <img src={service.photo} alt={service.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white" />
-                    <span className="absolute right-4 top-4 rounded-full border border-white/60 bg-white/80 px-3 py-1 text-xs font-black text-slate-500 backdrop-blur-sm">
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <div className="relative mt-52 flex h-full w-full flex-col">
-                    <h3 className="text-xl font-black tracking-tight text-ink">{service.name}</h3>
-                    <p className="mt-3 flex-1 text-base leading-7 text-slate-600">{service.description}</p>
-                    <div className="mt-6 flex items-center gap-3 text-sm font-extrabold text-emerald">
+                  <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${service.accent}`} />
+                  <div className="relative flex h-full w-full flex-col">
+                    <div className="mb-7 flex items-start justify-between gap-5">
+                      <div className="size-16 overflow-hidden rounded-xl border border-white/10">
+                        <img src={service.photo} alt={service.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+                      </div>
+                      <span className="rounded-full border border-white/20 px-3 py-1 text-xs font-black text-white/50 transition group-hover:border-emerald/40 group-hover:text-emerald">
+                        0{index + 1}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-black tracking-tight text-white">{service.name}</h3>
+                    <p className="mt-4 flex-1 text-base leading-7 text-slate-400">{service.description}</p>
+                    <div className="mt-7 flex items-center gap-3 text-sm font-extrabold text-emerald">
                       <span className="h-px flex-1 bg-gradient-to-r from-emerald/50 to-transparent" />
                       <span className="inline-flex items-center gap-2">{t.services.capability} <ArrowRight className="size-4 transition group-hover:translate-x-1" /></span>
                     </div>
@@ -541,7 +542,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
         <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
           <div>
             <a href={route("/")} className="mb-5 flex items-center gap-3 font-extrabold">
-              <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-14 w-52 object-contain mix-blend-screen" />
+              <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain />
             </a>
             <p className="max-w-md text-slate-400">{t.footer.description}</p>
           </div>
@@ -562,16 +563,4 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <h3 className="mb-4 font-black">{t.footer.connect}</h3>
             <div className="grid gap-2 text-slate-400">
               <a href="mailto:hello@rfala.com" className="hover:text-mint">hello@rfala.com</a>
-              <a href="https://rfala.com" target="_blank" rel="noopener" className="hover:text-mint">rfala.com</a>
-              <p className="pt-4 text-sm">{t.footer.copyright}</p>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
-  );
-}
-
-export default function Home() {
-  return <HomePage dictionary={enMessages} locale="en" />;
-}
+              <a href="https://rfala.com" target="_blank" rel="noopener" className="hover:text-min
