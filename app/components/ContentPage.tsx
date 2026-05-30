@@ -168,7 +168,7 @@ function Footer({ dictionary, locale }: { dictionary: Messages; locale: Locale }
       <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-10 md:grid-cols-[1.2fr_.8fr_.8fr]">
         <div>
           <Link href={localizedPath(locale, "/")} className="mb-5 flex items-center gap-3 font-extrabold">
-            <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain />
+            <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain" />
           </Link>
           <p className="max-w-md text-slate-400">{t.footer.description}</p>
         </div>
