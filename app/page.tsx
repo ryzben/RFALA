@@ -181,7 +181,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
 
   return (
     <main className="min-h-screen overflow-hidden bg-slate-50 text-slate-950">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-2xl">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between text-white">
           <a href={route("/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
             <img src="/assets/logos/rfala-mountain-ai-logo.png" alt="RFALA" className="h-12 w-44 object-contain mix-blend-screen sm:h-14 sm:w-52" />
