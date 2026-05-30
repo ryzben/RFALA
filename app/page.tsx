@@ -563,4 +563,4 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <h3 className="mb-4 font-black">{t.footer.connect}</h3>
             <div className="grid gap-2 text-slate-400">
               <a href="mailto:hello@rfala.com" className="hover:text-mint">hello@rfala.com</a>
-              <a href="https://rfala.com" target="_blank" rel="noopener" className="hover:text-min
+              <a href="https://rfala.com" target="_blank" rel="noopener" className="hover:text-mint"
