@@ -1,0 +1,142 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs>
+    <radialGradient id="bg1" cx="20%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#102c3b" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#071426" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2fb284" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#2fb284" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6dc8ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6dc8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d7a847" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#d7a847" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2fb284" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2fb284" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#72dfbd" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="lineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6dc8ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#6dc8ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#6dc8ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2fb284" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#071426" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg1)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="300" cy="150" rx="350" ry="280" fill="url(#glow1)" filter="url(#blur1)"/>
+  <ellipse cx="900" cy="200" rx="280" ry="220" fill="url(#glow2)" filter="url(#blur1)"/>
+  <ellipse cx="750" cy="500" rx="200" ry="160" fill="url(#glow3)" filter="url(#blur1)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.06" stroke="#72dfbd" stroke-width="0.5">
+    <line x1="0" y1="70" x2="1200" y2="70"/>
+    <line x1="0" y1="140" x2="1200" y2="140"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="350" x2="1200" y2="350"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="490" x2="1200" y2="490"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="100" y1="0" x2="100" y2="630"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="500" y1="0" x2="500" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="700" y1="0" x2="700" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+    <line x1="1100" y1="0" x2="1100" y2="630"/>
+  </g>
+
+  <!-- Mountain silhouette -->
+  <polygon points="0,630 150,380 280,480 420,260 560,400 680,180 800,320 920,200 1050,350 1200,280 1200,630" fill="url(#mountainGrad)"/>
+  <polygon points="0,630 150,420 280,510 420,310 560,440 680,230 800,360 920,240 1050,390 1200,320 1200,630" fill="#071426" opacity="0.4"/>
+
+  <!-- Connection lines -->
+  <g opacity="0.5">
+    <line x1="680" y1="180" x2="920" y2="200" stroke="url(#lineGrad1)" stroke-width="1"/>
+    <line x1="920" y1="200" x2="1050" y2="350" stroke="url(#lineGrad2)" stroke-width="1"/>
+    <line x1="680" y1="180" x2="560" y2="400" stroke="url(#lineGrad1)" stroke-width="1"/>
+    <line x1="420" y1="260" x2="680" y2="180" stroke="url(#lineGrad2)" stroke-width="0.8"/>
+    <line x1="800" y1="320" x2="1050" y2="350" stroke="url(#lineGrad1)" stroke-width="0.8"/>
+    <line x1="920" y1="200" x2="800" y2="320" stroke="url(#lineGrad2)" stroke-width="1"/>
+  </g>
+
+  <!-- Network nodes -->
+  <!-- Main glowing node -->
+  <circle cx="680" cy="180" r="18" fill="#071426" stroke="#2fb284" stroke-width="1.5" opacity="0.9"/>
+  <circle cx="680" cy="180" r="6" fill="#2fb284" opacity="0.9"/>
+  <circle cx="680" cy="180" r="30" fill="#2fb284" opacity="0.1"/>
+  <circle cx="680" cy="180" r="50" fill="#2fb284" opacity="0.05"/>
+
+  <circle cx="920" cy="200" r="12" fill="#071426" stroke="#6dc8ff" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="920" cy="200" r="5" fill="#6dc8ff" opacity="0.8"/>
+  <circle cx="920" cy="200" r="24" fill="#6dc8ff" opacity="0.08"/>
+
+  <circle cx="420" cy="260" r="10" fill="#071426" stroke="#72dfbd" stroke-width="1" opacity="0.7"/>
+  <circle cx="420" cy="260" r="4" fill="#72dfbd" opacity="0.7"/>
+
+  <circle cx="1050" cy="350" r="8" fill="#071426" stroke="#d7a847" stroke-width="1" opacity="0.7"/>
+  <circle cx="1050" cy="350" r="3" fill="#d7a847" opacity="0.8"/>
+  <circle cx="1050" cy="350" r="18" fill="#d7a847" opacity="0.06"/>
+
+  <circle cx="800" cy="320" r="7" fill="#071426" stroke="#6dc8ff" stroke-width="1" opacity="0.6"/>
+  <circle cx="800" cy="320" r="3" fill="#6dc8ff" opacity="0.6"/>
+
+  <circle cx="560" cy="400" r="6" fill="#071426" stroke="#2fb284" stroke-width="1" opacity="0.5"/>
+  <circle cx="560" cy="400" r="2.5" fill="#2fb284" opacity="0.6"/>
+
+  <!-- Floating card: Ecosystem Growth -->
+  <rect x="60" y="60" width="300" height="130" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="88" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.5)" letter-spacing="1.5">ECOSYSTEM GROWTH</text>
+  <!-- Bar 1 -->
+  <rect x="88" y="112" width="200" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="88" y="112" width="160" height="6" rx="3" fill="#2fb284"/>
+  <!-- Bar 2 -->
+  <rect x="88" y="126" width="200" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="88" y="126" width="120" height="6" rx="3" fill="#6dc8ff"/>
+  <!-- Bar 3 -->
+  <rect x="88" y="140" width="200" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <rect x="88" y="140" width="145" height="6" rx="3" fill="#d7a847"/>
+  <text x="88" y="175" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)" letter-spacing="1">↑ +20 years of growth</text>
+
+  <!-- Floating card: Est. 2006 -->
+  <rect x="880" y="420" width="240" height="100" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="906" y="455" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#72dfbd" letter-spacing="2">EST. 2006</text>
+  <text x="906" y="476" font-family="Inter, sans-serif" font-size="15" font-weight="800" fill="white">ryztech → RFALA</text>
+  <text x="906" y="497" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">Morocco · United States</text>
+
+  <!-- Small floating tag -->
+  <rect x="500" y="90" width="160" height="36" rx="8" fill="rgba(47,178,132,0.12)" stroke="rgba(47,178,132,0.3)" stroke-width="1"/>
+  <circle cx="520" cy="108" r="4" fill="#2fb284"/>
+  <text x="532" y="112" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#72dfbd">AI + Innovation</text>
+
+  <!-- Scan line effect -->
+  <line x1="0" y1="180" x2="1200" y2="180" stroke="rgba(114,223,189,0.04)" stroke-width="60"/>
+
+</svg>

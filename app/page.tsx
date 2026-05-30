@@ -221,7 +221,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <div className="absolute inset-8 rounded-[1.25rem] bg-gradient-to-br from-sky/20 via-emerald/15 to-gold/20 blur-3xl" />
             <div className="relative overflow-hidden rounded-xl border border-white/15 bg-white/[0.08] p-5 shadow-soft backdrop-blur-xl">
               <div className="relative h-[450px] overflow-hidden rounded-lg bg-ink">
-                <img src="/assets/rfala-hero.png" alt="Mountain landscape with digital innovation network" className="absolute inset-0 h-full w-full object-cover object-center" />
+                <img src="/assets/rfala-hero.svg" alt="RFALA digital innovation network" className="absolute inset-0 h-full w-full object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_24%,rgba(114,223,189,0.22),transparent_18%),radial-gradient(circle_at_62%_54%,rgba(109,200,255,0.12),transparent_22%)]" />
                 <motion.div
