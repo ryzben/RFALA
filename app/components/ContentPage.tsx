@@ -52,6 +52,7 @@ const ecosystemAssets = [
 
 const serviceAssets = [
   { icon: BrainCircuit, accent: "from-emerald to-sky" },
+  { icon: SearchCheck, accent: "from-mint to-emerald" },
   { icon: Code2, accent: "from-sky to-mint" },
   { icon: Megaphone, accent: "from-gold to-emerald" },
   { icon: Sparkles, accent: "from-mint to-sky" },
@@ -198,10 +199,10 @@ function Footer({ dictionary, locale }: { dictionary: Messages; locale: Locale }
 }
 
 const teamMembers = [
-  { name: "Dr. Abdellah", role: "Founder", description: "Visionary behind RFALA. Leading the ecosystem strategy, partnerships, and long-term direction since ryztech.com in 2006.", initials: "AB", gradient: "from-emerald to-sky" },
+  { name: "Abdellah Benaoussar", role: "Founder", description: "Visionary behind RFALA. Leading the ecosystem strategy, partnerships, and long-term direction since ryztech.com in 2006.", initials: "AB", gradient: "from-emerald to-sky" },
   { name: "Dr. Houda", role: "VP Customer Satisfaction", description: "Ensures every client, partner, and community member has an exceptional experience across all RFALA initiatives.", initials: "HO", gradient: "from-sky to-mint" },
   { name: "Ilyass", role: "Digital Marketing Director", description: "Leads RFALA's digital marketing strategy, brand growth, and online presence across all platforms and initiatives.", initials: "IL", gradient: "from-gold to-emerald" },
-  { name: "Yahya", role: "IT Director", description: "Drives the technical architecture and engineering across RFALA's platforms, products, and digital infrastructure.", initials: "YA", gradient: "from-sky to-emerald" }
+  { name: "Rayan", role: "IT Director", description: "Drives the technical architecture and engineering across RFALA's platforms, products, and digital infrastructure.", initials: "RA", gradient: "from-sky to-emerald" }
 ];
 
 function AboutBody({ dictionary }: { dictionary: Messages }) {
@@ -241,6 +242,12 @@ function AboutBody({ dictionary }: { dictionary: Messages }) {
                 <p className="leading-7 text-slate-600">{member.description}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-16 rounded-xl border border-slate-200 bg-slate-50 p-8 sm:p-10">
+            <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-emerald">Leadership & Industry Experience</p>
+            <h3 className="mb-4 text-2xl font-black leading-tight tracking-tight text-ink sm:text-3xl">Grounded in real-world enterprise experience</h3>
+            <p className="max-w-3xl text-lg leading-8 text-slate-600">RFALA's founder and co-founder bring hands-on professional consulting and enterprise experience across the Government, Healthcare, Financial Services, and Manufacturing sectors. Years spent working inside large organizations taught us how businesses actually adopt technology, and where AI initiatives succeed or stall. That real-world exposure shapes everything RFALA builds: practical, industry-ready AI solutions designed for how organizations really operate.</p>
           </div>
         </div>
       </section>
@@ -343,7 +350,7 @@ function InstituteBody({ dictionary }: { dictionary: Messages }) {
   );
 }
 
-function ServicesBody({ dictionary }: { dictionary: Messages }) {
+function ServicesBody({ dictionary, locale }: { dictionary: Messages; locale: Locale }) {
   const t = dictionary;
 
   return (
@@ -378,7 +385,7 @@ function ServicesBody({ dictionary }: { dictionary: Messages }) {
                   <p className="mt-4 flex-1 text-base leading-7 text-slate-300">{service.description}</p>
                   <div className="mt-7 flex items-center gap-3 text-sm font-extrabold text-mint">
                     <span className="h-px flex-1 bg-gradient-to-r from-mint/50 to-transparent" />
-                    <span className="inline-flex items-center gap-2">{t.services.capability} <ArrowRight className="size-4" /></span>
+                    <Link href={localizedPath(locale, "/contact")} className="inline-flex items-center gap-2 transition hover:text-white">{t.services.capability} <ArrowRight className="size-4" /></Link>
                   </div>
                 </div>
               </article>
@@ -412,7 +419,7 @@ export function ContentPage({ dictionary, locale, kind }: { dictionary: Messages
       {kind === "about" ? <AboutBody dictionary={dictionary} /> : null}
       {kind === "ecosystem" ? <EcosystemBody dictionary={dictionary} locale={locale} /> : null}
       {kind === "institute" ? <InstituteBody dictionary={dictionary} /> : null}
-      {kind === "services" ? <ServicesBody dictionary={dictionary} /> : null}
+      {kind === "services" ? <ServicesBody dictionary={dictionary} locale={locale} /> : null}
       {kind === "vision" ? <VisionBody dictionary={dictionary} /> : null}
       <Footer dictionary={dictionary} locale={locale} />
     </main>

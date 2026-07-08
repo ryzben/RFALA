@@ -70,6 +70,13 @@ const services = [
     photo: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=300&fit=crop&auto=format"
   },
   {
+    name: "AI Auditing",
+    description: "Independent assessments of how your business uses AI today and where it could go next. We review your workflows, tools, and data practices, then deliver a clear, practical roadmap for adopting AI with confidence.",
+    icon: SearchCheck,
+    accent: "from-mint to-emerald",
+    photo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&auto=format"
+  },
+  {
     name: "Web & App Development",
     description: "Modern websites, scalable platforms, mobile apps, and digital product development.",
     icon: Code2,
@@ -521,7 +528,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                     <p className="mt-4 flex-1 text-base leading-7 text-slate-400">{service.description}</p>
                     <div className="mt-7 flex items-center gap-3 text-sm font-extrabold text-emerald">
                       <span className="h-px flex-1 bg-gradient-to-r from-emerald/50 to-transparent" />
-                      <span className="inline-flex items-center gap-2">{t.services.capability} <ArrowRight className="size-4 transition group-hover:translate-x-1" /></span>
+                      <a href={route("/contact")} className="inline-flex items-center gap-2 transition hover:text-mint">{t.services.capability} <ArrowRight className="size-4 transition group-hover:translate-x-1" /></a>
                     </div>
                   </div>
                 </motion.article>
@@ -543,7 +550,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
           <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
             {[
               {
-                name: "Dr. Abdellah",
+                name: "Abdellah Benaoussar",
                 role: "Founder",
                 description: "Visionary behind RFALA. Leading the ecosystem strategy, partnerships, and long-term direction since ryztech.com in 2006.",
                 initials: "AB",
@@ -564,10 +571,10 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
                 gradient: "from-gold to-emerald"
               },
               {
-                name: "Yahya",
+                name: "Rayan",
                 role: "IT Director",
                 description: "Drives the technical architecture and engineering across RFALA's platforms, products, and digital infrastructure.",
-                initials: "YA",
+                initials: "RA",
                 gradient: "from-sky to-emerald"
               }
             ].map((member, index) => (

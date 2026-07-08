@@ -57,7 +57,8 @@
     "title": "Learning Pathways for the AI Era",
     "paragraphs": [
       "RFALA Institute combines top educational resources from leading universities and learning platforms with live mentorship, guided instruction, and market-focused learning pathways.",
-      "Instead of depending on a single institution, RFALA creates customized learning experiences using the best content from platforms such as MIT Open Learning, Harvard Online, Coursera, and other world-class educational providers."
+      "Instead of depending on a single institution, RFALA creates customized learning experiences using the best content from platforms such as MIT Open Learning, Harvard Online, Coursera, and other world-class educational providers.",
+      "RFALA Institute also runs hands-on AI bootcamps: intensive, project-based programs where participants build real AI skills with guided instruction and mentorship. Every graduate receives an RFALA Institute certificate of completion recognizing the skills they have demonstrated."
     ],
     "human": "Students no longer learn alone. RFALA Institute combines world-class learning resources with mentorship, accountability, and real human guidance.",
     "resources": "Using learning resources from leading platforms such as",
@@ -88,6 +89,10 @@
       {
         "name": "AI Solutions",
         "description": "Custom AI systems, automation, intelligent workflows, and future-ready technology solutions."
+      },
+      {
+        "name": "AI Auditing",
+        "description": "Independent assessments of how your business uses AI today and where it could go next. We review your workflows, tools, and data practices, then deliver a clear, practical roadmap for adopting AI with confidence."
       },
       {
         "name": "Web & App Development",
@@ -146,7 +151,31 @@
       "Technology ecosystem",
       "Moroccan roots",
       "International ambitions"
-    ]
+    ],
+    "partnerships": {
+      "label": "Partnerships",
+      "title": "Open to strategic partnerships",
+      "description": "RFALA is actively seeking strategic partnerships and MOUs with technology companies, universities, system integrators, and government and enterprise organizations. If our goals align, we would love to talk.",
+      "cta": "Start a partnership conversation",
+      "items": [
+        {
+          "title": "Joint solution development",
+          "description": "Co-developing AI products, platforms, and solutions that combine complementary strengths."
+        },
+        {
+          "title": "Consulting & implementation",
+          "description": "Collaborating with integrators and consultancies on AI consulting and implementation projects."
+        },
+        {
+          "title": "AI education initiatives",
+          "description": "Partnering with universities and organizations on bootcamps, certifications, and AI literacy programs."
+        },
+        {
+          "title": "Market expansion",
+          "description": "Growing into new regions and industries together with partners who share our ambitions."
+        }
+      ]
+    }
   },
   "pages": {
     "common": {

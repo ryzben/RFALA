@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BrainCircuit, Globe2, Mail, MessageCircle, Network, Phone, Sparkles } from "lucide-react";
+import { ArrowRight, BrainCircuit, Globe2, GraduationCap, Mail, MessageCircle, Network, Phone, Sparkles } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import enMessages from "../../messages/en.json";
@@ -8,11 +8,13 @@ type Messages = typeof enMessages;
 type Locale = "en" | "fr";
 
 const contactIcons = [BrainCircuit, Sparkles, Network];
+const partnershipIcons = [Sparkles, Network, GraduationCap, Globe2];
 
 export function ContactPage({ dictionary, locale }: { dictionary: Messages; locale: Locale }) {
   const t = dictionary;
   const homeHref = locale === "fr" ? "/fr" : "/";
   const contactHref = `mailto:${t.contact.email}?subject=RFALA%20Project%20Inquiry`;
+  const partnershipHref = `mailto:${t.contact.email}?subject=RFALA%20Partnership%20Inquiry`;
   const phoneHref = "tel:+19175822768";
   const whatsappHref = "https://wa.me/19175822768";
   const navItems = [
@@ -29,7 +31,7 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
       <header className="border-b border-white/10 bg-black backdrop-blur-2xl">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between">
           <Link href={homeHref} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
-            <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-12 w-44 object-contain sm:h-14 sm:w-52" />
+            <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain sm:h-16 sm:w-60" />
           </Link>
           <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
             <Link href={locale === "fr" ? "/fr/about" : "/about"} className="transition hover:text-mint">{t.nav.about}</Link>
@@ -132,6 +134,35 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="relative isolate border-t border-white/10 py-20 sm:py-24">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_30%,rgba(47,178,132,0.14),transparent_30%),radial-gradient(circle_at_80%_70%,rgba(109,200,255,0.12),transparent_28%)]" />
+        <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
+          <div className="mb-12 max-w-3xl">
+            <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.contact.partnerships.label}</p>
+            <h2 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">{t.contact.partnerships.title}</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">{t.contact.partnerships.description}</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {t.contact.partnerships.items.map((item, index) => {
+              const Icon = partnershipIcons[index] ?? Sparkles;
+              return (
+                <article key={item.title} className="rounded-xl border border-white/10 bg-white/[0.06] p-5 transition hover:-translate-y-1 hover:border-mint/50 hover:bg-white/[0.1]">
+                  <div className="mb-4 grid size-11 place-items-center rounded-lg bg-white/10 text-mint">
+                    <Icon className="size-5" />
+                  </div>
+                  <h3 className="font-black text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{item.description}</p>
+                </article>
+              );
+            })}
+          </div>
+          <a href={partnershipHref} className="mt-10 inline-flex items-center justify-center gap-2 rounded-xl bg-mint px-6 py-4 text-sm font-black text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-white">
+            <Mail className="size-5" />
+            {t.contact.partnerships.cta}
+          </a>
         </div>
       </section>
     </main>

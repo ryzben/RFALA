@@ -58,7 +58,8 @@
     "title": "Parcours d’apprentissage pour l’ère de l’IA",
     "paragraphs": [
       "RFALA Institute combine des ressources éducatives de grandes universités et plateformes d’apprentissage avec du mentorat en direct, un accompagnement guidé et des parcours orientés marché.",
-      "Au lieu de dépendre d’une seule institution, RFALA crée des expériences d’apprentissage personnalisées en utilisant le meilleur contenu de plateformes comme MIT Open Learning, Harvard Online, Coursera et d’autres fournisseurs éducatifs reconnus."
+      "Au lieu de dépendre d’une seule institution, RFALA crée des expériences d’apprentissage personnalisées en utilisant le meilleur contenu de plateformes comme MIT Open Learning, Harvard Online, Coursera et d’autres fournisseurs éducatifs reconnus.",
+      "RFALA Institute organise également des bootcamps IA pratiques : des programmes intensifs basés sur des projets, où les participants développent de vraies compétences en IA avec un accompagnement guidé et du mentorat. Chaque diplômé reçoit un certificat de réussite RFALA Institute reconnaissant les compétences démontrées."
     ],
     "human": "Les étudiants n’apprennent plus seuls. RFALA Institute combine des ressources d’apprentissage de niveau mondial avec du mentorat, de la responsabilisation et un véritable accompagnement humain.",
     "resources": "Avec des ressources d’apprentissage provenant de plateformes telles que",
@@ -89,6 +90,10 @@
       {
         "name": "Solutions IA",
         "description": "Systèmes IA sur mesure, automatisation, workflows intelligents et solutions technologiques prêtes pour l’avenir."
+      },
+      {
+        "name": "Audit IA",
+        "description": "Évaluations indépendantes de la façon dont votre entreprise utilise l’IA aujourd’hui et de son potentiel futur. Nous analysons vos workflows, outils et pratiques de données, puis livrons une feuille de route claire et pratique pour adopter l’IA en toute confiance."
       },
       {
         "name": "Développement Web & App",
@@ -147,7 +152,31 @@
       "Écosystème technologique",
       "Racines marocaines",
       "Ambitions internationales"
-    ]
+    ],
+    "partnerships": {
+      "label": "Partenariats",
+      "title": "Ouverts aux partenariats stratégiques",
+      "description": "RFALA recherche activement des partenariats stratégiques et des protocoles d’accord (MOU) avec des entreprises technologiques, des universités, des intégrateurs de systèmes et des organisations gouvernementales et privées. Si nos objectifs s’alignent, parlons-en.",
+      "cta": "Démarrer une conversation partenariat",
+      "items": [
+        {
+          "title": "Développement de solutions conjointes",
+          "description": "Co-développer des produits, plateformes et solutions IA en combinant des forces complémentaires."
+        },
+        {
+          "title": "Conseil & implémentation",
+          "description": "Collaborer avec des intégrateurs et cabinets de conseil sur des projets de conseil et de mise en œuvre de l’IA."
+        },
+        {
+          "title": "Initiatives d’éducation IA",
+          "description": "S’associer avec des universités et organisations sur des bootcamps, certifications et programmes de culture IA."
+        },
+        {
+          "title": "Expansion de marché",
+          "description": "Grandir ensemble vers de nouvelles régions et industries avec des partenaires partageant nos ambitions."
+        }
+      ]
+    }
   },
   "pages": {
     "common": {
