@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { MobileMenu } from "../components/MobileMenu";
+import { Footer } from "../components/ContentPage";
+import enMessages from "../../messages/en.json";
 
 export const metadata = {
   title: "Privacy Policy | RFALA",
@@ -11,7 +13,7 @@ export default function PrivacyPage() {
     { href: "/about", label: "About" },
     { href: "/ecosystem", label: "Ecosystem" },
     { href: "/institute", label: "Institute" },
-    { href: "/services", label: "Services" },
+    { href: "/services", label: "Capabilities" },
     { href: "/vision", label: "Vision" },
     { href: "/contact", label: "Contact" }
   ];
@@ -40,6 +42,7 @@ export default function PrivacyPage() {
           <p>For privacy questions, contact <a className="font-extrabold text-emerald" href="mailto:contact@rfala.com">contact@rfala.com</a>.</p>
         </div>
       </section>
+      <Footer dictionary={enMessages} locale="en" />
     </main>
   );
 }

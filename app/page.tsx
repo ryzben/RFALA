@@ -535,7 +535,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
           <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
             {[
               {
-                name: "Abdellah Benaoussar",
+                name: "Abdellah",
                 role: "Founder",
                 description: "Visionary behind RFALA. Leading the ecosystem strategy, partnerships, and long-term direction since ryztech.com in 2006.",
                 initials: "AB",
@@ -617,6 +617,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <h3 className="mb-4 font-black">{t.footer.connect}</h3>
             <div className="grid gap-2 text-slate-400">
               <a href="mailto:contact@rfala.com" className="hover:text-mint">contact@rfala.com</a>
+              <a href="tel:+19175822768" className="hover:text-mint">{t.contact.phone}</a>
               <a href="https://rfala.com" target="_blank" rel="noopener" className="hover:text-mint">rfala.com</a>
               <p className="pt-4 text-sm">{t.footer.copyright}</p>
             </div>

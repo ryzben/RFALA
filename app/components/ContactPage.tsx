@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, BrainCircuit, Globe2, GraduationCap, Mail, MessageCircle, Network, Phone, Sparkles } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
+import { Footer } from "./ContentPage";
 import enMessages from "../../messages/en.json";
 
 type Messages = typeof enMessages;
@@ -165,6 +166,8 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
           </a>
         </div>
       </section>
+
+      <Footer dictionary={dictionary} locale={locale} />
     </main>
   );
 }
