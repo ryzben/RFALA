@@ -6,3 +6,8 @@ NotToUpload/
 *.log
 .env*
 *.zip
+
+# Local tooling config (contains API keys - never commit)
+.mcp.json
+.claude/
+.babelrc
