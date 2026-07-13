@@ -5,16 +5,16 @@
     "about": "À propos",
     "ecosystem": "Écosystème",
     "institute": "Institut",
-    "services": "Services",
+    "services": "Expertises",
     "vision": "Vision",
     "contact": "Contact"
   },
   "hero": {
     "label": "Technologie + IA + Innovation + Éducation",
-    "title": "Construire l’avenir grâce à la technologie, l’IA, l’innovation et l’éducation",
-    "description": "RFALA est un écosystème moderne de technologie et d’innovation qui construit des initiatives IA, des plateformes digitales, des solutions créatives et des projets tournés vers l’avenir pour les entreprises, les communautés et les apprenants.",
-    "primary": "Explorer les projets",
-    "secondary": "RFALA Institute",
+    "title": "Transformer les idées en solutions intelligentes",
+    "description": "Nous aidons les organisations à concevoir, construire et déployer des systèmes alimentés par l’IA, en appliquant une expertise technique approfondie là où elle crée le plus de valeur.",
+    "primary": "Explorer nos expertises",
+    "secondary": "Nous contacter",
     "aiLabel": "Couche IA",
     "aiText": "Intelligence d’apprentissage",
     "growth": "Croissance de l’écosystème"
@@ -82,40 +82,59 @@
     ]
   },
   "services": {
-    "label": "Services",
-    "title": "Créer des solutions digitales, IA et innovation pour l’avenir",
-    "description": "RFALA combine technologie, intelligence artificielle, médias numériques, innovation et solutions d’apprentissage pour créer des plateformes, services et expériences à fort impact pour les entreprises, communautés et écosystèmes numériques modernes.",
+    "label": "Expertises",
+    "title": "Nous transformons les idées, les données et la technologie en solutions intelligentes.",
+    "description": "RFALA aide les entreprises, startups et institutions à concevoir, construire et déployer des systèmes alimentés par l’IA et des applications intelligentes, en appliquant notre expertise là où elle crée une réelle valeur.",
     "capability": "Explorer",
     "items": [
       {
-        "name": "Solutions IA",
-        "description": "Systèmes IA sur mesure, automatisation, workflows intelligents et solutions technologiques prêtes pour l’avenir."
+        "name": "Stratégie IA & Innovation",
+        "description": "Aider les organisations à identifier où l’IA crée une valeur mesurable, des évaluations de maturité IA aux preuves de concept et au développement de MVP."
+      },
+      {
+        "name": "Plateformes de données intelligentes",
+        "description": "Ingénierie des données, intégration de systèmes, plateformes cloud, analytique et architecture de données d’entreprise pour transformer les données brutes en intelligence exploitable."
+      },
+      {
+        "name": "Applications IA",
+        "description": "Agents IA, automatisation intelligente, analytique prédictive et outils IA sur mesure construits autour de workflows réels."
+      },
+      {
+        "name": "Croissance & Performance digitale",
+        "description": "Génération de prospects, amélioration du marketing digital et sécurité des bases de données. Un travail concret que nous livrons aujourd’hui à nos clients pour développer et protéger leurs opérations digitales."
       },
       {
         "name": "Audit IA",
         "description": "Évaluations indépendantes de la façon dont votre entreprise utilise l’IA aujourd’hui et de son potentiel futur. Nous analysons vos workflows, outils et pratiques de données, puis livrons une feuille de route claire et pratique pour adopter l’IA en toute confiance."
       },
       {
-        "name": "Développement Web & App",
-        "description": "Sites modernes, plateformes évolutives, applications mobiles et développement de produits digitaux."
-      },
-      {
-        "name": "Marketing Digital",
-        "description": "Croissance de marque, SEO, stratégie de contenu, réseaux sociaux et génération de prospects."
-      },
-      {
-        "name": "Branding & Media",
-        "description": "Identité créative, storytelling numérique, production média et expériences visuelles de marque."
-      },
-      {
-        "name": "Recherche & Innovation",
-        "description": "Initiatives de technologies émergentes, laboratoires d’innovation et projets digitaux tournés vers l’avenir."
-      },
-      {
-        "name": "Technologies d’apprentissage",
-        "description": "Systèmes d’apprentissage modernes, programmes de mentorat et plateformes de connaissance numériques."
+        "name": "Ingénierie IA sur mesure",
+        "description": "Des solutions IA et logicielles conçues pour votre problème spécifique, applicables à tous les secteurs et pensées pour s’adapter au fonctionnement de votre organisation."
       }
-    ]
+    ],
+    "industries": {
+      "title": "Les secteurs que nous pouvons servir",
+      "description": "RFALA n’est pas construit autour d’un seul secteur. Nos capacités en IA, données et ingénierie peuvent s’appliquer partout où elles créent de la valeur, dans des secteurs tels que :",
+      "sectors": [
+        "Gouvernement",
+        "Santé",
+        "Services financiers",
+        "Industrie manufacturière",
+        "Éducation",
+        "Commerce & Marketplaces",
+        "Startups & Scale-ups"
+      ]
+    },
+    "scenarios": {
+      "label": "Scénarios de solutions",
+      "title": "Comment nos expertises peuvent s’appliquer",
+      "description": "Des exemples illustratifs de la façon dont RFALA aborde des problèmes concrets. Ce sont des approches types et une réflexion prospective, pas des missions clients réalisées.",
+      "disclaimer": "Scénario illustratif, pas une mission client réalisée",
+      "problemLabel": "Problème",
+      "approachLabel": "Approche",
+      "capabilitiesLabel": "Expertises mobilisées",
+      "items": []
+    }
   },
   "vision": {
     "title": "Connecter technologie, innovation et éducation",
@@ -128,7 +147,7 @@
     "primary": "Envoyer un email",
     "secondary": "Explorer l’écosystème",
     "emailLabel": "Email",
-    "email": "hello@rfala.com",
+    "email": "contact@rfala.com",
     "phoneLabel": "Telephone",
     "phone": "(917) 582-2768",
     "whatsapp": "WhatsApp",
@@ -207,13 +226,13 @@
       ]
     },
     "services": {
-      "label": "Services RFALA",
-      "title": "Capacités digitales, IA et innovation pour les organisations modernes.",
-      "description": "RFALA aide les entreprises, créateurs et communautés à construire des produits digitaux, automatiser des workflows, développer des marques et transformer des idées en expériences technologiques évolutives.",
+      "label": "Expertises RFALA",
+      "title": "Des capacités IA, données et ingénierie pour les organisations modernes.",
+      "description": "RFALA aide les entreprises, startups et institutions à concevoir, construire et déployer des systèmes alimentés par l’IA et des applications intelligentes, en appliquant notre expertise là où elle crée une réelle valeur.",
       "highlights": [
-        "Systèmes alimentés par l’IA",
-        "Développement de produits digitaux",
-        "Croissance de marque et innovation"
+        "Stratégie et maturité IA",
+        "Plateformes de données intelligentes",
+        "Ingénierie IA sur mesure"
       ]
     },
     "vision": {

@@ -37,7 +37,7 @@ export default function PrivacyPage() {
         <div className="mt-8 space-y-6 text-lg leading-8 text-slate-600">
           <p>RFALA respects your privacy. Information submitted through this website is used only to respond to your message, support RFALA services, and improve future educational and innovation initiatives.</p>
           <p>We do not sell personal information. If third-party services are added in the future, this page should be updated to explain how those services collect and process information.</p>
-          <p>For privacy questions, contact <a className="font-extrabold text-emerald" href="mailto:hello@rfala.com">hello@rfala.com</a>.</p>
+          <p>For privacy questions, contact <a className="font-extrabold text-emerald" href="mailto:contact@rfala.com">contact@rfala.com</a>.</p>
         </div>
       </section>
     </main>

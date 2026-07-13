@@ -12,30 +12,30 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rfala.com"),
-  title: "RFALA | Technology, Innovation, and Digital Ecosystem",
+  title: "RFALA | AI Innovation Partner",
   description:
-    "RFALA is a technology, innovation, and digital ecosystem building impactful solutions, platforms, and experiences for the future.",
+    "RFALA helps enterprises, startups, and institutions design, build, and deploy AI-powered systems and intelligent applications, from AI strategy and auditing to data platforms and custom AI engineering.",
   keywords: [
     "RFALA",
-    "AI Education",
-    "AI education",
-    "Innovation Platform",
-    "Technology Education",
-    "Digital Learning",
+    "AI Innovation Partner",
+    "AI Strategy",
+    "AI Auditing",
+    "AI Applications",
+    "Intelligent Data Platforms",
+    "Custom AI Engineering",
     "Artificial Intelligence",
-    "Online Learning",
+    "AI Education",
+    "Digital Learning",
     "Moroccan Innovation",
-    "Future of Education",
-    "Educational Technology",
     "RFALA Institute",
     "Xenova Studio",
     "Maroclist",
     "Islamic School Review"
   ],
   openGraph: {
-    title: "RFALA | Technology, Innovation, and Digital Ecosystem",
+    title: "RFALA | AI Innovation Partner",
     description:
-      "Building impactful solutions, platforms, and experiences through AI, digital transformation, modern technology, and education.",
+      "We transform ideas, data, and technology into intelligent solutions. AI strategy, data platforms, AI applications, auditing, and custom AI engineering.",
     url: "https://www.rfala.com",
     siteName: "RFALA",
     images: [{ url: "/assets/rfala-hero.png", width: 1200, height: 630 }],
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RFALA | Technology, Innovation, and Digital Ecosystem",
-    description: "Building impactful solutions, platforms, and experiences through AI and modern technology.",
+    title: "RFALA | AI Innovation Partner",
+    description: "We transform ideas, data, and technology into intelligent solutions.",
     images: ["/assets/rfala-hero.png"]
   },
   alternates: {

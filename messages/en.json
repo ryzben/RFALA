@@ -5,16 +5,16 @@
     "about": "About",
     "ecosystem": "Ecosystem",
     "institute": "Institute",
-    "services": "Services",
+    "services": "Capabilities",
     "vision": "Vision",
     "contact": "Contact"
   },
   "hero": {
     "label": "Est. 2006 · Technology + AI + Innovation",
-    "title": "20 Years of Building Digital Futures",
-    "description": "From ryztech.com to RFALA, two decades of technology, innovation, and digital transformation across platforms, communities, and businesses worldwide.",
-    "primary": "Explore Projects",
-    "secondary": "Get In Touch",
+    "title": "Transforming Ideas into Intelligent Solutions",
+    "description": "We help organizations design, build, and deploy AI-powered systems, applying deep technical expertise wherever it creates the most value.",
+    "primary": "Explore Capabilities",
+    "secondary": "Get in Touch",
     "aiLabel": "AI Layer",
     "aiText": "Learning intelligence",
     "growth": "Ecosystem Growth"
@@ -81,40 +81,59 @@
     ]
   },
   "services": {
-    "label": "Services",
-    "title": "Building Digital, AI, and Innovation Solutions for the Future",
-    "description": "RFALA combines technology, artificial intelligence, digital media, innovation, and learning solutions to create impactful platforms, services, and future-focused experiences for businesses, communities, and modern digital ecosystems.",
+    "label": "Capabilities",
+    "title": "We transform ideas, data, and technology into intelligent solutions.",
+    "description": "RFALA helps enterprises, startups, and institutions design, build, and deploy AI-powered systems and intelligent applications, applying our expertise wherever it creates real value.",
     "capability": "Explore capability",
     "items": [
       {
-        "name": "AI Solutions",
-        "description": "Custom AI systems, automation, intelligent workflows, and future-ready technology solutions."
+        "name": "AI Strategy & Innovation",
+        "description": "Helping organizations identify where AI creates measurable value, from AI readiness assessments to proof-of-concepts and MVP development."
+      },
+      {
+        "name": "Intelligent Data Platforms",
+        "description": "Data engineering, systems integration, cloud platforms, analytics, and enterprise data architecture that turn raw data into usable intelligence."
+      },
+      {
+        "name": "AI Applications",
+        "description": "AI agents, intelligent automation, predictive analytics, and custom AI-powered tools built around real workflows."
+      },
+      {
+        "name": "Growth & Digital Performance",
+        "description": "Lead generation, digital marketing improvement, and database security. Hands-on work we deliver for clients today to grow and protect their digital operations."
       },
       {
         "name": "AI Auditing",
         "description": "Independent assessments of how your business uses AI today and where it could go next. We review your workflows, tools, and data practices, then deliver a clear, practical roadmap for adopting AI with confidence."
       },
       {
-        "name": "Web & App Development",
-        "description": "Modern websites, scalable platforms, mobile apps, and digital product development."
-      },
-      {
-        "name": "Digital Marketing",
-        "description": "Brand growth, SEO, content strategy, social media, and lead generation solutions."
-      },
-      {
-        "name": "Branding & Media",
-        "description": "Creative identity, digital storytelling, media production, and visual brand experiences."
-      },
-      {
-        "name": "Research & Innovation",
-        "description": "Emerging technology initiatives, innovation labs, and future-driven digital projects."
-      },
-      {
-        "name": "Learning Technologies",
-        "description": "Future-focused learning systems, mentorship programs, and digital knowledge platforms."
+        "name": "Custom AI Engineering",
+        "description": "Tailored AI and software solutions engineered for your specific problem, applicable across industries and built to fit how your organization works."
       }
-    ]
+    ],
+    "industries": {
+      "title": "Industries we can serve",
+      "description": "RFALA is not built around a single industry. Our AI, data, and engineering capabilities can be applied wherever they create value, across sectors such as:",
+      "sectors": [
+        "Government",
+        "Healthcare",
+        "Financial Services",
+        "Manufacturing",
+        "Education",
+        "Retail & Marketplaces",
+        "Startups & Scale-ups"
+      ]
+    },
+    "scenarios": {
+      "label": "Solution Scenarios",
+      "title": "How our capabilities could be applied",
+      "description": "Illustrative examples of how RFALA approaches real problems. These are example approaches and forward-looking thinking, not completed client engagements.",
+      "disclaimer": "Illustrative scenario, not a completed client engagement",
+      "problemLabel": "Problem",
+      "approachLabel": "Approach",
+      "capabilitiesLabel": "Capabilities used",
+      "items": []
+    }
   },
   "vision": {
     "title": "Connecting Technology, Innovation, and Education",
@@ -127,7 +146,7 @@
     "primary": "Email RFALA",
     "secondary": "Explore the ecosystem",
     "emailLabel": "Email",
-    "email": "hello@rfala.com",
+    "email": "contact@rfala.com",
     "phoneLabel": "Phone",
     "phone": "(917) 582-2768",
     "whatsapp": "WhatsApp",
@@ -206,13 +225,13 @@
       ]
     },
     "services": {
-      "label": "RFALA Services",
-      "title": "Digital, AI, and innovation capabilities for modern organizations.",
-      "description": "RFALA helps businesses, creators, and communities build digital products, automate workflows, grow brands, and turn ideas into scalable technology experiences.",
+      "label": "RFALA Capabilities",
+      "title": "AI, data, and engineering capabilities for modern organizations.",
+      "description": "RFALA helps enterprises, startups, and institutions design, build, and deploy AI-powered systems and intelligent applications, applying our expertise wherever it creates real value.",
       "highlights": [
-        "AI-powered systems",
-        "Digital product development",
-        "Brand growth and innovation"
+        "AI strategy and readiness",
+        "Intelligent data platforms",
+        "Custom AI engineering"
       ]
     },
     "vision": {

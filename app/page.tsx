@@ -8,15 +8,13 @@ import {
   Building2,
   Code2,
   Compass,
+  Database,
   ExternalLink,
   GraduationCap,
-  Megaphone,
-  MonitorSmartphone,
   Network,
   Palette,
   Rocket,
   SearchCheck,
-  Sparkles,
   UsersRound
 } from "lucide-react";
 import { LanguageSwitcher } from "./components/LanguageSwitcher";
@@ -63,53 +61,40 @@ const ecosystem = [
 
 const services = [
   {
-    name: "AI Solutions",
-    description: "Custom AI systems, automation, intelligent workflows, and future-ready technology solutions.",
+    name: "AI Strategy & Innovation",
+    description: "Helping organizations identify where AI creates measurable value, from AI readiness assessments to proof-of-concepts and MVP development.",
+    icon: Compass,
+    accent: "from-emerald to-sky"
+  },
+  {
+    name: "Intelligent Data Platforms",
+    description: "Data engineering, systems integration, cloud platforms, analytics, and enterprise data architecture that turn raw data into usable intelligence.",
+    icon: Database,
+    accent: "from-sky to-mint"
+  },
+  {
+    name: "AI Applications",
+    description: "AI agents, intelligent automation, predictive analytics, and custom AI-powered tools built around real workflows.",
     icon: BrainCircuit,
-    accent: "from-emerald to-sky",
-    photo: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=300&fit=crop&auto=format"
+    accent: "from-gold to-emerald"
+  },
+  {
+    name: "Growth & Digital Performance",
+    description: "Lead generation, digital marketing improvement, and database security. Hands-on work we deliver for clients today to grow and protect their digital operations.",
+    icon: Rocket,
+    accent: "from-mint to-sky"
   },
   {
     name: "AI Auditing",
     description: "Independent assessments of how your business uses AI today and where it could go next. We review your workflows, tools, and data practices, then deliver a clear, practical roadmap for adopting AI with confidence.",
     icon: SearchCheck,
-    accent: "from-mint to-emerald",
-    photo: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop&auto=format"
+    accent: "from-sky to-gold"
   },
   {
-    name: "Web & App Development",
-    description: "Modern websites, scalable platforms, mobile apps, and digital product development.",
+    name: "Custom AI Engineering",
+    description: "Tailored AI and software solutions engineered for your specific problem, applicable across industries and built to fit how your organization works.",
     icon: Code2,
-    accent: "from-sky to-mint",
-    photo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=300&fit=crop&auto=format"
-  },
-  {
-    name: "Digital Marketing",
-    description: "Brand growth, SEO, content strategy, social media, and lead generation solutions.",
-    icon: Megaphone,
-    accent: "from-gold to-emerald",
-    photo: "https://images.unsplash.com/photo-1551135049-8a33b5883817?w=600&h=300&fit=crop&auto=format"
-  },
-  {
-    name: "Branding & Media",
-    description: "Creative identity, digital storytelling, media production, and visual brand experiences.",
-    icon: Sparkles,
-    accent: "from-mint to-sky",
-    photo: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=300&fit=crop&auto=format"
-  },
-  {
-    name: "Research & Innovation",
-    description: "Emerging technology initiatives, innovation labs, and future-driven digital projects.",
-    icon: Rocket,
-    accent: "from-sky to-gold",
-    photo: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&h=300&fit=crop&auto=format"
-  },
-  {
-    name: "Learning Technologies",
-    description: "Future-focused learning systems, mentorship programs, and digital knowledge platforms.",
-    icon: MonitorSmartphone,
-    accent: "from-emerald to-gold",
-    photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=300&fit=crop&auto=format"
+    accent: "from-emerald to-gold"
   }
 ];
 
@@ -266,7 +251,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
           >
             <a
-              href={route("/ecosystem")}
+              href="#services"
               className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-emerald px-8 py-4 text-sm font-extrabold text-white shadow-[0_0_32px_rgba(47,178,132,0.35)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_48px_rgba(47,178,132,0.5)]"
             >
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
@@ -631,7 +616,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
           <div>
             <h3 className="mb-4 font-black">{t.footer.connect}</h3>
             <div className="grid gap-2 text-slate-400">
-              <a href="mailto:hello@rfala.com" className="hover:text-mint">hello@rfala.com</a>
+              <a href="mailto:contact@rfala.com" className="hover:text-mint">contact@rfala.com</a>
               <a href="https://rfala.com" target="_blank" rel="noopener" className="hover:text-mint">rfala.com</a>
               <p className="pt-4 text-sm">{t.footer.copyright}</p>
             </div>

@@ -5,10 +5,9 @@ import {
   Building2,
   Code2,
   Compass,
+  Database,
   ExternalLink,
   GraduationCap,
-  Megaphone,
-  MonitorSmartphone,
   Network,
   Palette,
   Rocket,
@@ -51,14 +50,20 @@ const ecosystemAssets = [
 ];
 
 const serviceAssets = [
-  { icon: BrainCircuit, accent: "from-emerald to-sky" },
-  { icon: SearchCheck, accent: "from-mint to-emerald" },
-  { icon: Code2, accent: "from-sky to-mint" },
-  { icon: Megaphone, accent: "from-gold to-emerald" },
-  { icon: Sparkles, accent: "from-mint to-sky" },
-  { icon: Rocket, accent: "from-sky to-gold" },
-  { icon: MonitorSmartphone, accent: "from-emerald to-gold" }
+  { icon: Compass, accent: "from-emerald to-sky" },
+  { icon: Database, accent: "from-sky to-mint" },
+  { icon: BrainCircuit, accent: "from-gold to-emerald" },
+  { icon: Rocket, accent: "from-mint to-sky" },
+  { icon: SearchCheck, accent: "from-sky to-gold" },
+  { icon: Code2, accent: "from-emerald to-gold" }
 ];
+
+type SolutionScenario = {
+  title: string;
+  problem: string;
+  approach: string;
+  capabilities: string[];
+};
 
 const instituteAssets = [
   BrainCircuit,
@@ -188,7 +193,7 @@ function Footer({ dictionary, locale }: { dictionary: Messages; locale: Locale }
         <div>
           <h3 className="mb-4 font-black">{t.footer.connect}</h3>
           <div className="grid gap-2 text-slate-400">
-            <a href="mailto:hello@rfala.com" className="hover:text-mint">hello@rfala.com</a>
+            <a href="mailto:contact@rfala.com" className="hover:text-mint">contact@rfala.com</a>
             <a href="tel:+19175822768" className="hover:text-mint">{t.contact.phone}</a>
             <p className="pt-4 text-sm">{t.footer.copyright}</p>
           </div>
@@ -352,6 +357,7 @@ function InstituteBody({ dictionary }: { dictionary: Messages }) {
 
 function ServicesBody({ dictionary, locale }: { dictionary: Messages; locale: Locale }) {
   const t = dictionary;
+  const scenarios = t.services.scenarios.items as SolutionScenario[];
 
   return (
     <section className="relative isolate overflow-hidden bg-ink py-24 text-white">
@@ -392,6 +398,56 @@ function ServicesBody({ dictionary, locale }: { dictionary: Messages; locale: Lo
             );
           })}
         </div>
+
+        <div className="mt-16 rounded-2xl border border-white/10 bg-white/[0.06] p-8 backdrop-blur-2xl sm:p-10">
+          <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{t.services.industries.title}</h2>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">{t.services.industries.description}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {t.services.industries.sectors.map((sector) => (
+              <span key={sector} className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-bold text-slate-200 backdrop-blur-xl">
+                {sector}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {scenarios.length > 0 ? (
+          <div className="mt-16">
+            <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.services.scenarios.label}</p>
+            <h2 className="text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl">{t.services.scenarios.title}</h2>
+            <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">{t.services.scenarios.description}</p>
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
+              {scenarios.map((scenario) => (
+                <article key={scenario.title} className="flex flex-col rounded-xl border border-white/10 bg-white/[0.08] p-6 shadow-[0_24px_90px_rgba(0,0,0,0.22)] backdrop-blur-2xl transition hover:border-mint/40 hover:bg-white/[0.12]">
+                  <p className="mb-4 inline-flex self-start rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-bold text-gold">
+                    {t.services.scenarios.disclaimer}
+                  </p>
+                  <h3 className="text-xl font-black text-white">{scenario.title}</h3>
+                  <div className="mt-4 space-y-4 text-sm leading-6 text-slate-300">
+                    <div>
+                      <p className="mb-1 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald">{t.services.scenarios.problemLabel}</p>
+                      <p>{scenario.problem}</p>
+                    </div>
+                    <div>
+                      <p className="mb-1 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald">{t.services.scenarios.approachLabel}</p>
+                      <p>{scenario.approach}</p>
+                    </div>
+                  </div>
+                  <div className="mt-5 border-t border-white/10 pt-4">
+                    <p className="mb-2 text-xs font-extrabold uppercase tracking-[0.18em] text-emerald">{t.services.scenarios.capabilitiesLabel}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {scenario.capabilities.map((capability) => (
+                        <span key={capability} className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-bold text-slate-200">
+                          {capability}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </section>
   );

@@ -2,8 +2,8 @@ import { ContentPage } from "../components/ContentPage";
 import enMessages from "../../messages/en.json";
 
 export const metadata = {
-  title: "RFALA Services | Digital, AI, and Innovation Solutions",
-  description: "Explore RFALA services across AI solutions, web and app development, digital marketing, branding, media, research, and learning technologies."
+  title: "RFALA Capabilities | AI Strategy, Data Platforms, and Custom AI Engineering",
+  description: "Explore RFALA's capability areas: AI strategy and innovation, intelligent data platforms, AI applications, growth and digital performance, AI auditing, and custom AI engineering."
 };
 
 export default function ServicesPage() {
