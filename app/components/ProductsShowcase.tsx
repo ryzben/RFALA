@@ -61,7 +61,7 @@ export function ProductsShowcase({ dictionary, locale, headingLevel = "h2" }: { 
           <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">{p.subtitle}</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {productOrder.map((key) => {
             const product = p[key];
             return (

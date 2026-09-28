@@ -36,7 +36,7 @@ export function ProductPage({ dictionary, locale, product }: { dictionary: Messa
           <div className="absolute right-[-10%] top-[20%] h-[420px] w-[420px] rounded-full bg-sky/10 blur-[100px]" />
         </div>
         <DotGrid />
-        <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+        <div className="mx-auto grid w-[min(1180px,calc(100%-32px))] grid-cols-1 gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
           <div>
             <Link href={localizedPath(locale, "/products")} className="mb-8 inline-flex items-center gap-2 rounded-md text-sm font-extrabold text-slate-300 transition hover:text-mint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint">
               <ArrowLeft className="size-4" /> {p.backToProducts}

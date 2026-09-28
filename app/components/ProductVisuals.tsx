@@ -40,7 +40,7 @@ const hillB = [10, 21, 32, 43, 54].map((r, i) => contourPath(246, 138, r, 2.1 + 
 
 export function WaterIntelligenceVisual({ labels, conceptLabel, className = "" }: { labels: Visuals; conceptLabel: string; className?: string }) {
   return (
-    <div className={`relative isolate aspect-[16/10] min-h-[220px] overflow-hidden rounded-lg border border-white/10 bg-[#04101d] ${className}`}>
+    <div className={`relative isolate aspect-[16/10] w-full min-w-0 min-h-[220px] overflow-hidden rounded-lg border border-white/10 bg-[#04101d] ${className}`}>
       <ConceptLabel>{conceptLabel}</ConceptLabel>
       <div aria-hidden="true" className="absolute inset-0">
         <svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" className="size-full">
@@ -109,7 +109,7 @@ const matchRows = [
 
 export function CareerAIVisual({ labels, conceptLabel, className = "" }: { labels: Visuals; conceptLabel: string; className?: string }) {
   return (
-    <div className={`relative isolate aspect-[16/10] min-h-[230px] overflow-hidden rounded-lg border border-white/10 bg-[#04101d] ${className}`}>
+    <div className={`relative isolate aspect-[16/10] w-full min-w-0 min-h-[260px] overflow-hidden rounded-lg border border-white/10 bg-[#04101d] ${className}`}>
       <ConceptLabel>{conceptLabel}</ConceptLabel>
       <div aria-hidden="true" className="absolute inset-0 grid grid-cols-[.8fr_1.2fr] gap-3 p-3 pt-11 [background-image:radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:16px_16px]">
         {/* Resume */}
