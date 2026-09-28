@@ -19,6 +19,9 @@ import {
 } from "lucide-react";
 import { LanguageSwitcher } from "./components/LanguageSwitcher";
 import { MobileMenu } from "./components/MobileMenu";
+import { ProductsMenu } from "./components/ProductsMenu";
+import { ProductsShowcase } from "./components/ProductsShowcase";
+import { productsMobileItem, productsNav } from "./components/siteNav";
 import enMessages from "../messages/en.json";
 
 type IconType = ComponentType<{ className?: string }>;
@@ -162,10 +165,12 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
     label: t.institute.signals[index]?.label ?? item.label,
     value: t.institute.signals[index]?.value ?? item.value
   }));
+  const products = productsNav(t, locale);
   const navItems = [
     { href: route("/about"), label: t.nav.about },
     { href: route("/ecosystem"), label: t.nav.ecosystem },
     { href: route("/institute"), label: t.nav.institute },
+    productsMobileItem(products),
     { href: route("/services"), label: t.nav.services },
     { href: route("/vision"), label: t.nav.vision },
     { href: route("/contact"), label: t.nav.contact }
@@ -182,6 +187,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <a href={route("/about")} className="transition hover:text-mint">{t.nav.about}</a>
             <a href={route("/ecosystem")} className="transition hover:text-mint">{t.nav.ecosystem}</a>
             <a href={route("/institute")} className="transition hover:text-mint">{t.nav.institute}</a>
+            <ProductsMenu nav={products} />
             <a href={route("/services")} className="transition hover:text-mint">{t.nav.services}</a>
             <a href={route("/vision")} className="transition hover:text-mint">{t.nav.vision}</a>
             <a href={route("/contact")} className="transition hover:text-mint">{t.nav.contact}</a>
@@ -360,6 +366,8 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
           </div>
         </div>
       </section>
+
+      <ProductsShowcase dictionary={t} locale={locale} />
 
       <section id="institute" className="relative isolate overflow-hidden bg-ink py-24 text-white">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_20%,rgba(47,178,132,0.24),transparent_30%),radial-gradient(circle_at_82%_24%,rgba(109,200,255,0.18),transparent_28%),linear-gradient(135deg,#071426_0%,#081827_48%,#06111f_100%)]" />
@@ -607,6 +615,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
               <a href={route("/about")} className="hover:text-mint">{t.nav.about}</a>
               <a href={route("/ecosystem")} className="hover:text-mint">{t.nav.ecosystem}</a>
               <a href={route("/institute")} className="hover:text-mint">{t.nav.institute}</a>
+              <a href={route("/products")} className="hover:text-mint">{t.nav.products}</a>
               <a href={route("/services")} className="hover:text-mint">{t.nav.services}</a>
               <a href={route("/vision")} className="hover:text-mint">{t.nav.vision}</a>
               <a href={route("/contact")} className="hover:text-mint">{t.footer.contact}</a>
