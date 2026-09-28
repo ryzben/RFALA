@@ -435,8 +435,8 @@
   "advisory": {
     "label": "Service",
     "name": "Conseil en technologie et produit",
-    "titleBefore": "Conseil en technologie",
-    "titleHighlight": "et produit",
+    "titleBefore": "Conseil en technologie et",
+    "titleHighlight": "produit",
     "tagline": "Faites de votre investissement technologique le bon produit.",
     "intro": "RFALA assure une supervision technologique et produit indépendante pour les entreprises qui travaillent avec des développeurs, des freelances ou des équipes techniques.",
     "body": [

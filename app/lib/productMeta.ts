@@ -2,21 +2,23 @@ import type { Metadata } from "next";
 import enMessages from "../../messages/en.json";
 import frMessages from "../../messages/fr.json";
 
-type ProductPage = "index" | "water" | "careerai";
+type ProductPage = "index" | "water" | "careerai" | "advisory";
 type Locale = "en" | "fr";
 
 const SITE = "https://www.rfala.com";
 const paths: Record<ProductPage, string> = {
   index: "/products",
   water: "/products/water-intelligence",
-  careerai: "/products/careerai"
+  careerai: "/products/careerai",
+  advisory: "/services/technology-product-advisory"
 };
 
 const urlFor = (locale: Locale, page: ProductPage) => `${SITE}${locale === "fr" ? "/fr" : ""}${paths[page]}`;
 
-/** Unique title, description, canonical, hreflang alternates, and Open Graph/Twitter tags for product pages. */
+/** Unique title, description, canonical, hreflang alternates, and Open Graph/Twitter tags for product and advisory pages. */
 export function productPageMetadata(page: ProductPage, locale: Locale): Metadata {
-  const meta = (locale === "fr" ? frMessages : enMessages).products.meta[page];
+  const messages = locale === "fr" ? frMessages : enMessages;
+  const meta = page === "advisory" ? messages.advisory.meta : messages.products.meta[page];
   const url = urlFor(locale, page);
 
   return {

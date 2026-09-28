@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, CircleDashed, ExternalLink, ShieldAlert, ShieldC
 import { Footer, Header, ecosystemAssets } from "./ContentPage";
 import { ProductInterestForm } from "./ProductInterestForm";
 import { DotGrid, ProductVisual, ProductsShowcase, StatusBadge, gradientText, primaryButton, secondaryButton } from "./ProductsShowcase";
-import { localizedPath } from "./siteNav";
+import { advisoryPath, localizedPath } from "./siteNav";
 import type { Locale, Messages, ProductKey } from "./siteNav";
 
 const formAnchor: Record<ProductKey, string> = { water: "pilot-request", careerai: "early-access" };
@@ -122,6 +122,13 @@ export function ProductPage({ dictionary, locale, product }: { dictionary: Messa
               </li>
             ))}
           </ul>
+          <p className="mt-10 text-lg leading-8 text-slate-300">
+            {t.advisory.productsLink.before}
+            <Link href={localizedPath(locale, advisoryPath)} className="font-extrabold text-mint underline underline-offset-4 hover:text-white">
+              {t.advisory.productsLink.link}
+            </Link>
+            {t.advisory.productsLink.after}
+          </p>
         </div>
       </section>
 
@@ -145,7 +152,7 @@ export function ProductPage({ dictionary, locale, product }: { dictionary: Messa
             ) : null}
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 shadow-[0_24px_90px_rgba(0,0,0,0.35)] sm:p-8">
-            <ProductInterestForm product={product} dictionary={t} locale={locale} />
+            <ProductInterestForm kind={product} dictionary={t} locale={locale} />
           </div>
         </div>
       </section>

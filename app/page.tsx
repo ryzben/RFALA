@@ -19,9 +19,10 @@ import {
 } from "lucide-react";
 import { LanguageSwitcher } from "./components/LanguageSwitcher";
 import { MobileMenu } from "./components/MobileMenu";
-import { ProductsMenu } from "./components/ProductsMenu";
+import { NavDropdown } from "./components/NavDropdown";
+import { AdvisorySection } from "./components/AdvisorySection";
 import { ProductsShowcase } from "./components/ProductsShowcase";
-import { productsMobileItem, productsNav } from "./components/siteNav";
+import { capabilitiesMobileItem, capabilitiesNav, productsMobileItem, productsNav } from "./components/siteNav";
 import enMessages from "../messages/en.json";
 
 type IconType = ComponentType<{ className?: string }>;
@@ -166,12 +167,13 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
     value: t.institute.signals[index]?.value ?? item.value
   }));
   const products = productsNav(t, locale);
+  const capabilities = capabilitiesNav(t, locale);
   const navItems = [
     { href: route("/about"), label: t.nav.about },
     { href: route("/ecosystem"), label: t.nav.ecosystem },
     { href: route("/institute"), label: t.nav.institute },
     productsMobileItem(products),
-    { href: route("/services"), label: t.nav.services },
+    capabilitiesMobileItem(capabilities),
     { href: route("/vision"), label: t.nav.vision },
     { href: route("/contact"), label: t.nav.contact }
   ];
@@ -187,8 +189,8 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <a href={route("/about")} className="transition hover:text-mint">{t.nav.about}</a>
             <a href={route("/ecosystem")} className="transition hover:text-mint">{t.nav.ecosystem}</a>
             <a href={route("/institute")} className="transition hover:text-mint">{t.nav.institute}</a>
-            <ProductsMenu nav={products} />
-            <a href={route("/services")} className="transition hover:text-mint">{t.nav.services}</a>
+            <NavDropdown nav={products} />
+            <NavDropdown nav={capabilities} />
             <a href={route("/vision")} className="transition hover:text-mint">{t.nav.vision}</a>
             <a href={route("/contact")} className="transition hover:text-mint">{t.nav.contact}</a>
             <LanguageSwitcher locale={locale} />
@@ -525,6 +527,8 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
           </div>
         </div>
       </section>
+
+      <AdvisorySection dictionary={t} locale={locale} />
 
       {/* Team Section */}
       <section id="team" className="bg-white py-24">

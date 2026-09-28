@@ -16,9 +16,9 @@ import {
 } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
-import { ProductsMenu } from "./ProductsMenu";
+import { NavDropdown } from "./NavDropdown";
 import { StatusBadge } from "./ProductsShowcase";
-import { localizedPath, productPaths, productsMobileItem, productsNav } from "./siteNav";
+import { advisoryPath, capabilitiesMobileItem, capabilitiesNav, localizedPath, productPaths, productsMobileItem, productsNav } from "./siteNav";
 import type { Locale, Messages } from "./siteNav";
 type PageKind = "about" | "ecosystem" | "institute" | "services" | "vision";
 
@@ -84,12 +84,13 @@ const learningPlatforms = [
 export function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }) {
   const t = dictionary;
   const products = productsNav(t, locale);
+  const capabilities = capabilitiesNav(t, locale);
   const navItems = [
     { href: localizedPath(locale, "/about"), label: t.nav.about },
     { href: localizedPath(locale, "/ecosystem"), label: t.nav.ecosystem },
     { href: localizedPath(locale, "/institute"), label: t.nav.institute },
     productsMobileItem(products),
-    { href: localizedPath(locale, "/services"), label: t.nav.services },
+    capabilitiesMobileItem(capabilities),
     { href: localizedPath(locale, "/vision"), label: t.nav.vision },
     { href: localizedPath(locale, "/contact"), label: t.nav.contact }
   ];
@@ -104,8 +105,8 @@ export function Header({ dictionary, locale }: { dictionary: Messages; locale: L
           <Link href={localizedPath(locale, "/about")} className="transition hover:text-mint">{t.nav.about}</Link>
           <Link href={localizedPath(locale, "/ecosystem")} className="transition hover:text-mint">{t.nav.ecosystem}</Link>
           <Link href={localizedPath(locale, "/institute")} className="transition hover:text-mint">{t.nav.institute}</Link>
-          <ProductsMenu nav={products} />
-          <Link href={localizedPath(locale, "/services")} className="transition hover:text-mint">{t.nav.services}</Link>
+          <NavDropdown nav={products} />
+          <NavDropdown nav={capabilities} />
           <Link href={localizedPath(locale, "/vision")} className="transition hover:text-mint">{t.nav.vision}</Link>
           <Link href={localizedPath(locale, "/contact")} className="transition hover:text-mint">{t.nav.contact}</Link>
           <LanguageSwitcher locale={locale} />
@@ -422,6 +423,14 @@ function ServicesBody({ dictionary, locale }: { dictionary: Messages; locale: Lo
             );
           })}
         </div>
+
+        <p className="mt-10 max-w-3xl text-lg leading-8 text-slate-300">
+          {t.advisory.servicesLink.before}
+          <Link href={localizedPath(locale, advisoryPath)} className="font-extrabold text-mint underline underline-offset-4 hover:text-white">
+            {t.advisory.servicesLink.link}
+          </Link>
+          {t.advisory.servicesLink.after}
+        </p>
 
         <div className="mt-16 rounded-2xl border border-white/10 bg-white/[0.06] p-8 backdrop-blur-2xl sm:p-10">
           <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{t.services.industries.title}</h2>
