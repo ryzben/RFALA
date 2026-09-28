@@ -50,9 +50,15 @@ public/             Static assets
 
 The site is bilingual. English pages live at the root (`/about`, `/services`, …) and French pages under `/fr` (`/fr/about`, `/fr/services`, …), with copy sourced from `messages/en.json` and `messages/fr.json`. `LanguageSwitcher` toggles between the two.
 
-## Product interest forms
+## Inquiry forms
 
-The Water Intelligence pilot request and CareerAI early-access forms post to `/api/product-interest`, which validates the input, drops honeypot submissions, and forwards the result as JSON to the URL in the `PRODUCT_FORM_WEBHOOK_URL` environment variable.
+Three forms post to `/api/product-interest`: the Water Intelligence pilot request (`water`), the CareerAI early-access list (`careerai`), and the Technology & Product Advisory discovery session (`advisory`). The route validates the input, drops honeypot submissions, and forwards the result as JSON to the URL in the `PRODUCT_FORM_WEBHOOK_URL` environment variable:
+
+```json
+{ "form": "advisory", "locale": "en", "submittedAt": "2026-09-28T12:00:00.000Z", "values": { "name": "…", "email": "…", "company": "…", "stage": "inDevelopment", "project": "…", "consent": true } }
+```
+
+The destination must accept a JSON POST and answer with a 2xx status within 10 seconds.
 
 - In development without that variable, submissions are printed to the server console.
 - In production without it, the form shows an error so no request is silently lost. Set it in Vercel before relying on the forms.
