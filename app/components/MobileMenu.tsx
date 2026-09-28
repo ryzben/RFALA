@@ -93,7 +93,7 @@ export function MobileMenu({ items, locale }: { items: NavItem[]; locale: Locale
   }, [open]);
 
   return (
-    <div className="relative md:hidden">
+    <div className="relative lg:hidden">
       <button
         ref={buttonRef}
         type="button"

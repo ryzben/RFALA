@@ -22,12 +22,12 @@ export default function PrivacyPage() {
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-950">
-      <header className="border-b border-white/10 bg-ink">
+      <header className="relative z-40 border-b border-white/10 bg-ink">
         <nav className="mx-auto flex h-20 w-[min(1120px,calc(100%-32px))] items-center justify-between">
           <Link href="/" className="flex items-center gap-3 font-extrabold text-white" aria-label="RFALA home">
             <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain sm:h-16 sm:w-60" />
           </Link>
-          <div className="hidden items-center gap-5 text-sm font-bold text-white/70 md:flex">
+          <div className="hidden items-center gap-5 text-sm font-bold text-white/70 lg:flex">
             <Link href="/about" className="hover:text-mint">About</Link>
             <Link href="/ecosystem" className="hover:text-mint">Ecosystem</Link>
             <Link href="/contact" className="hover:text-mint">Contact</Link>

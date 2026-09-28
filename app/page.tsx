@@ -183,7 +183,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
           <a href={route("/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
             <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain sm:h-16 sm:w-60" />
           </a>
-          <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
+          <div className="hidden items-center gap-7 text-sm font-bold text-white/80 lg:flex">
             <a href={route("/about")} className="transition hover:text-mint">{t.nav.about}</a>
             <a href={route("/ecosystem")} className="transition hover:text-mint">{t.nav.ecosystem}</a>
             <a href={route("/institute")} className="transition hover:text-mint">{t.nav.institute}</a>

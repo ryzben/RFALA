@@ -33,12 +33,12 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
 
   return (
     <main className="min-h-screen overflow-hidden bg-ink text-white">
-      <header className="border-b border-white/10 bg-black backdrop-blur-2xl">
+      <header className="relative z-40 border-b border-white/10 bg-black backdrop-blur-2xl">
         <nav className="mx-auto flex h-20 w-[min(1180px,calc(100%-32px))] items-center justify-between">
           <Link href={homeHref} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
             <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain sm:h-16 sm:w-60" />
           </Link>
-          <div className="hidden items-center gap-7 text-sm font-bold text-white/80 md:flex">
+          <div className="hidden items-center gap-7 text-sm font-bold text-white/80 lg:flex">
             <Link href={locale === "fr" ? "/fr/about" : "/about"} className="transition hover:text-mint">{t.nav.about}</Link>
             <Link href={locale === "fr" ? "/fr/ecosystem" : "/ecosystem"} className="transition hover:text-mint">{t.nav.ecosystem}</Link>
             <Link href={locale === "fr" ? "/fr/institute" : "/institute"} className="transition hover:text-mint">{t.nav.institute}</Link>
