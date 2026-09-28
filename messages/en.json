@@ -294,6 +294,11 @@
       "existingTitle": "Existing RFALA Products",
       "existingDescription": "Platforms already running across the RFALA ecosystem."
     },
+    "inDevelopment": {
+      "label": "In development",
+      "title": "Coming next from RFALA",
+      "description": "Two technology products are being built under the RFALA umbrella. They are not live yet."
+    },
     "meta": {
       "index": {
         "title": "RFALA Technology Products | Water Intelligence and CareerAI",

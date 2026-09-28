@@ -295,6 +295,11 @@
       "existingTitle": "Produits RFALA existants",
       "existingDescription": "Les plateformes déjà en activité au sein de l’écosystème RFALA."
     },
+    "inDevelopment": {
+      "label": "En développement",
+      "title": "Bientôt chez RFALA",
+      "description": "Deux produits technologiques sont en cours de développement au sein de l’écosystème RFALA. Ils ne sont pas encore disponibles."
+    },
     "meta": {
       "index": {
         "title": "Produits technologiques RFALA | Water Intelligence et CareerAI",

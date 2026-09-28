@@ -17,7 +17,8 @@ import {
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { ProductsMenu } from "./ProductsMenu";
-import { localizedPath, productsMobileItem, productsNav } from "./siteNav";
+import { StatusBadge } from "./ProductsShowcase";
+import { localizedPath, productPaths, productsMobileItem, productsNav } from "./siteNav";
 import type { Locale, Messages } from "./siteNav";
 type PageKind = "about" | "ecosystem" | "institute" | "services" | "vision";
 
@@ -289,6 +290,30 @@ function EcosystemBody({ dictionary, locale }: { dictionary: Messages; locale: L
               </article>
             );
           })}
+        </div>
+
+        {/* Products in development: kept apart from the live platforms above */}
+        <div className="mt-16 border-t border-white/10 pt-12">
+          <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.products.inDevelopment.label}</p>
+          <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{t.products.inDevelopment.title}</h2>
+          <p className="mt-3 max-w-3xl text-lg leading-8 text-slate-300">{t.products.inDevelopment.description}</p>
+          <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
+            {(["water", "careerai"] as const).map((key) => {
+              const product = t.products[key];
+              return (
+                <li key={key} className="flex flex-col rounded-lg border border-dashed border-white/15 bg-white/[0.04] p-6 transition hover:border-mint/40 hover:bg-white/[0.08]">
+                  <div>
+                    <StatusBadge>{product.badge}</StatusBadge>
+                  </div>
+                  <h3 className="mt-4 text-xl font-black text-white">{product.name}</h3>
+                  <p className="mt-2 flex-1 text-slate-300">{product.tagline}</p>
+                  <Link href={localizedPath(locale, productPaths[key])} className="mt-5 inline-flex items-center gap-2 self-start rounded-md font-extrabold text-mint transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint">
+                    {product.exploreCta} <ArrowRight className="size-4" />
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </section>
