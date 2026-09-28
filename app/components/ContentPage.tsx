@@ -21,7 +21,7 @@ import { localizedPath, productsMobileItem, productsNav } from "./siteNav";
 import type { Locale, Messages } from "./siteNav";
 type PageKind = "about" | "ecosystem" | "institute" | "services" | "vision";
 
-const ecosystemAssets = [
+export const ecosystemAssets = [
   {
     href: "https://xenovastudio.com",
     logo: "/assets/logos/xenova-studio.svg",
