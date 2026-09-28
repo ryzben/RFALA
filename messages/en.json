@@ -23,6 +23,11 @@
       },
       "existing": ["Xenova Studio", "Maroclist", "Islamic School Review", "RFALA Institute"],
       "newTab": "opens in a new tab"
+    },
+    "capabilitiesMenu": {
+      "toggle": "Capabilities menu",
+      "all": "All capabilities",
+      "advisory": "Technology & Product Advisory"
     }
   },
   "hero": {
@@ -33,7 +38,13 @@
     "secondary": "Get in Touch",
     "aiLabel": "AI Layer",
     "aiText": "Learning intelligence",
-    "growth": "Ecosystem Growth"
+    "growth": "Ecosystem Growth",
+    "stats": [
+      { "value": "30+", "label": "Years of Technology Experience" },
+      { "value": "4", "label": "Active Platforms" },
+      { "value": "2", "label": "Continents" },
+      { "value": "∞", "label": "Ambition" }
+    ]
   },
   "about": {
     "label": "About RFALA",
@@ -420,6 +431,67 @@
       "exploreCta": "Explore CareerAI"
     }
   },
+  "advisory": {
+    "label": "Service",
+    "name": "Technology & Product Advisory",
+    "titleBefore": "Technology & Product",
+    "titleHighlight": "Advisory",
+    "tagline": "Turn your technology investment into the right product.",
+    "intro": "RFALA provides independent technology and product oversight for businesses working with developers, freelancers, or technology teams.",
+    "body": [
+      "We bridge the gap between the business owner and the development team, helping translate your vision into clear requirements, manage priorities and timelines, review quality and deliverables, and keep the product aligned with your business objectives.",
+      "Beyond project management, RFALA's founder brings more than 30 years of hands-on experience in IT, AI, data, and enterprise technology, helping identify opportunities, improve the product, and guide technology decisions from concept through delivery."
+    ],
+    "independence": "Independent oversight. RFALA works on your behalf alongside the developers you choose. We do not replace your development team.",
+    "provideTitle": "What We Provide",
+    "provide": [
+      "Product requirements and roadmap",
+      "Developer coordination",
+      "Project and milestone management",
+      "Technology and AI guidance",
+      "Quality and deliverable review",
+      "Risk and issue management",
+      "Product improvement recommendations",
+      "AI, data, and automation opportunities",
+      "Final delivery and product readiness review"
+    ],
+    "homeHighlights": [0, 1, 4, 8],
+    "idealTitle": "Ideal For",
+    "ideal": "Businesses that have an idea, product, or active development project and want an experienced technology partner to help ensure the right product is built and delivered successfully.",
+    "closing": "Your idea. Your investment. Your product. RFALA helps keep it aligned with the value you envisioned.",
+    "cta": "Schedule a Technology Discovery Session",
+    "learnMore": "Explore Technology & Product Advisory",
+    "allCapabilities": "All capabilities",
+    "diagram": {
+      "label": "Illustration",
+      "caption": "How RFALA sits between the business owner and the development team.",
+      "owner": "Business owner",
+      "ownerRole": "Vision, budget, and goals",
+      "rfala": "RFALA",
+      "rfalaRole": "Independent oversight: requirements, priorities, quality review",
+      "team": "Development team",
+      "teamRole": "Design, build, and delivery"
+    },
+    "servicesLink": {
+      "before": "Working with developers on a product? See ",
+      "link": "Technology & Product Advisory",
+      "after": " for independent oversight from concept through delivery."
+    },
+    "productsLink": {
+      "before": "Building a product? See our ",
+      "link": "Technology & Product Advisory",
+      "after": "."
+    },
+    "ownProducts": {
+      "before": "RFALA also builds its own technology products. ",
+      "link": "Explore RFALA technology products",
+      "after": "."
+    },
+    "meta": {
+      "title": "Technology & Product Advisory | RFALA",
+      "description": "Independent technology and product oversight for businesses working with developers: requirements, roadmap, developer coordination, quality review, and delivery readiness."
+    }
+  },
   "forms": {
     "requiredHint": "Fields marked * are required.",
     "optional": "optional",
@@ -432,7 +504,10 @@
       "unit": "Unit",
       "need": "Briefly describe what you need",
       "persona": "Who are you?",
-      "country": "Country"
+      "country": "Country",
+      "company": "Company",
+      "project": "Briefly describe your project or idea",
+      "stage": "Current stage"
     },
     "units": {
       "hectares": "Hectares",
@@ -444,6 +519,12 @@
       "student": "Student",
       "careerChanger": "Career changer",
       "institution": "Institution"
+    },
+    "stagePlaceholder": "Select one",
+    "stages": {
+      "idea": "Idea",
+      "inDevelopment": "In development",
+      "live": "Live"
     },
     "honeypot": "Leave this field empty",
     "consentBefore": "I agree that RFALA may use this information to respond to my request, as described in the ",
@@ -472,6 +553,13 @@
       "submit": "Join the list",
       "successTitle": "You are on the list.",
       "successBody": "We will email you when CareerAI early access opens."
+    },
+    "advisory": {
+      "title": "Schedule a Technology Discovery Session",
+      "intro": "Tell us about your project or idea and where it stands today. We will reply by email to arrange a time.",
+      "submit": "Request a session",
+      "successTitle": "Thank you, your request was received.",
+      "successBody": "We will reply by email to arrange a time."
     }
   },
   "footer": {

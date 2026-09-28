@@ -23,6 +23,11 @@
       },
       "existing": ["Xenova Studio", "Maroclist", "Islamic School Review", "RFALA Institute"],
       "newTab": "s’ouvre dans un nouvel onglet"
+    },
+    "capabilitiesMenu": {
+      "toggle": "Menu Expertises",
+      "all": "Toutes nos expertises",
+      "advisory": "Conseil en technologie et produit"
     }
   },
   "hero": {
@@ -33,7 +38,13 @@
     "secondary": "Nous contacter",
     "aiLabel": "Couche IA",
     "aiText": "Intelligence d’apprentissage",
-    "growth": "Croissance de l’écosystème"
+    "growth": "Croissance de l’écosystème",
+    "stats": [
+      { "value": "30+", "label": "Ans d’expérience technologique" },
+      { "value": "4", "label": "Plateformes actives" },
+      { "value": "2", "label": "Continents" },
+      { "value": "∞", "label": "Ambition" }
+    ]
   },
   "about": {
     "label": "À propos de RFALA",
@@ -421,6 +432,67 @@
       "exploreCta": "Découvrir CareerAI"
     }
   },
+  "advisory": {
+    "label": "Service",
+    "name": "Conseil en technologie et produit",
+    "titleBefore": "Conseil en technologie",
+    "titleHighlight": "et produit",
+    "tagline": "Faites de votre investissement technologique le bon produit.",
+    "intro": "RFALA assure une supervision technologique et produit indépendante pour les entreprises qui travaillent avec des développeurs, des freelances ou des équipes techniques.",
+    "body": [
+      "Nous faisons le lien entre le dirigeant et l’équipe de développement : nous aidons à traduire votre vision en exigences claires, à gérer les priorités et les délais, à contrôler la qualité et les livrables, et à garder le produit aligné sur vos objectifs.",
+      "Au-delà de la gestion de projet, le fondateur de RFALA apporte plus de 30 ans d’expérience de terrain en informatique, IA, données et technologies d’entreprise, pour repérer les opportunités, améliorer le produit et orienter les choix technologiques, de la conception à la livraison."
+    ],
+    "independence": "Une supervision indépendante. RFALA agit pour votre compte, aux côtés des développeurs que vous avez choisis. Nous ne remplaçons pas votre équipe de développement.",
+    "provideTitle": "Ce que nous apportons",
+    "provide": [
+      "Exigences produit et feuille de route",
+      "Coordination des développeurs",
+      "Pilotage du projet et des jalons",
+      "Conseil en technologie et en IA",
+      "Contrôle de la qualité et des livrables",
+      "Gestion des risques et des incidents",
+      "Recommandations d’amélioration du produit",
+      "Opportunités en IA, données et automatisation",
+      "Revue finale de livraison et de mise en production"
+    ],
+    "homeHighlights": [0, 1, 4, 8],
+    "idealTitle": "Pour qui ?",
+    "ideal": "Les entreprises qui ont une idée, un produit ou un projet en cours de développement, et qui veulent un partenaire technologique expérimenté pour s’assurer que le bon produit est construit et livré.",
+    "closing": "Votre idée. Votre investissement. Votre produit. RFALA vous aide à le garder fidèle à la valeur que vous aviez imaginée.",
+    "cta": "Planifier une séance de découverte technologique",
+    "learnMore": "Découvrir le conseil en technologie et produit",
+    "allCapabilities": "Toutes nos expertises",
+    "diagram": {
+      "label": "Illustration",
+      "caption": "La place de RFALA entre le dirigeant et l’équipe de développement.",
+      "owner": "Dirigeant",
+      "ownerRole": "Vision, budget et objectifs",
+      "rfala": "RFALA",
+      "rfalaRole": "Supervision indépendante : exigences, priorités, contrôle qualité",
+      "team": "Équipe de développement",
+      "teamRole": "Conception, développement et livraison"
+    },
+    "servicesLink": {
+      "before": "Vous travaillez avec des développeurs sur un produit ? Découvrez notre ",
+      "link": "conseil en technologie et produit",
+      "after": " : une supervision indépendante, de la conception à la livraison."
+    },
+    "productsLink": {
+      "before": "Vous construisez un produit ? Découvrez notre ",
+      "link": "conseil en technologie et produit",
+      "after": "."
+    },
+    "ownProducts": {
+      "before": "RFALA développe aussi ses propres produits technologiques. ",
+      "link": "Découvrir les produits technologiques RFALA",
+      "after": "."
+    },
+    "meta": {
+      "title": "Conseil en technologie et produit | RFALA",
+      "description": "Une supervision technologique et produit indépendante pour les entreprises qui travaillent avec des développeurs : exigences, feuille de route, coordination, qualité et livraison."
+    }
+  },
   "forms": {
     "requiredHint": "Les champs marqués d’un * sont obligatoires.",
     "optional": "facultatif",
@@ -433,7 +505,10 @@
       "unit": "Unité",
       "need": "Décrivez brièvement votre besoin",
       "persona": "Vous êtes…",
-      "country": "Pays"
+      "country": "Pays",
+      "company": "Entreprise",
+      "project": "Décrivez brièvement votre projet ou votre idée",
+      "stage": "Où en est le projet ?"
     },
     "units": {
       "hectares": "Hectares",
@@ -445,6 +520,12 @@
       "student": "Étudiant ou étudiante",
       "careerChanger": "En reconversion professionnelle",
       "institution": "Une institution"
+    },
+    "stagePlaceholder": "Choisissez une option",
+    "stages": {
+      "idea": "À l’état d’idée",
+      "inDevelopment": "En cours de développement",
+      "live": "Déjà en ligne"
     },
     "honeypot": "Laissez ce champ vide",
     "consentBefore": "J’accepte que RFALA utilise ces informations pour répondre à ma demande, conformément à la ",
@@ -473,6 +554,13 @@
       "submit": "M’inscrire",
       "successTitle": "Votre inscription est confirmée.",
       "successBody": "Nous vous écrirons dès l’ouverture de l’accès anticipé à CareerAI."
+    },
+    "advisory": {
+      "title": "Planifier une séance de découverte technologique",
+      "intro": "Présentez-nous votre projet ou votre idée, et où il en est aujourd’hui. Nous vous répondrons par e-mail pour convenir d’un créneau.",
+      "submit": "Demander une séance",
+      "successTitle": "Merci, votre demande a bien été reçue.",
+      "successBody": "Nous vous répondrons par e-mail pour convenir d’un créneau."
     }
   },
   "footer": {
