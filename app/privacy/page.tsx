@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MobileMenu } from "../components/MobileMenu";
 import { Footer } from "../components/ContentPage";
+import { productsMobileItem, productsNav } from "../components/siteNav";
 import enMessages from "../../messages/en.json";
 
 export const metadata = {
@@ -13,6 +14,7 @@ export default function PrivacyPage() {
     { href: "/about", label: "About" },
     { href: "/ecosystem", label: "Ecosystem" },
     { href: "/institute", label: "Institute" },
+    productsMobileItem(productsNav(enMessages, "en")),
     { href: "/services", label: "Capabilities" },
     { href: "/vision", label: "Vision" },
     { href: "/contact", label: "Contact" }

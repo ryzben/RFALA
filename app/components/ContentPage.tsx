@@ -16,10 +16,9 @@ import {
 } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
-import enMessages from "../../messages/en.json";
-
-type Messages = typeof enMessages;
-type Locale = "en" | "fr";
+import { ProductsMenu } from "./ProductsMenu";
+import { localizedPath, productsMobileItem, productsNav } from "./siteNav";
+import type { Locale, Messages } from "./siteNav";
 type PageKind = "about" | "ecosystem" | "institute" | "services" | "vision";
 
 const ecosystemAssets = [
@@ -81,16 +80,14 @@ const learningPlatforms = [
   { name: "edX", logo: "/assets/logos/edx.svg" }
 ];
 
-function localizedPath(locale: Locale, path: string) {
-  return locale === "fr" ? `/fr${path === "/" ? "" : path}` : path;
-}
-
-function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }) {
+export function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }) {
   const t = dictionary;
+  const products = productsNav(t, locale);
   const navItems = [
     { href: localizedPath(locale, "/about"), label: t.nav.about },
     { href: localizedPath(locale, "/ecosystem"), label: t.nav.ecosystem },
     { href: localizedPath(locale, "/institute"), label: t.nav.institute },
+    productsMobileItem(products),
     { href: localizedPath(locale, "/services"), label: t.nav.services },
     { href: localizedPath(locale, "/vision"), label: t.nav.vision },
     { href: localizedPath(locale, "/contact"), label: t.nav.contact }
@@ -106,6 +103,7 @@ function Header({ dictionary, locale }: { dictionary: Messages; locale: Locale }
           <Link href={localizedPath(locale, "/about")} className="transition hover:text-mint">{t.nav.about}</Link>
           <Link href={localizedPath(locale, "/ecosystem")} className="transition hover:text-mint">{t.nav.ecosystem}</Link>
           <Link href={localizedPath(locale, "/institute")} className="transition hover:text-mint">{t.nav.institute}</Link>
+          <ProductsMenu nav={products} />
           <Link href={localizedPath(locale, "/services")} className="transition hover:text-mint">{t.nav.services}</Link>
           <Link href={localizedPath(locale, "/vision")} className="transition hover:text-mint">{t.nav.vision}</Link>
           <Link href={localizedPath(locale, "/contact")} className="transition hover:text-mint">{t.nav.contact}</Link>
@@ -185,6 +183,7 @@ export function Footer({ dictionary, locale }: { dictionary: Messages; locale: L
             <Link href={localizedPath(locale, "/about")} className="hover:text-mint">{t.nav.about}</Link>
             <Link href={localizedPath(locale, "/ecosystem")} className="hover:text-mint">{t.nav.ecosystem}</Link>
             <Link href={localizedPath(locale, "/institute")} className="hover:text-mint">{t.nav.institute}</Link>
+            <Link href={localizedPath(locale, "/products")} className="hover:text-mint">{t.nav.products}</Link>
             <Link href={localizedPath(locale, "/services")} className="hover:text-mint">{t.nav.services}</Link>
             <Link href={localizedPath(locale, "/vision")} className="hover:text-mint">{t.nav.vision}</Link>
             <Link href={localizedPath(locale, "/contact")} className="hover:text-mint">{t.footer.contact}</Link>

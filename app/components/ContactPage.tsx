@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight, BrainCircuit, Globe2, GraduationCap, Mail, MessageCircle, Network, Phone, Sparkles } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
+import { ProductsMenu } from "./ProductsMenu";
+import { productsMobileItem, productsNav } from "./siteNav";
 import { Footer } from "./ContentPage";
 import enMessages from "../../messages/en.json";
 
@@ -18,10 +20,12 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
   const partnershipHref = `mailto:${t.contact.email}?subject=RFALA%20Partnership%20Inquiry`;
   const phoneHref = "tel:+19175822768";
   const whatsappHref = "https://wa.me/19175822768";
+  const products = productsNav(t, locale);
   const navItems = [
     { href: locale === "fr" ? "/fr/about" : "/about", label: t.nav.about },
     { href: locale === "fr" ? "/fr/ecosystem" : "/ecosystem", label: t.nav.ecosystem },
     { href: locale === "fr" ? "/fr/institute" : "/institute", label: t.nav.institute },
+    productsMobileItem(products),
     { href: locale === "fr" ? "/fr/services" : "/services", label: t.nav.services },
     { href: locale === "fr" ? "/fr/vision" : "/vision", label: t.nav.vision },
     { href: locale === "fr" ? "/fr/contact" : "/contact", label: t.nav.contact }
@@ -38,6 +42,7 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
             <Link href={locale === "fr" ? "/fr/about" : "/about"} className="transition hover:text-mint">{t.nav.about}</Link>
             <Link href={locale === "fr" ? "/fr/ecosystem" : "/ecosystem"} className="transition hover:text-mint">{t.nav.ecosystem}</Link>
             <Link href={locale === "fr" ? "/fr/institute" : "/institute"} className="transition hover:text-mint">{t.nav.institute}</Link>
+            <ProductsMenu nav={products} />
             <Link href={locale === "fr" ? "/fr/services" : "/services"} className="transition hover:text-mint">{t.nav.services}</Link>
             <Link href={locale === "fr" ? "/fr/vision" : "/vision"} className="transition hover:text-mint">{t.nav.vision}</Link>
             <LanguageSwitcher locale={locale} />
