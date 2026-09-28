@@ -50,6 +50,13 @@ public/             Static assets
 
 The site is bilingual. English pages live at the root (`/about`, `/services`, …) and French pages under `/fr` (`/fr/about`, `/fr/services`, …), with copy sourced from `messages/en.json` and `messages/fr.json`. `LanguageSwitcher` toggles between the two.
 
+## Product interest forms
+
+The Water Intelligence pilot request and CareerAI early-access forms post to `/api/product-interest`, which validates the input, drops honeypot submissions, and forwards the result as JSON to the URL in the `PRODUCT_FORM_WEBHOOK_URL` environment variable.
+
+- In development without that variable, submissions are printed to the server console.
+- In production without it, the form shows an error so no request is silently lost. Set it in Vercel before relying on the forms.
+
 ## Deployment
 
 Deployed on [Vercel](https://vercel.com/) using the Next.js framework preset (see `vercel.json`). Pushing to `main` triggers a production deployment.
