@@ -278,12 +278,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-20 flex w-full items-center justify-center divide-x divide-white/10 border-t border-white/[0.07] pt-10"
           >
-            {[
-              { value: "20+", label: "Years of Experience" },
-              { value: "4", label: "Active Platforms" },
-              { value: "2", label: "Continents" },
-              { value: "∞", label: "Ambition" }
-            ].map((stat) => (
+            {t.hero.stats.map((stat) => (
               <div key={stat.label} className="flex-1 px-6 text-center first:pl-0 last:pr-0">
                 <p className="text-3xl font-black tabular-nums text-white sm:text-4xl">{stat.value}</p>
                 <p className="mt-1.5 text-[0.62rem] font-bold uppercase tracking-[0.22em] text-white/35">{stat.label}</p>
