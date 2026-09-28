@@ -36,9 +36,9 @@ function MobileGroup({ item, onNavigate }: { item: NavItem & { groups: NavGroup[
         <ChevronDown className={`size-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
       </button>
       <div id={panelId} hidden={!expanded} className="mb-1 ml-4 border-l border-white/10 pl-2">
-        {item.groups.map((group) => (
-          <div key={group.heading} className="pt-2">
-            <p className="px-3 pb-1 text-[0.65rem] font-extrabold uppercase tracking-[0.2em] text-mint">{group.heading}</p>
+        {item.groups.map((group, groupIndex) => (
+          <div key={group.heading || groupIndex} className="pt-2">
+            {group.heading ? <p className="px-3 pb-1 text-[0.65rem] font-extrabold uppercase tracking-[0.2em] text-mint">{group.heading}</p> : null}
             <ul>
               {group.links.map((link) => (
                 <li key={link.href}>

@@ -55,13 +55,51 @@ export function productNavGroups(t: Messages, locale: Locale): NavGroup[] {
   ];
 }
 
-export type ProductsNav = {
+export type DropdownNav = {
   label: string;
+  /** Page for the item itself: the "view all" target, or the link half of a split control. */
   href: string;
-  viewAll: string;
+  /** Split control: the label stays a normal link and a separate chevron button opens the menu. */
+  split?: boolean;
+  /** Accessible name for the chevron button in split mode. */
+  toggleLabel?: string;
+  /** Optional "view all" link label shown at the bottom of the panel. */
+  viewAll?: string;
+  /** Narrow single-column panel. */
+  compact?: boolean;
   newTab: string;
   groups: NavGroup[];
 };
+
+export type ProductsNav = DropdownNav;
+
+export const advisoryPath = "/services/technology-product-advisory";
+
+export function capabilitiesNav(t: Messages, locale: Locale): DropdownNav {
+  const menu = t.nav.capabilitiesMenu;
+  return {
+    label: t.nav.services,
+    href: localizedPath(locale, "/services"),
+    split: true,
+    toggleLabel: menu.toggle,
+    compact: true,
+    newTab: t.nav.productsMenu.newTab,
+    groups: [
+      {
+        heading: "",
+        links: [
+          { href: localizedPath(locale, "/services"), label: menu.all },
+          { href: localizedPath(locale, advisoryPath), label: menu.advisory }
+        ]
+      }
+    ]
+  };
+}
+
+/** The Capabilities entry in the shape MobileMenu expects. */
+export function capabilitiesMobileItem(nav: DropdownNav) {
+  return { href: nav.href, label: nav.label, groups: nav.groups, newTabLabel: nav.newTab };
+}
 
 export function productsNav(t: Messages, locale: Locale): ProductsNav {
   return {
