@@ -96,4 +96,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.rfala.com/fr/products/careerai"/>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.rfala.com/services/technology-product-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rfala.com/services/technology-product-advisory"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rfala.com/fr/services/technology-product-advisory"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.rfala.com/fr/services/technology-product-advisory</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rfala.com/services/technology-product-advisory"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rfala.com/fr/services/technology-product-advisory"/>
+    <priority>0.7</priority>
+  </url>
 </urlset>
