@@ -1,7 +1,8 @@
-import type { FormValues, ProductKey } from "./productInterest";
+import type { FormKind, FormValues } from "./productInterest";
 
 export type Submission = {
-  product: ProductKey;
+  /** Which form sent it: "water", "careerai", or "advisory". */
+  form: FormKind;
   locale: "en" | "fr";
   submittedAt: string;
   values: FormValues;

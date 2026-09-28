@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 import { deliverSubmission } from "../../lib/deliverSubmission";
-import { isProductKey, pickProductValues, validateProductInterest } from "../../lib/productInterest";
+import { isFormKind, pickInquiryValues, validateInquiry } from "../../lib/productInterest";
 
 const MAX_BODY_BYTES = 16_000;
 
+/**
+ * Receives all three site inquiry forms (water, careerai, advisory).
+ * The route keeps its original path so existing forms keep working.
+ */
 export async function POST(request: Request) {
   const text = await request.text();
   if (text.length > MAX_BODY_BYTES) {
@@ -21,8 +25,10 @@ export async function POST(request: Request) {
   }
 
   const input = body as Record<string, unknown>;
-  if (!isProductKey(input.product)) {
-    return NextResponse.json({ ok: false, error: "unknown_product" }, { status: 400 });
+  // "form" is the current field name; "product" is accepted for backward compatibility.
+  const kind = input.form ?? input.product;
+  if (!isFormKind(kind)) {
+    return NextResponse.json({ ok: false, error: "unknown_form" }, { status: 400 });
   }
 
   // Honeypot: real visitors never see or fill the "website" field. Answer as if it worked so bots learn nothing.
@@ -30,15 +36,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const product = input.product;
-  const values = pickProductValues(product, input);
-  const errors = validateProductInterest(product, values);
+  const values = pickInquiryValues(kind, input);
+  const errors = validateInquiry(kind, values);
   if (Object.keys(errors).length > 0) {
     return NextResponse.json({ ok: false, errors }, { status: 422 });
   }
 
   const delivered = await deliverSubmission({
-    product,
+    form: kind,
     locale: input.locale === "fr" ? "fr" : "en",
     submittedAt: new Date().toISOString(),
     values

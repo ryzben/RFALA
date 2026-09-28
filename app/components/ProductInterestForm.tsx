@@ -5,12 +5,13 @@ import type { ChangeEvent, FormEvent, ReactNode } from "react";
 import { CheckCircle2, Send } from "lucide-react";
 import {
   maxLengths,
+  formFields,
   personas,
-  productFields,
+  projectStages,
   propertyUnits,
-  validateProductInterest
+  validateInquiry
 } from "../lib/productInterest";
-import type { FieldErrors, FieldName, FormValues, ProductKey } from "../lib/productInterest";
+import type { FieldErrors, FieldName, FormKind, FormValues } from "../lib/productInterest";
 import type { Locale, Messages } from "./siteNav";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -46,9 +47,10 @@ function FieldShell({ inputId, errorId, label, required, optionalLabel, error, c
 const inputClass =
   "w-full rounded-lg border bg-slate-950/70 px-4 py-3 text-base text-white placeholder:text-slate-500 transition focus:outline-none focus:ring-2 focus:ring-mint/60";
 
-export function ProductInterestForm({ product, dictionary, locale }: { product: ProductKey; dictionary: Messages; locale: Locale }) {
+/** Inquiry form for the product pages and the advisory page. `kind` selects the fields and copy. */
+export function ProductInterestForm({ kind, dictionary, locale }: { kind: FormKind; dictionary: Messages; locale: Locale }) {
   const f = dictionary.forms;
-  const copy = f[product];
+  const copy = f[kind];
   const baseId = useId();
   const id = (field: string) => `${baseId}-${field}`;
 
@@ -67,13 +69,13 @@ export function ProductInterestForm({ product, dictionary, locale }: { product: 
   const update = (field: FieldName, value: string | boolean) => {
     const next = { ...values, [field]: value };
     setValues(next);
-    if (attempted) setErrors(validateProductInterest(product, next));
+    if (attempted) setErrors(validateInquiry(kind, next));
   };
 
   const onText = (field: FieldName) => (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => update(field, event.target.value);
 
   const focusFirstError = (fieldErrors: FieldErrors) => {
-    const first = productFields[product].find((field) => fieldErrors[field]);
+    const first = formFields[kind].find((field) => fieldErrors[field]);
     if (first) formRef.current?.querySelector<HTMLElement>(`#${CSS.escape(id(first))}`)?.focus();
   };
 
@@ -82,7 +84,7 @@ export function ProductInterestForm({ product, dictionary, locale }: { product: 
     if (status === "submitting") return;
     setAttempted(true);
 
-    const clientErrors = validateProductInterest(product, values);
+    const clientErrors = validateInquiry(kind, values);
     setErrors(clientErrors);
     if (Object.keys(clientErrors).length > 0) {
       focusFirstError(clientErrors);
@@ -94,7 +96,7 @@ export function ProductInterestForm({ product, dictionary, locale }: { product: 
       const response = await fetch("/api/product-interest", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ product, locale, website: honeypot, ...values })
+        body: JSON.stringify({ form: kind, locale, website: honeypot, ...values })
       });
       const result = (await response.json().catch(() => ({}))) as { ok?: boolean; errors?: FieldErrors };
 
@@ -161,7 +163,7 @@ export function ProductInterestForm({ product, dictionary, locale }: { product: 
         </FieldShell>
       </div>
 
-      {product === "water" ? (
+      {kind === "water" ? (
         <>
           <div className="grid gap-5 sm:grid-cols-2">
             <FieldShell {...shell("organization", f.fields.organization, false)}>
@@ -187,7 +189,7 @@ export function ProductInterestForm({ product, dictionary, locale }: { product: 
             <textarea {...fieldProps("need")} rows={5} required maxLength={maxLengths.need} value={values.need ?? ""} onChange={onText("need")} />
           </FieldShell>
         </>
-      ) : (
+      ) : kind === "careerai" ? (
         <div className="grid gap-5 sm:grid-cols-2">
           <FieldShell {...shell("persona", f.fields.persona, true)}>
             <select {...fieldProps("persona")} required value={values.persona ?? ""} onChange={onText("persona")}>
@@ -201,6 +203,25 @@ export function ProductInterestForm({ product, dictionary, locale }: { product: 
             <input {...fieldProps("country")} type="text" autoComplete="country-name" maxLength={maxLengths.country} value={values.country ?? ""} onChange={onText("country")} />
           </FieldShell>
         </div>
+      ) : (
+        <>
+          <div className="grid gap-5 sm:grid-cols-2">
+            <FieldShell {...shell("company", f.fields.company, false)}>
+              <input {...fieldProps("company")} type="text" autoComplete="organization" maxLength={maxLengths.company} value={values.company ?? ""} onChange={onText("company")} />
+            </FieldShell>
+            <FieldShell {...shell("stage", f.fields.stage, true)}>
+              <select {...fieldProps("stage")} required value={values.stage ?? ""} onChange={onText("stage")}>
+                <option value="" disabled>{f.stagePlaceholder}</option>
+                {projectStages.map((stage) => (
+                  <option key={stage} value={stage}>{f.stages[stage]}</option>
+                ))}
+              </select>
+            </FieldShell>
+          </div>
+          <FieldShell {...shell("project", f.fields.project, true)}>
+            <textarea {...fieldProps("project")} rows={5} required maxLength={maxLengths.project} value={values.project ?? ""} onChange={onText("project")} />
+          </FieldShell>
+        </>
       )}
 
       {/* Honeypot: hidden from people and assistive tech; bots that fill it are silently discarded by the API. */}

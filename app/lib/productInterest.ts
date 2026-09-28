@@ -1,12 +1,18 @@
 /**
- * Shared field rules for the product interest forms.
+ * Shared field rules for the site's inquiry forms:
+ * - "water": Water Intelligence pilot analysis request
+ * - "careerai": CareerAI early-access list
+ * - "advisory": Technology & Product Advisory discovery session request
  * Used by the client form (instant feedback) and the API route (authoritative check).
  */
 
 export type ProductKey = "water" | "careerai";
+export type FormKind = ProductKey | "advisory";
 
+export const formKinds: FormKind[] = ["water", "careerai", "advisory"];
 export const personas = ["jobSeeker", "student", "careerChanger", "institution"] as const;
 export const propertyUnits = ["hectares", "acres"] as const;
+export const projectStages = ["idea", "inDevelopment", "live"] as const;
 
 export type FieldName =
   | "name"
@@ -18,6 +24,9 @@ export type FieldName =
   | "need"
   | "persona"
   | "country"
+  | "company"
+  | "project"
+  | "stage"
   | "consent";
 
 export type ErrorCode = "required" | "email" | "tooLong" | "propertySize" | "consent";
@@ -25,36 +34,46 @@ export type FieldErrors = Partial<Record<FieldName, ErrorCode>>;
 export type FormValues = Partial<Record<Exclude<FieldName, "consent">, string>> & { consent?: boolean };
 
 /** Fields in display order, which is also the order used to focus the first invalid field. */
-export const productFields: Record<ProductKey, FieldName[]> = {
+export const formFields: Record<FormKind, FieldName[]> = {
   water: ["name", "email", "organization", "region", "propertySize", "propertyUnit", "need", "consent"],
-  careerai: ["name", "email", "persona", "country", "consent"]
+  careerai: ["name", "email", "persona", "country", "consent"],
+  advisory: ["name", "email", "company", "stage", "project", "consent"]
 };
 
-const requiredFields: Record<ProductKey, FieldName[]> = {
+const requiredFields: Record<FormKind, FieldName[]> = {
   water: ["name", "email", "region", "propertySize", "propertyUnit", "need"],
-  careerai: ["name", "email", "persona"]
+  careerai: ["name", "email", "persona"],
+  advisory: ["name", "email", "project", "stage"]
 };
 
 export const maxLengths: Partial<Record<FieldName, number>> = {
   name: 120,
   email: 254,
   organization: 160,
+  company: 160,
   region: 120,
   country: 120,
   propertySize: 16,
-  need: 2000
+  need: 2000,
+  project: 2000
+};
+
+const allowedValues: Partial<Record<FieldName, readonly string[]>> = {
+  propertyUnit: propertyUnits,
+  persona: personas,
+  stage: projectStages
 };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export function isProductKey(value: unknown): value is ProductKey {
-  return value === "water" || value === "careerai";
+export function isFormKind(value: unknown): value is FormKind {
+  return typeof value === "string" && (formKinds as string[]).includes(value);
 }
 
-export function validateProductInterest(product: ProductKey, values: FormValues): FieldErrors {
+export function validateInquiry(kind: FormKind, values: FormValues): FieldErrors {
   const errors: FieldErrors = {};
 
-  for (const field of productFields[product]) {
+  for (const field of formFields[kind]) {
     if (field === "consent") {
       if (values.consent !== true) errors.consent = "consent";
       continue;
@@ -64,7 +83,7 @@ export function validateProductInterest(product: ProductKey, values: FormValues)
     const max = maxLengths[field];
 
     if (!value) {
-      if (requiredFields[product].includes(field)) errors[field] = "required";
+      if (requiredFields[kind].includes(field)) errors[field] = "required";
       continue;
     }
     if (max && value.length > max) {
@@ -76,17 +95,17 @@ export function validateProductInterest(product: ProductKey, values: FormValues)
       const size = Number(value.replace(",", "."));
       if (!Number.isFinite(size) || size <= 0) errors.propertySize = "propertySize";
     }
-    if (field === "propertyUnit" && !(propertyUnits as readonly string[]).includes(value)) errors.propertyUnit = "required";
-    if (field === "persona" && !(personas as readonly string[]).includes(value)) errors.persona = "required";
+    const allowed = allowedValues[field];
+    if (allowed && !allowed.includes(value)) errors[field] = "required";
   }
 
   return errors;
 }
 
-/** Keeps only the fields that belong to the product, as trimmed strings (consent as boolean). */
-export function pickProductValues(product: ProductKey, input: Record<string, unknown>): FormValues {
+/** Keeps only the fields that belong to the form, as trimmed strings (consent as boolean). */
+export function pickInquiryValues(kind: FormKind, input: Record<string, unknown>): FormValues {
   const values: FormValues = {};
-  for (const field of productFields[product]) {
+  for (const field of formFields[kind]) {
     if (field === "consent") {
       values.consent = input.consent === true;
       continue;
