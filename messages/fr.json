@@ -7,7 +7,23 @@
     "institute": "Institut",
     "services": "Expertises",
     "vision": "Vision",
-    "contact": "Contact"
+    "contact": "Contact",
+    "products": "Produits",
+    "productsMenu": {
+      "groupNew": "Produits technologiques",
+      "groupExisting": "Produits RFALA existants",
+      "viewAll": "Voir tous les produits",
+      "water": {
+        "name": "Water Intelligence",
+        "description": "Présélection des eaux souterraines par satellite et IA"
+      },
+      "careerai": {
+        "name": "CareerAI",
+        "description": "Assistant de recherche d’emploi propulsé par l’IA"
+      },
+      "existing": ["Xenova Studio", "Maroclist", "Islamic School Review", "RFALA Institute"],
+      "newTab": "s’ouvre dans un nouvel onglet"
+    }
   },
   "hero": {
     "label": "Technologie + IA + Innovation + Éducation",
@@ -257,6 +273,201 @@
           "description": "Créer des produits et expériences qui soutiennent les communautés locales et globales."
         }
       ]
+    }
+  },
+  "products": {
+    "label": "Produits technologiques",
+    "titleBefore": "Les produits",
+    "titleHighlight": "technologiques",
+    "titleAfter": "RFALA",
+    "subtitle": "Des solutions technologiques concrètes, portées par l’IA, la donnée et l’innovation.",
+    "closing": "RFALA conçoit des produits technologiques concrets qui associent IA, données, automatisation et expertise métier pour résoudre des problèmes bien réels.",
+    "conceptPreview": "Aperçu conceptuel",
+    "backToProducts": "Tous les produits technologiques",
+    "sections": {
+      "overview": "Présentation",
+      "capabilities": "Fonctionnalités prévues",
+      "capabilitiesNote": "En cours de développement : les fonctionnalités ci-dessous sont prévues et ne sont pas encore disponibles.",
+      "audience": "À qui s’adresse-t-il ?",
+      "workflow": "Parcours prévu"
+    },
+    "index": {
+      "existingTitle": "Produits RFALA existants",
+      "existingDescription": "Les plateformes déjà en activité au sein de l’écosystème RFALA."
+    },
+    "meta": {
+      "index": {
+        "title": "Produits technologiques RFALA | Water Intelligence et CareerAI",
+        "description": "Découvrez les produits technologiques RFALA en développement : Water Intelligence pour la recherche d’eau agricole et CareerAI, assistant IA de recherche d’emploi."
+      },
+      "water": {
+        "title": "RFALA Water Intelligence | Présélection des eaux souterraines par satellite et IA",
+        "description": "En développement : une plateforme géospatiale qui combine imagerie satellite, relief et IA pour repérer les zones à potentiel en eaux souterraines avant forage."
+      },
+      "careerai": {
+        "title": "RFALA CareerAI | Assistant de recherche d’emploi propulsé par l’IA",
+        "description": "En développement : CareerAI aide les candidats à trouver des offres pertinentes et à préparer candidatures et lettres de motivation. Accès anticipé ouvert."
+      }
+    },
+    "visuals": {
+      "candidateArea": "Zone candidate",
+      "parcel": "Limite de propriété",
+      "drainage": "Axe de drainage",
+      "resume": "CV",
+      "skills": "Compétences",
+      "experience": "Expérience",
+      "matches": "Offres classées par pertinence",
+      "strong": "Très pertinente",
+      "good": "Pertinente",
+      "partial": "Partiellement pertinente",
+      "roles": ["Analyste de données", "Coordinateur des opérations", "Assistant de projet"]
+    },
+    "water": {
+      "name": "RFALA Water Intelligence",
+      "namePrefix": "RFALA Water",
+      "nameHighlight": "Intelligence",
+      "badge": "En développement · phase pilote",
+      "tagline": "L’imagerie satellite et l’IA au service de l’eau agricole",
+      "summary": "Associe imagerie satellite, analyse du relief et analyse assistée par IA pour repérer les zones à potentiel en eaux souterraines et réduire l’incertitude avant de forer.",
+      "description": [
+        "RFALA Water Intelligence est une plateforme d’intelligence géospatiale conçue pour aider les agriculteurs, les investisseurs agricoles et les propriétaires fonciers à prendre des décisions mieux éclairées en matière de recherche d’eau souterraine.",
+        "Elle croise imagerie satellite, données géographiques, indicateurs environnementaux, analyse du relief et analyse assistée par IA pour identifier les zones présentant un potentiel en eaux souterraines, et pour aider à déterminer où des investigations complémentaires se justifient avant d’engager un forage coûteux."
+      ],
+      "capabilities": [
+        "Analyse d’imagerie satellite",
+        "SIG et intelligence géospatiale",
+        "Analyse du potentiel en eaux souterraines assistée par IA",
+        "Analyse du relief et de l’altitude",
+        "Données environnementales historiques",
+        "Indicateurs de végétation et d’humidité",
+        "Cartographie des exploitations et des parcelles",
+        "Priorisation des zones candidates",
+        "Cartes interactives",
+        "Rapports d’analyse exportables"
+      ],
+      "audience": [
+        "Agriculteurs",
+        "Investisseurs agricoles",
+        "Grands exploitants agricoles",
+        "Propriétaires fonciers",
+        "Conseillers agricoles",
+        "Bureaux d’études en ingénierie et en environnement",
+        "Organismes de planification des ressources en eau"
+      ],
+      "noteTitle": "Un outil de présélection, pas une garantie.",
+      "noteBody": "Les résultats éclairent les décisions de recherche d’eau souterraine et permettent de prioriser les zones à investiguer. Ils ne garantissent ni la présence d’eau, ni le débit d’un futur puits. Faites confirmer les résultats par une étude de terrain et un professionnel qualifié avant tout forage.",
+      "primaryCta": "Demander une analyse pilote",
+      "secondaryCta": "Découvrir Water Intelligence",
+      "exploreCta": "Découvrir Water Intelligence"
+    },
+    "careerai": {
+      "name": "RFALA CareerAI",
+      "namePrefix": "RFALA",
+      "nameHighlight": "CareerAI",
+      "badge": "Accès anticipé · En développement",
+      "tagline": "Votre assistant de recherche d’emploi propulsé par l’IA",
+      "summary": "Conçu pour aider les candidats à trouver des offres pertinentes et à préparer des candidatures personnalisées, lettres de motivation ciblées comprises.",
+      "description": [
+        "CareerAI aide les candidats à trouver des offres pertinentes et à préparer des candidatures personnalisées grâce à l’IA. Chacun importe son CV et crée un profil de carrière enrichi par l’IA.",
+        "La plateforme peut analyser les offres d’emploi, comparer leurs exigences au parcours du candidat et l’aider à préparer des documents de candidature sur mesure, dont des lettres de motivation adaptées à chaque poste."
+      ],
+      "workflow": [
+        "Importer son CV",
+        "Créer son profil de carrière IA",
+        "Trouver des offres pertinentes",
+        "Analyser les exigences",
+        "Faire correspondre les compétences",
+        "Préparer la candidature",
+        "Générer une lettre de motivation ciblée",
+        "Suivre ses candidatures"
+      ],
+      "capabilities": [
+        "Import et analyse de CV",
+        "Profil candidat enrichi par l’IA",
+        "Mise en relation avec des offres",
+        "Analyse des offres d’emploi",
+        "Correspondance des compétences",
+        "Score de correspondance expliqué",
+        "Lettres de motivation personnalisées",
+        "Recommandations pour améliorer le CV",
+        "Suivi des candidatures",
+        "Tableau de bord de recherche d’emploi",
+        "Historique des candidatures",
+        "Préparation aux entretiens"
+      ],
+      "audience": [
+        "Personnes en recherche d’emploi",
+        "Jeunes diplômés",
+        "Personnes en reconversion",
+        "Professionnels internationaux",
+        "Étudiants",
+        "Universités",
+        "Organismes d’insertion et de développement de l’emploi",
+        "Services d’orientation et centres carrière"
+      ],
+      "noteTitle": "Vous gardez le contrôle.",
+      "noteBody": "CareerAI vous aide à repérer les offres pertinentes, à préparer des candidatures personnalisées et à simplifier vos démarches. Il ne postule pas automatiquement à toutes les offres. Lorsque l’envoi automatisé est possible, il respecte les conditions de la plateforme concernée et nécessite votre autorisation. Les résultats, comme un entretien ou une offre d’emploi, ne sont pas garantis.",
+      "dataNoteTitle": "À propos de votre CV",
+      "dataNoteBefore": "Un CV contient des données personnelles. Les modalités de conservation, d’utilisation et de suppression des CV seront publiées avant le lancement. Ce formulaire d’accès anticipé ne vous demande pas votre CV. Consultez notre ",
+      "dataNoteLink": "politique de confidentialité",
+      "dataNoteAfter": ".",
+      "primaryCta": "Essayer CareerAI",
+      "secondaryCta": "Rejoindre la liste d’accès anticipé",
+      "exploreCta": "Découvrir CareerAI"
+    }
+  },
+  "forms": {
+    "requiredHint": "Les champs marqués d’un * sont obligatoires.",
+    "optional": "facultatif",
+    "fields": {
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "organization": "Organisation",
+      "region": "Pays / région",
+      "propertySize": "Superficie de la propriété",
+      "unit": "Unité",
+      "need": "Décrivez brièvement votre besoin",
+      "persona": "Vous êtes…",
+      "country": "Pays"
+    },
+    "units": {
+      "hectares": "Hectares",
+      "acres": "Acres"
+    },
+    "personaPlaceholder": "Choisissez une option",
+    "personas": {
+      "jobSeeker": "En recherche d’emploi",
+      "student": "Étudiant ou étudiante",
+      "careerChanger": "En reconversion professionnelle",
+      "institution": "Une institution"
+    },
+    "honeypot": "Laissez ce champ vide",
+    "consentBefore": "J’accepte que RFALA utilise ces informations pour répondre à ma demande, conformément à la ",
+    "consentLink": "politique de confidentialité",
+    "consentAfter": ".",
+    "errors": {
+      "required": "Ce champ est obligatoire.",
+      "email": "Saisissez une adresse e-mail valide.",
+      "tooLong": "Ce texte est trop long.",
+      "propertySize": "Indiquez une superficie supérieure à zéro.",
+      "consent": "Merci de cocher cette case pour continuer.",
+      "summary": "Merci de corriger les champs signalés.",
+      "submit": "Votre demande n’a pas pu être envoyée. Réessayez ou écrivez-nous à contact@rfala.com."
+    },
+    "submitting": "Envoi en cours…",
+    "water": {
+      "title": "Demander une analyse pilote",
+      "intro": "Présentez-nous votre propriété et ce que vous cherchez à savoir. Nous étudierons votre demande et vous répondrons par e-mail pour voir si une analyse pilote est adaptée.",
+      "submit": "Envoyer la demande",
+      "successTitle": "Merci, votre demande a bien été reçue.",
+      "successBody": "Nous l’étudierons et vous répondrons par e-mail."
+    },
+    "careerai": {
+      "title": "Rejoindre la liste d’accès anticipé",
+      "intro": "CareerAI est encore en développement. Inscrivez-vous et nous vous écrirons dès l’ouverture de l’accès anticipé.",
+      "submit": "M’inscrire",
+      "successTitle": "Votre inscription est confirmée.",
+      "successBody": "Nous vous écrirons dès l’ouverture de l’accès anticipé à CareerAI."
     }
   },
   "footer": {

@@ -7,7 +7,23 @@
     "institute": "Institute",
     "services": "Capabilities",
     "vision": "Vision",
-    "contact": "Contact"
+    "contact": "Contact",
+    "products": "Products",
+    "productsMenu": {
+      "groupNew": "Technology products",
+      "groupExisting": "Existing RFALA Products",
+      "viewAll": "View all products",
+      "water": {
+        "name": "Water Intelligence",
+        "description": "Satellite and AI groundwater screening for agriculture"
+      },
+      "careerai": {
+        "name": "CareerAI",
+        "description": "AI-powered job search assistant"
+      },
+      "existing": ["Xenova Studio", "Maroclist", "Islamic School Review", "RFALA Institute"],
+      "newTab": "opens in a new tab"
+    }
   },
   "hero": {
     "label": "Est. 2006 · Technology + AI + Innovation",
@@ -256,6 +272,201 @@
           "description": "Create products and experiences that support local and global communities."
         }
       ]
+    }
+  },
+  "products": {
+    "label": "Technology Products",
+    "titleBefore": "RFALA Technology",
+    "titleHighlight": "Products",
+    "titleAfter": "",
+    "subtitle": "Building practical technology solutions powered by AI, data, and innovation.",
+    "closing": "RFALA builds practical technology products that combine AI, data, automation, and domain-specific intelligence to solve real-world problems.",
+    "conceptPreview": "Concept preview",
+    "backToProducts": "All technology products",
+    "sections": {
+      "overview": "Overview",
+      "capabilities": "Planned capabilities",
+      "capabilitiesNote": "In development. The capabilities below are planned and not yet available.",
+      "audience": "Who it is for",
+      "workflow": "Planned workflow"
+    },
+    "index": {
+      "existingTitle": "Existing RFALA Products",
+      "existingDescription": "Platforms already running across the RFALA ecosystem."
+    },
+    "meta": {
+      "index": {
+        "title": "RFALA Technology Products | Water Intelligence and CareerAI",
+        "description": "Explore RFALA technology products in development: Water Intelligence for agricultural groundwater screening, and CareerAI, an AI job search assistant."
+      },
+      "water": {
+        "title": "RFALA Water Intelligence | Satellite and AI Groundwater Screening",
+        "description": "In development: a geospatial platform using satellite imagery, terrain data, and AI to help identify areas with potential groundwater resources before drilling."
+      },
+      "careerai": {
+        "title": "RFALA CareerAI | AI-Powered Job Search Assistant",
+        "description": "In development: CareerAI helps job seekers find relevant opportunities and prepare personalized applications and cover letters. Join the early access list."
+      }
+    },
+    "visuals": {
+      "candidateArea": "Candidate area",
+      "parcel": "Property boundary",
+      "drainage": "Drainage line",
+      "resume": "Resume",
+      "skills": "Skills",
+      "experience": "Experience",
+      "matches": "Ranked job matches",
+      "strong": "Strong match",
+      "good": "Good match",
+      "partial": "Partial match",
+      "roles": ["Data Analyst", "Operations Coordinator", "Project Assistant"]
+    },
+    "water": {
+      "name": "RFALA Water Intelligence",
+      "namePrefix": "RFALA Water",
+      "nameHighlight": "Intelligence",
+      "badge": "In development (pilot stage)",
+      "tagline": "Satellite & AI-Powered Water Intelligence for Agriculture",
+      "summary": "Combines satellite imagery, terrain analysis, and AI-assisted analysis to identify areas with potential groundwater resources and help reduce uncertainty before drilling.",
+      "description": [
+        "RFALA Water Intelligence is a geospatial intelligence platform designed to help farmers, agricultural investors, and landowners make better-informed decisions about groundwater exploration.",
+        "It combines satellite imagery, geographic data, environmental indicators, terrain analysis, and AI-assisted analysis to identify areas with potential groundwater resources, and to help users understand where further investigation may be appropriate before investing in costly drilling."
+      ],
+      "capabilities": [
+        "Satellite imagery analysis",
+        "GIS and geospatial intelligence",
+        "AI-assisted groundwater-potential analysis",
+        "Terrain and elevation analysis",
+        "Historical environmental data",
+        "Vegetation and moisture indicators",
+        "Farm and property mapping",
+        "Candidate-area prioritization",
+        "Interactive maps",
+        "Exportable analysis reports"
+      ],
+      "audience": [
+        "Farmers",
+        "Agricultural investors",
+        "Large farm owners",
+        "Landowners",
+        "Agricultural consultants",
+        "Engineering and environmental companies",
+        "Water-resource planning organizations"
+      ],
+      "noteTitle": "Screening tool, not a guarantee.",
+      "noteBody": "Results support groundwater exploration decisions and prioritize areas for further investigation. They do not guarantee that water is present or that a well will produce. Confirm findings with a field survey and a qualified professional before drilling.",
+      "primaryCta": "Request a Pilot Analysis",
+      "secondaryCta": "Explore Water Intelligence",
+      "exploreCta": "Explore Water Intelligence"
+    },
+    "careerai": {
+      "name": "RFALA CareerAI",
+      "namePrefix": "RFALA",
+      "nameHighlight": "CareerAI",
+      "badge": "Early access · In development",
+      "tagline": "Your AI-Powered Job Search Assistant",
+      "summary": "Designed to help job seekers find relevant opportunities and prepare personalized applications, including job-specific cover letters.",
+      "description": [
+        "CareerAI helps job seekers find relevant opportunities and prepare personalized applications using AI. Users upload a resume and create an AI-powered career profile.",
+        "The platform can analyze job descriptions, compare requirements with the candidate's experience, and help prepare personalized application materials, including job-specific cover letters."
+      ],
+      "workflow": [
+        "Upload resume",
+        "Create AI career profile",
+        "Find relevant jobs",
+        "Analyze requirements",
+        "Match skills",
+        "Prepare application",
+        "Generate job-specific cover letter",
+        "Track applications"
+      ],
+      "capabilities": [
+        "Resume upload and analysis",
+        "AI-powered candidate profile",
+        "Job matching",
+        "Job-description analysis",
+        "Skill matching",
+        "Match scoring and explanation",
+        "Personalized cover letters",
+        "Resume recommendations",
+        "Application tracking",
+        "Job-search dashboard",
+        "Application history",
+        "Interview preparation"
+      ],
+      "audience": [
+        "Job seekers",
+        "Recent graduates",
+        "Career changers",
+        "International professionals",
+        "Students",
+        "Universities",
+        "Workforce development organizations",
+        "Career centers"
+      ],
+      "noteTitle": "You stay in control.",
+      "noteBody": "CareerAI helps you find relevant opportunities, prepare personalized applications, and streamline the process. It does not apply to every job automatically. Where automated submission is supported, it follows the applicable platform's terms and requires your authorization. Outcomes such as interviews or offers are not guaranteed.",
+      "dataNoteTitle": "About your resume",
+      "dataNoteBefore": "Resumes contain personal data. Details on how resumes will be stored, used, and deleted will be published before launch. This early-access form does not ask for your resume. See our ",
+      "dataNoteLink": "Privacy Policy",
+      "dataNoteAfter": ".",
+      "primaryCta": "Try CareerAI",
+      "secondaryCta": "Join the Early Access List",
+      "exploreCta": "Explore CareerAI"
+    }
+  },
+  "forms": {
+    "requiredHint": "Fields marked * are required.",
+    "optional": "optional",
+    "fields": {
+      "name": "Full name",
+      "email": "Email address",
+      "organization": "Organization",
+      "region": "Country / region",
+      "propertySize": "Property size",
+      "unit": "Unit",
+      "need": "Briefly describe what you need",
+      "persona": "Who are you?",
+      "country": "Country"
+    },
+    "units": {
+      "hectares": "Hectares",
+      "acres": "Acres"
+    },
+    "personaPlaceholder": "Select one",
+    "personas": {
+      "jobSeeker": "Job seeker",
+      "student": "Student",
+      "careerChanger": "Career changer",
+      "institution": "Institution"
+    },
+    "honeypot": "Leave this field empty",
+    "consentBefore": "I agree that RFALA may use this information to respond to my request, as described in the ",
+    "consentLink": "Privacy Policy",
+    "consentAfter": ".",
+    "errors": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "tooLong": "This text is too long.",
+      "propertySize": "Enter a property size greater than zero.",
+      "consent": "Please agree to continue.",
+      "summary": "Please correct the highlighted fields.",
+      "submit": "Your request could not be sent. Please try again, or email us at contact@rfala.com."
+    },
+    "submitting": "Sending…",
+    "water": {
+      "title": "Request a Pilot Analysis",
+      "intro": "Tell us about your property and what you want to learn. We will review your request and reply by email to discuss whether a pilot analysis is a good fit.",
+      "submit": "Send request",
+      "successTitle": "Thank you, your request was received.",
+      "successBody": "We will review it and reply by email."
+    },
+    "careerai": {
+      "title": "Join the Early Access List",
+      "intro": "CareerAI is still in development. Join the list and we will email you when early access opens.",
+      "submit": "Join the list",
+      "successTitle": "You are on the list.",
+      "successBody": "We will email you when CareerAI early access opens."
     }
   },
   "footer": {
