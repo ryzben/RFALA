@@ -73,27 +73,15 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.rfala.com/products/water-intelligence</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.rfala.com/products/water-intelligence"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rfala.com/fr/products/water-intelligence"/>
+    <loc>https://www.rfala.com/products/wateragent</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rfala.com/products/wateragent"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rfala.com/fr/products/wateragent"/>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.rfala.com/fr/products/water-intelligence</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.rfala.com/products/water-intelligence"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rfala.com/fr/products/water-intelligence"/>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.rfala.com/products/careerai</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.rfala.com/products/careerai"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rfala.com/fr/products/careerai"/>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.rfala.com/fr/products/careerai</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.rfala.com/products/careerai"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rfala.com/fr/products/careerai"/>
+    <loc>https://www.rfala.com/fr/products/wateragent</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.rfala.com/products/wateragent"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.rfala.com/fr/products/wateragent"/>
     <priority>0.7</priority>
   </url>
   <url>

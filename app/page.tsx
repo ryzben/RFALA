@@ -5,14 +5,11 @@ import type { ComponentType, ReactNode } from "react";
 import {
   ArrowRight,
   BrainCircuit,
-  Building2,
   Code2,
   Compass,
   Database,
   ExternalLink,
-  GraduationCap,
   Network,
-  Palette,
   Rocket,
   SearchCheck,
   UsersRound
@@ -21,34 +18,33 @@ import { LanguageSwitcher } from "./components/LanguageSwitcher";
 import { MobileMenu } from "./components/MobileMenu";
 import { NavDropdown } from "./components/NavDropdown";
 import { AdvisorySection } from "./components/AdvisorySection";
-import { ProductsShowcase } from "./components/ProductsShowcase";
-import { capabilitiesMobileItem, capabilitiesNav, productsMobileItem, productsNav } from "./components/siteNav";
+import { whatsappHref } from "./lib/contact";
+import { EcosystemWordmark, ProductsShowcase, StatusBadgeLight, ecosystemFeatured, ecosystemGrid } from "./components/ProductsShowcase";
+import { capabilitiesMobileItem, capabilitiesNav, productsMobileItem, productsNav, wateragentUrl } from "./components/siteNav";
 import enMessages from "../messages/en.json";
 
 type IconType = ComponentType<{ className?: string }>;
 type Messages = typeof enMessages;
 type Locale = "en" | "fr";
 
-const ecosystem = [
+/** Index-aligned with `ecosystem.items` in the messages; keep both in the same order. */
+const ecosystem: { name: string; href: string; logo?: string; logoClassName?: string; description: string }[] = [
   {
-    name: "Xenova Studio",
-    href: "https://xenovastudio.com",
-    icon: Palette,
-    logo: "/assets/logos/xenova-studio.svg",
+    // No WaterAgent logo exists yet, so the logo tile shows the name as text (EcosystemWordmark).
+    name: "WaterAgent",
+    href: wateragentUrl,
     logoClassName: "bg-ink",
-    description: "Digital marketing, branding, web development, lead generation, and creative solutions."
+    description: "Shows what groundwater evidence exists for a location in Morocco, what is missing, and what to investigate next. Pilot stage."
   },
   {
     name: "Maroclist",
     href: "https://maroclist.com",
-    icon: Building2,
     logo: "/assets/logos/maroclist-logo2.jpg",
     description: "Modern platform for listings, rentals, and marketplace services focused on Morocco."
   },
   {
     name: "Islamic School Review (ISR)",
     href: "https://islamicschoolreview.com",
-    icon: SearchCheck,
     logo: "/assets/logos/islamic-school-review.svg",
     logoClassName: "bg-white",
     description: "Directory and review platform helping Muslim families discover Islamic schools across America."
@@ -56,10 +52,16 @@ const ecosystem = [
   {
     name: "RFALA Institute",
     href: "/institute",
-    icon: GraduationCap,
     logo: "/assets/logos/rfala-institute.svg",
     logoClassName: "bg-ink",
     description: "Educational branch focused on AI, technology, mentorship, and future-ready learning."
+  },
+  {
+    name: "Xenova Studio",
+    href: "https://xenovastudio.com",
+    logo: "/assets/logos/xenova-studio.svg",
+    logoClassName: "bg-ink",
+    description: "Digital marketing, branding, web development, lead generation, and creative solutions."
   }
 ];
 
@@ -150,7 +152,8 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
   const localizedEcosystem = ecosystem.map((item, index) => ({
     ...item,
     name: t.ecosystem.items[index]?.name ?? item.name,
-    description: t.ecosystem.items[index]?.description ?? item.description
+    description: t.ecosystem.items[index]?.description ?? item.description,
+    badge: (t.ecosystem.items[index] as { badge?: string } | undefined)?.badge
   }));
   const localizedServices = services.map((item, index) => ({
     ...item,
@@ -338,21 +341,17 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
       <section id="projects" className="bg-slate-100 py-24">
         <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
           <SectionIntro label={t.ecosystem.label} title={t.ecosystem.title} text={t.ecosystem.description} />
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className={ecosystemGrid}>
             {localizedEcosystem.map((item, index) => {
-              const Icon = item.icon;
               return (
-                <motion.article key={item.name} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5, delay: index * 0.08 }} className="group flex min-h-[310px] flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-emerald/40 hover:shadow-soft">
-                  {item.logo ? (
-                    <div className={`mb-6 flex h-28 items-center justify-center overflow-hidden rounded-lg border border-slate-200 p-4 shadow-sm ${item.logoClassName ?? "bg-white"}`}>
-                      <img src={item.logo} alt={`${item.name} logo`} className="max-h-20 max-w-full object-contain" />
-                    </div>
-                  ) : (
-                    <div className="mb-6 grid size-13 place-items-center rounded-lg bg-ink text-mint transition group-hover:bg-emerald group-hover:text-white">
-                      <Icon className="size-7" />
-                    </div>
-                  )}
-                  <h3 className="text-xl font-black text-ink">{item.name}</h3>
+                <motion.article key={item.name} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5, delay: index * 0.08 }} className={`${index === 0 ? ecosystemFeatured : ""} group flex min-h-[310px] flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-emerald/40 hover:shadow-soft`}>
+                  <div className={`mb-6 flex h-28 items-center justify-center overflow-hidden rounded-lg border border-slate-200 p-4 shadow-sm ${item.logoClassName ?? "bg-white"}`}>
+                    {item.logo ? <img src={item.logo} alt={`${item.name} logo`} className="max-h-20 max-w-full object-contain" /> : <EcosystemWordmark name={item.name} />}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <h3 className="text-xl font-black text-ink">{item.name}</h3>
+                    {item.badge ? <StatusBadgeLight>{item.badge}</StatusBadgeLight> : null}
+                  </div>
                   <p className="mt-3 flex-1 text-slate-600">{item.description}</p>
                   <a href={item.href.startsWith("/") ? route(item.href) : item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noopener" : undefined} className="mt-6 inline-flex items-center gap-2 font-extrabold text-emerald">
                     {t.ecosystem.learnMore} {item.href.startsWith("http") ? <ExternalLink className="size-4" /> : <ArrowRight className="size-4" />}
@@ -626,6 +625,10 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
             <div className="grid gap-2 text-slate-400">
               <a href="mailto:contact@rfala.com" className="hover:text-mint">contact@rfala.com</a>
               <a href="tel:+19175822768" className="hover:text-mint">{t.contact.phone}</a>
+              <a href={whatsappHref(t.contact.whatsappMessage)} target="_blank" rel="noopener noreferrer" className="rounded-sm hover:text-mint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint">
+                {t.contact.whatsappLabel}
+                <span className="sr-only"> ({t.nav.productsMenu.newTab})</span>
+              </a>
               <a href="https://rfala.com" target="_blank" rel="noopener" className="hover:text-mint">rfala.com</a>
               <p className="pt-4 text-sm">{t.footer.copyright}</p>
             </div>

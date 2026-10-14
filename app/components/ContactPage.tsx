@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, BrainCircuit, Globe2, GraduationCap, Mail, MessageCircle, Network, Phone, Sparkles } from "lucide-react";
+import { ArrowRight, BrainCircuit, ExternalLink, Globe2, GraduationCap, Mail, MessageCircle, Network, Phone, Sparkles } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { NavDropdown } from "./NavDropdown";
 import { capabilitiesMobileItem, capabilitiesNav, productsMobileItem, productsNav } from "./siteNav";
 import { Footer } from "./ContentPage";
+import { whatsappHref } from "../lib/contact";
 import enMessages from "../../messages/en.json";
 
 type Messages = typeof enMessages;
@@ -19,7 +20,7 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
   const contactHref = `mailto:${t.contact.email}?subject=RFALA%20Project%20Inquiry`;
   const partnershipHref = `mailto:${t.contact.email}?subject=RFALA%20Partnership%20Inquiry`;
   const phoneHref = "tel:+19175822768";
-  const whatsappHref = "https://wa.me/19175822768";
+  const whatsappLink = whatsappHref(t.contact.whatsappMessage);
   const products = productsNav(t, locale);
   const capabilities = capabilitiesNav(t, locale);
   const navItems = [
@@ -94,6 +95,17 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
                   <a href={contactHref} className="mt-2 block text-2xl font-black text-white transition hover:text-mint">{t.contact.email}</a>
                   <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.22em] text-gold">{t.contact.phoneLabel}</p>
                   <a href={phoneHref} className="mt-2 block text-2xl font-black text-white transition hover:text-gold">{t.contact.phone}</a>
+                  <p className="mt-5 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.contact.whatsapp}</p>
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-2 rounded-md text-2xl font-black text-white transition hover:text-mint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  >
+                    {t.contact.whatsappLabel}
+                    <ExternalLink aria-hidden="true" className="size-5 text-white/60" />
+                    <span className="sr-only">({t.nav.productsMenu.newTab})</span>
+                  </a>
                 </div>
                 <div className="grid size-12 place-items-center rounded-xl bg-gradient-to-br from-emerald to-sky text-ink">
                   <Globe2 className="size-6" />
@@ -102,10 +114,10 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
 
               <div className="mb-5 flex gap-3">
                 <a
-                  href={whatsappHref}
+                  href={whatsappLink}
                   target="_blank"
-                  rel="noopener"
-                  aria-label={t.contact.whatsapp}
+                  rel="noopener noreferrer"
+                  aria-label={`${t.contact.whatsappLabel} (${t.nav.productsMenu.newTab})`}
                   className="grid size-14 place-items-center rounded-full bg-[#4fce5d] text-white shadow-[0_12px_30px_rgba(79,206,93,0.32)] transition hover:-translate-y-1 hover:scale-105"
                 >
                   <MessageCircle className="size-7" />

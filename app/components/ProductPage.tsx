@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CircleDashed, ExternalLink, ShieldAlert, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ArrowRight, CircleCheck, ExternalLink, ShieldAlert } from "lucide-react";
 import { Footer, Header, ecosystemAssets } from "./ContentPage";
 import { ProductInterestForm } from "./ProductInterestForm";
-import { DotGrid, ProductVisual, ProductsShowcase, StatusBadge, gradientText, primaryButton, secondaryButton } from "./ProductsShowcase";
-import { advisoryPath, localizedPath } from "./siteNav";
+import { DotGrid, EcosystemWordmark, ExternalButton, ProductVisual, ProductsShowcase, StatusBadge, gradientText, primaryButton, secondaryButton } from "./ProductsShowcase";
+import { advisoryPath, localizedPath, productExternalLinks } from "./siteNav";
 import type { Locale, Messages, ProductKey } from "./siteNav";
 
-const formAnchor: Record<ProductKey, string> = { water: "pilot-request", careerai: "early-access" };
+const formAnchor: Record<ProductKey, string> = { water: "pilot-request" };
 
 function SectionHeading({ label, children }: { label?: string; children: string }) {
   return (
@@ -23,7 +23,7 @@ export function ProductPage({ dictionary, locale, product }: { dictionary: Messa
   const copy = p[product];
   const form = t.forms[product];
   const anchor = formAnchor[product];
-  const NoteIcon = product === "water" ? ShieldAlert : ShieldCheck;
+  const external = productExternalLinks[product];
 
   return (
     <main lang={locale} className="min-h-screen bg-ink text-white">
@@ -45,20 +45,19 @@ export function ProductPage({ dictionary, locale, product }: { dictionary: Messa
               <StatusBadge>{copy.badge}</StatusBadge>
             </div>
             <h1 className="mt-6 text-[clamp(2.6rem,7vw,4.75rem)] font-black leading-[0.95] tracking-[-0.04em]">
-              {copy.namePrefix} <span className={`${gradientText} pb-1`}>{copy.nameHighlight}</span>
+              {copy.namePrefix ? `${copy.namePrefix} ` : null}<span className={`${gradientText} pb-1`}>{copy.nameHighlight}</span>
             </h1>
             <p className="mt-6 max-w-2xl text-xl font-bold leading-8 text-slate-200 sm:text-2xl sm:leading-9">{copy.tagline}</p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <a href={`#${anchor}`} className={primaryButton}>
+              <ExternalButton href={external.primary} className={primaryButton} newTab={t.nav.productsMenu.newTab}>
                 {copy.primaryCta}
-                <ArrowRight className="size-5" />
-              </a>
-              <a href={product === "water" ? "#overview" : `#${anchor}`} className={secondaryButton}>
+              </ExternalButton>
+              <ExternalButton href={external.secondary} className={secondaryButton} newTab={t.nav.productsMenu.newTab}>
                 {copy.secondaryCta}
-              </a>
+              </ExternalButton>
             </div>
           </div>
-          <ProductVisual product={product} dictionary={t} className="shadow-[0_24px_90px_rgba(0,0,0,0.45)]" />
+          <ProductVisual dictionary={t} className="shadow-[0_24px_90px_rgba(0,0,0,0.45)]" />
         </div>
       </section>
 
@@ -72,38 +71,36 @@ export function ProductPage({ dictionary, locale, product }: { dictionary: Messa
             </div>
           </div>
           <aside aria-label={copy.noteTitle} className="rounded-xl border border-gold/40 bg-gold/10 p-6">
-            <NoteIcon className="size-7 text-gold" />
+            <ShieldAlert className="size-7 text-gold" />
             <p className="mt-4 text-lg font-black text-white">{copy.noteTitle}</p>
             <p className="mt-2 leading-7 text-slate-200">{copy.noteBody}</p>
           </aside>
         </div>
 
-        {"workflow" in copy ? (
-          <div className="mx-auto mt-16 w-[min(1180px,calc(100%-32px))]">
-            <SectionHeading>{p.sections.workflow}</SectionHeading>
-            <ol className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {copy.workflow.map((step, index) => (
-                <li key={step} className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.06] p-4 transition hover:border-mint/40">
-                  <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-emerald to-sky text-xs font-black text-ink">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-sm font-extrabold text-white">{step}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        ) : null}
+        <div className="mx-auto mt-16 w-[min(1180px,calc(100%-32px))]">
+          <SectionHeading>{copy.workflowTitle}</SectionHeading>
+          <ol className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {copy.workflow.map((step, index) => (
+              <li key={step} className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.06] p-4 transition hover:border-mint/40">
+                <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-emerald to-sky text-xs font-black text-ink">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="text-sm font-extrabold text-white">{step}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
 
-      {/* Planned capabilities */}
+      {/* What it covers today */}
       <section className="relative isolate border-t border-white/10 bg-midnight py-20">
         <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
-          <SectionHeading>{p.sections.capabilities}</SectionHeading>
-          <p className="mt-4 max-w-3xl text-base font-bold text-mint">{p.sections.capabilitiesNote}</p>
+          <SectionHeading>{copy.capabilitiesTitle}</SectionHeading>
+          <p className="mt-4 max-w-3xl text-base font-bold text-mint">{copy.capabilitiesNote}</p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {copy.capabilities.map((capability) => (
               <li key={capability} className="flex items-start gap-3 rounded-lg border border-white/10 bg-white/[0.06] p-4 transition hover:border-mint/40 hover:bg-white/[0.09]">
-                <CircleDashed className="mt-0.5 size-5 shrink-0 text-mint" />
+                <CircleCheck className="mt-0.5 size-5 shrink-0 text-mint" />
                 <span className="font-bold leading-6 text-slate-100">{capability}</span>
               </li>
             ))}
@@ -140,16 +137,6 @@ export function ProductPage({ dictionary, locale, product }: { dictionary: Messa
             <StatusBadge>{copy.badge}</StatusBadge>
             <h2 id={`${anchor}-title`} className="mt-5 text-3xl font-black leading-tight tracking-tight sm:text-4xl">{form.title}</h2>
             <p className="mt-4 text-lg leading-8 text-slate-300">{form.intro}</p>
-            {"dataNoteTitle" in copy ? (
-              <div className="mt-6 rounded-xl border border-mint/20 bg-mint/10 p-5">
-                <p className="font-black text-white">{copy.dataNoteTitle}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-200">
-                  {copy.dataNoteBefore}
-                  <a href="/privacy" className="font-extrabold text-mint underline underline-offset-2 hover:text-white">{copy.dataNoteLink}</a>
-                  {copy.dataNoteAfter}
-                </p>
-              </div>
-            ) : null}
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 shadow-[0_24px_90px_rgba(0,0,0,0.35)] sm:p-8">
             <ProductInterestForm kind={product} dictionary={t} locale={locale} />
@@ -177,11 +164,13 @@ export function ProductsIndexPage({ dictionary, locale }: { dictionary: Messages
           <ul className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {t.ecosystem.items.map((item, index) => {
               const asset = ecosystemAssets[index];
+              // Products with their own card in the showcase above are not repeated here.
+              if (asset.showcased) return null;
               const external = asset.href.startsWith("http");
               return (
                 <li key={item.name} className="flex flex-col rounded-lg border border-white/10 bg-white/[0.06] p-5 transition hover:-translate-y-1 hover:border-mint/40 hover:bg-white/[0.1]">
                   <div className={`mb-5 flex h-20 items-center justify-center overflow-hidden rounded-lg border border-slate-200 p-3 ${asset.logoClassName}`}>
-                    <img src={asset.logo} alt={`${item.name} logo`} className="max-h-14 max-w-full object-contain" />
+                    {asset.logo ? <img src={asset.logo} alt={`${item.name} logo`} className="max-h-14 max-w-full object-contain" /> : <EcosystemWordmark name={item.name} />}
                   </div>
                   <h3 className="text-lg font-black text-white">{item.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-6 text-slate-300">{item.description}</p>

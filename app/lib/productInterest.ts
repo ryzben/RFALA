@@ -1,16 +1,14 @@
 /**
  * Shared field rules for the site's inquiry forms:
- * - "water": Water Intelligence pilot analysis request
- * - "careerai": CareerAI early-access list
+ * - "water": WaterAgent area or site inquiry
  * - "advisory": Technology & Product Advisory discovery session request
  * Used by the client form (instant feedback) and the API route (authoritative check).
  */
 
-export type ProductKey = "water" | "careerai";
+export type ProductKey = "water";
 export type FormKind = ProductKey | "advisory";
 
-export const formKinds: FormKind[] = ["water", "careerai", "advisory"];
-export const personas = ["jobSeeker", "student", "careerChanger", "institution"] as const;
+export const formKinds: FormKind[] = ["water", "advisory"];
 export const propertyUnits = ["hectares", "acres"] as const;
 export const projectStages = ["idea", "inDevelopment", "live"] as const;
 
@@ -22,8 +20,6 @@ export type FieldName =
   | "propertySize"
   | "propertyUnit"
   | "need"
-  | "persona"
-  | "country"
   | "company"
   | "project"
   | "stage"
@@ -36,13 +32,11 @@ export type FormValues = Partial<Record<Exclude<FieldName, "consent">, string>> 
 /** Fields in display order, which is also the order used to focus the first invalid field. */
 export const formFields: Record<FormKind, FieldName[]> = {
   water: ["name", "email", "organization", "region", "propertySize", "propertyUnit", "need", "consent"],
-  careerai: ["name", "email", "persona", "country", "consent"],
   advisory: ["name", "email", "company", "stage", "project", "consent"]
 };
 
 const requiredFields: Record<FormKind, FieldName[]> = {
   water: ["name", "email", "region", "propertySize", "propertyUnit", "need"],
-  careerai: ["name", "email", "persona"],
   advisory: ["name", "email", "project", "stage"]
 };
 
@@ -52,7 +46,6 @@ export const maxLengths: Partial<Record<FieldName, number>> = {
   organization: 160,
   company: 160,
   region: 120,
-  country: 120,
   propertySize: 16,
   need: 2000,
   project: 2000
@@ -60,7 +53,6 @@ export const maxLengths: Partial<Record<FieldName, number>> = {
 
 const allowedValues: Partial<Record<FieldName, readonly string[]>> = {
   propertyUnit: propertyUnits,
-  persona: personas,
   stage: projectStages
 };
 

@@ -1,4 +1,15 @@
 {
+  "_needsNativeReview": [
+    "ecosystem.items[0] (WaterAgent: description, badge)",
+    "contact.whatsappLabel",
+    "contact.whatsappMessage",
+    "products.illustration",
+    "products.meta.index",
+    "products.meta.water",
+    "products.visuals.evidenceTitle, available, missing, evidence, nextStep, nextStepText, evidenceAlt",
+    "products.water (all strings)",
+    "forms.water.title, forms.water.intro"
+  ],
   "locale": "fr",
   "nav": {
     "home": "Accueil",
@@ -10,18 +21,9 @@
     "contact": "Contact",
     "products": "Produits",
     "productsMenu": {
-      "groupNew": "Produits technologiques",
       "groupExisting": "Produits RFALA existants",
       "viewAll": "Voir tous les produits",
-      "water": {
-        "name": "Water Intelligence",
-        "description": "Présélection des eaux souterraines par satellite et IA"
-      },
-      "careerai": {
-        "name": "CareerAI",
-        "description": "Assistant de recherche d’emploi propulsé par l’IA"
-      },
-      "existing": ["Xenova Studio", "Maroclist", "Islamic School Review", "RFALA Institute"],
+      "existing": ["WaterAgent", "Maroclist", "Islamic School Review", "RFALA Institute", "Xenova Studio"],
       "newTab": "s’ouvre dans un nouvel onglet"
     },
     "capabilitiesMenu": {
@@ -64,8 +66,9 @@
     "learnMore": "En savoir plus",
     "items": [
       {
-        "name": "Xenova Studio",
-        "description": "Marketing digital, branding, développement web, génération de prospects et solutions créatives."
+        "name": "WaterAgent",
+        "badge": "Pilote",
+        "description": "Indique quelles données sur les eaux souterraines existent pour un lieu au Maroc, ce qui manque et ce qu’il faut vérifier ensuite. Phase pilote."
       },
       {
         "name": "Maroclist",
@@ -78,6 +81,10 @@
       {
         "name": "RFALA Institute",
         "description": "Branche éducative axée sur l’IA, la technologie, le mentorat et les compétences d’avenir."
+      },
+      {
+        "name": "Xenova Studio",
+        "description": "Marketing digital, branding, développement web, génération de prospects et solutions créatives."
       }
     ]
   },
@@ -178,6 +185,8 @@
     "phoneLabel": "Telephone",
     "phone": "(917) 582-2768",
     "whatsapp": "WhatsApp",
+    "whatsappLabel": "Discuter sur WhatsApp",
+    "whatsappMessage": "Bonjour RFALA, je souhaite vous contacter.",
     "call": "Appeler",
     "response": "Nous étudions chaque message et revenons avec la meilleure prochaine étape pour votre projet, votre marque ou votre initiative d’apprentissage.",
     "cards": [
@@ -293,143 +302,83 @@
     "titleAfter": "RFALA",
     "subtitle": "Des solutions technologiques concrètes, portées par l’IA, la donnée et l’innovation.",
     "closing": "RFALA conçoit des produits technologiques concrets qui associent IA, données, automatisation et expertise métier pour résoudre des problèmes bien réels.",
-    "conceptPreview": "Aperçu conceptuel",
+    "illustration": "Illustration",
     "backToProducts": "Tous les produits technologiques",
     "sections": {
       "overview": "Présentation",
-      "capabilities": "Fonctionnalités prévues",
-      "capabilitiesNote": "En cours de développement : les fonctionnalités ci-dessous sont prévues et ne sont pas encore disponibles.",
-      "audience": "À qui s’adresse-t-il ?",
-      "workflow": "Parcours prévu"
+      "audience": "À qui s’adresse-t-il ?"
     },
     "index": {
       "existingTitle": "Produits RFALA existants",
       "existingDescription": "Les plateformes déjà en activité au sein de l’écosystème RFALA."
     },
-    "inDevelopment": {
-      "label": "En développement",
-      "title": "Bientôt chez RFALA",
-      "description": "Deux produits technologiques sont en cours de développement au sein de l’écosystème RFALA. Ils ne sont pas encore disponibles."
-    },
     "meta": {
       "index": {
-        "title": "Produits technologiques RFALA | Water Intelligence et CareerAI",
-        "description": "Découvrez les produits technologiques RFALA en développement : Water Intelligence pour la recherche d’eau agricole et CareerAI, assistant IA de recherche d’emploi."
+        "title": "Produits technologiques RFALA | WaterAgent",
+        "description": "Découvrez les produits technologiques RFALA, dont WaterAgent, un outil pilote de données sur les eaux souterraines pour des lieux au Maroc."
       },
       "water": {
-        "title": "RFALA Water Intelligence | Présélection des eaux souterraines par satellite et IA",
-        "description": "En développement : une plateforme géospatiale qui combine imagerie satellite, relief et IA pour repérer les zones à potentiel en eaux souterraines avant forage."
-      },
-      "careerai": {
-        "title": "RFALA CareerAI | Assistant de recherche d’emploi propulsé par l’IA",
-        "description": "En développement : CareerAI aide les candidats à trouver des offres pertinentes et à préparer candidatures et lettres de motivation. Accès anticipé ouvert."
+        "title": "WaterAgent par RFALA | Rapports de données sur les eaux souterraines au Maroc",
+        "description": "WaterAgent indique quelles données sur les eaux souterraines existent pour un lieu au Maroc, ce qui manque et ce qu’il faut vérifier ensuite, dans un rapport préliminaire imprimable. Phase pilote. Il ne prédit pas la présence d’eau souterraine."
       }
     },
     "visuals": {
-      "candidateArea": "Zone candidate",
-      "parcel": "Limite de propriété",
-      "drainage": "Axe de drainage",
-      "resume": "CV",
-      "skills": "Compétences",
-      "experience": "Expérience",
-      "matches": "Offres classées par pertinence",
-      "strong": "Très pertinente",
-      "good": "Pertinente",
-      "partial": "Partiellement pertinente",
-      "roles": ["Analyste de données", "Coordinateur des opérations", "Assistant de projet"]
+      "evidenceTitle": "Synthèse des données",
+      "available": "Disponible",
+      "missing": "Manquant",
+      "evidence": [
+        { "name": "Relief", "available": true },
+        { "name": "Climat et précipitations", "available": true },
+        { "name": "Géologie et aquifère", "available": true },
+        { "name": "Tendance régionale du stock d’eau", "available": false },
+        { "name": "Puits et points de suivi", "available": false }
+      ],
+      "nextStep": "Étape suivante",
+      "nextStepText": "Consulter un hydrogéologue local qualifié",
+      "evidenceAlt": "Illustration d’une synthèse des données WaterAgent, inspirée du rapport d’exemple : relief, climat et précipitations, géologie et aquifère sont disponibles ; la tendance régionale du stock d’eau ainsi que les puits et points de suivi sont manquants. Étape suivante : consulter un hydrogéologue local qualifié."
     },
     "water": {
-      "name": "RFALA Water Intelligence",
-      "namePrefix": "RFALA Water",
-      "nameHighlight": "Intelligence",
-      "badge": "En développement · phase pilote",
-      "tagline": "L’imagerie satellite et l’IA au service de l’eau agricole",
-      "summary": "Associe imagerie satellite, analyse du relief et analyse assistée par IA pour repérer les zones à potentiel en eaux souterraines et réduire l’incertitude avant de forer.",
+      "name": "WaterAgent",
+      "namePrefix": "",
+      "nameHighlight": "WaterAgent",
+      "badge": "Pilote en ligne · une zone test",
+      "tagline": "Des rapports de données sur les eaux souterraines pour des lieux au Maroc",
+      "summary": "Choisissez un lieu au Maroc : WaterAgent indique quelles données existent pour ce lieu (relief, précipitations, géologie régionale…), ce qui manque et ce qu’il faut vérifier ensuite, dans un rapport préliminaire imprimable. Il ne prédit pas la présence d’eau souterraine. Phase pilote, sur une seule zone test.",
       "description": [
-        "RFALA Water Intelligence est une plateforme d’intelligence géospatiale conçue pour aider les agriculteurs, les investisseurs agricoles et les propriétaires fonciers à prendre des décisions mieux éclairées en matière de recherche d’eau souterraine.",
-        "Elle croise imagerie satellite, données géographiques, indicateurs environnementaux, analyse du relief et analyse assistée par IA pour identifier les zones présentant un potentiel en eaux souterraines, et pour aider à déterminer où des investigations complémentaires se justifient avant d’engager un forage coûteux."
+        "WaterAgent est une application web d’aide à la décision pour les questions d’eau souterraine au Maroc. Vous choisissez un lieu, et l’outil indique quelles données sont disponibles pour ce point : relief (altitude et pente), climat et précipitations, et contexte géologique et aquifère régional.",
+        "Il indique tout aussi clairement ce qui manque, par exemple les données sur les puits voisins, et liste les vérifications à mener ensuite, comme consulter un hydrogéologue local qualifié ou demander les données existantes à l’Agence du bassin hydraulique (ABH). Le résultat est un rapport préliminaire imprimable.",
+        "WaterAgent est en phase pilote. Il couvre actuellement une seule zone test, Oulad Teima au Maroc, et ses couches de données n’ont pas encore été revues par un hydrogéologue."
       ],
+      "workflowTitle": "Comment ça marche",
+      "workflow": [
+        "Choisir un lieu dans la zone pilote",
+        "Voir les données disponibles et celles qui manquent",
+        "Consulter les étapes suivantes recommandées",
+        "Imprimer le rapport préliminaire"
+      ],
+      "capabilitiesTitle": "Ce que couvre un rapport aujourd’hui",
+      "capabilitiesNote": "Phase pilote : une zone test (Oulad Teima, Maroc). Les couches de données n’ont pas encore été revues par un hydrogéologue.",
       "capabilities": [
-        "Analyse d’imagerie satellite",
-        "SIG et intelligence géospatiale",
-        "Analyse du potentiel en eaux souterraines assistée par IA",
-        "Analyse du relief et de l’altitude",
-        "Données environnementales historiques",
-        "Indicateurs de végétation et d’humidité",
-        "Cartographie des exploitations et des parcelles",
-        "Priorisation des zones candidates",
-        "Cartes interactives",
-        "Rapports d’analyse exportables"
+        "Relief : altitude et pente",
+        "Climat et précipitations",
+        "Contexte géologique et aquifère régional",
+        "Chaque donnée marquée comme disponible ou manquante",
+        "Incertitudes et limites",
+        "Étapes d’investigation recommandées",
+        "Rapport préliminaire imprimable"
       ],
       "audience": [
         "Agriculteurs",
-        "Investisseurs agricoles",
-        "Grands exploitants agricoles",
         "Propriétaires fonciers",
         "Conseillers agricoles",
         "Bureaux d’études en ingénierie et en environnement",
         "Organismes de planification des ressources en eau"
       ],
-      "noteTitle": "Un outil de présélection, pas une garantie.",
-      "noteBody": "Les résultats éclairent les décisions de recherche d’eau souterraine et permettent de prioriser les zones à investiguer. Ils ne garantissent ni la présence d’eau, ni le débit d’un futur puits. Faites confirmer les résultats par une étude de terrain et un professionnel qualifié avant tout forage.",
-      "primaryCta": "Demander une analyse pilote",
-      "secondaryCta": "Découvrir Water Intelligence",
-      "exploreCta": "Découvrir Water Intelligence"
-    },
-    "careerai": {
-      "name": "RFALA CareerAI",
-      "namePrefix": "RFALA",
-      "nameHighlight": "CareerAI",
-      "badge": "Accès anticipé · En développement",
-      "tagline": "Votre assistant de recherche d’emploi propulsé par l’IA",
-      "summary": "Conçu pour aider les candidats à trouver des offres pertinentes et à préparer des candidatures personnalisées, lettres de motivation ciblées comprises.",
-      "description": [
-        "CareerAI aide les candidats à trouver des offres pertinentes et à préparer des candidatures personnalisées grâce à l’IA. Chacun importe son CV et crée un profil de carrière enrichi par l’IA.",
-        "La plateforme peut analyser les offres d’emploi, comparer leurs exigences au parcours du candidat et l’aider à préparer des documents de candidature sur mesure, dont des lettres de motivation adaptées à chaque poste."
-      ],
-      "workflow": [
-        "Importer son CV",
-        "Créer son profil de carrière IA",
-        "Trouver des offres pertinentes",
-        "Analyser les exigences",
-        "Faire correspondre les compétences",
-        "Préparer la candidature",
-        "Générer une lettre de motivation ciblée",
-        "Suivre ses candidatures"
-      ],
-      "capabilities": [
-        "Import et analyse de CV",
-        "Profil candidat enrichi par l’IA",
-        "Mise en relation avec des offres",
-        "Analyse des offres d’emploi",
-        "Correspondance des compétences",
-        "Score de correspondance expliqué",
-        "Lettres de motivation personnalisées",
-        "Recommandations pour améliorer le CV",
-        "Suivi des candidatures",
-        "Tableau de bord de recherche d’emploi",
-        "Historique des candidatures",
-        "Préparation aux entretiens"
-      ],
-      "audience": [
-        "Personnes en recherche d’emploi",
-        "Jeunes diplômés",
-        "Personnes en reconversion",
-        "Professionnels internationaux",
-        "Étudiants",
-        "Universités",
-        "Organismes d’insertion et de développement de l’emploi",
-        "Services d’orientation et centres carrière"
-      ],
-      "noteTitle": "Vous gardez le contrôle.",
-      "noteBody": "CareerAI vous aide à repérer les offres pertinentes, à préparer des candidatures personnalisées et à simplifier vos démarches. Il ne postule pas automatiquement à toutes les offres. Lorsque l’envoi automatisé est possible, il respecte les conditions de la plateforme concernée et nécessite votre autorisation. Les résultats, comme un entretien ou une offre d’emploi, ne sont pas garantis.",
-      "dataNoteTitle": "À propos de votre CV",
-      "dataNoteBefore": "Un CV contient des données personnelles. Les modalités de conservation, d’utilisation et de suppression des CV seront publiées avant le lancement. Ce formulaire d’accès anticipé ne vous demande pas votre CV. Consultez notre ",
-      "dataNoteLink": "politique de confidentialité",
-      "dataNoteAfter": ".",
-      "primaryCta": "Essayer CareerAI",
-      "secondaryCta": "Rejoindre la liste d’accès anticipé",
-      "exploreCta": "Découvrir CareerAI"
+      "noteTitle": "Une aide à la décision, pas une prédiction.",
+      "noteBody": "WaterAgent ne prédit ni la présence d’eau souterraine, ni sa profondeur, ni son volume, et ne remplace pas une étude hydrogéologique menée par un professionnel qualifié. Servez-vous du rapport pour préparer cette étude, pas pour décider où forer.",
+      "primaryCta": "Ouvrir WaterAgent",
+      "secondaryCta": "Voir un rapport d’exemple",
+      "exploreCta": "À propos de WaterAgent"
     }
   },
   "advisory": {
@@ -504,8 +453,6 @@
       "propertySize": "Superficie de la propriété",
       "unit": "Unité",
       "need": "Décrivez brièvement votre besoin",
-      "persona": "Vous êtes…",
-      "country": "Pays",
       "company": "Entreprise",
       "project": "Décrivez brièvement votre projet ou votre idée",
       "stage": "Où en est le projet ?"
@@ -513,13 +460,6 @@
     "units": {
       "hectares": "Hectares",
       "acres": "Acres"
-    },
-    "personaPlaceholder": "Choisissez une option",
-    "personas": {
-      "jobSeeker": "En recherche d’emploi",
-      "student": "Étudiant ou étudiante",
-      "careerChanger": "En reconversion professionnelle",
-      "institution": "Une institution"
     },
     "stagePlaceholder": "Choisissez une option",
     "stages": {
@@ -542,18 +482,11 @@
     },
     "submitting": "Envoi en cours…",
     "water": {
-      "title": "Demander une analyse pilote",
-      "intro": "Présentez-nous votre propriété et ce que vous cherchez à savoir. Nous étudierons votre demande et vous répondrons par e-mail pour voir si une analyse pilote est adaptée.",
+      "title": "Une question sur votre zone ?",
+      "intro": "WaterAgent couvre pour l’instant une seule zone pilote. Si votre terrain se trouve ailleurs au Maroc, ou si vous souhaitez parler d’un site, décrivez-le-nous et nous vous répondrons par e-mail.",
       "submit": "Envoyer la demande",
       "successTitle": "Merci, votre demande a bien été reçue.",
       "successBody": "Nous l’étudierons et vous répondrons par e-mail."
-    },
-    "careerai": {
-      "title": "Rejoindre la liste d’accès anticipé",
-      "intro": "CareerAI est encore en développement. Inscrivez-vous et nous vous écrirons dès l’ouverture de l’accès anticipé.",
-      "submit": "M’inscrire",
-      "successTitle": "Votre inscription est confirmée.",
-      "successBody": "Nous vous écrirons dès l’ouverture de l’accès anticipé à CareerAI."
     },
     "advisory": {
       "title": "Planifier une séance de découverte technologique",

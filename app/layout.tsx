@@ -30,7 +30,8 @@ export const metadata: Metadata = {
     "RFALA Institute",
     "Xenova Studio",
     "Maroclist",
-    "Islamic School Review"
+    "Islamic School Review",
+    "WaterAgent"
   ],
   openGraph: {
     title: "RFALA | AI Innovation Partner",

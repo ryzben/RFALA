@@ -10,18 +10,9 @@
     "contact": "Contact",
     "products": "Products",
     "productsMenu": {
-      "groupNew": "Technology products",
       "groupExisting": "Existing RFALA Products",
       "viewAll": "View all products",
-      "water": {
-        "name": "Water Intelligence",
-        "description": "Satellite and AI groundwater screening for agriculture"
-      },
-      "careerai": {
-        "name": "CareerAI",
-        "description": "AI-powered job search assistant"
-      },
-      "existing": ["Xenova Studio", "Maroclist", "Islamic School Review", "RFALA Institute"],
+      "existing": ["WaterAgent", "Maroclist", "Islamic School Review", "RFALA Institute", "Xenova Studio"],
       "newTab": "opens in a new tab"
     },
     "capabilitiesMenu": {
@@ -63,8 +54,9 @@
     "learnMore": "Learn More",
     "items": [
       {
-        "name": "Xenova Studio",
-        "description": "Digital marketing, branding, web development, lead generation, and creative solutions."
+        "name": "WaterAgent",
+        "badge": "Pilot",
+        "description": "Shows what groundwater evidence exists for a location in Morocco, what is missing, and what to investigate next. Pilot stage."
       },
       {
         "name": "Maroclist",
@@ -77,6 +69,10 @@
       {
         "name": "RFALA Institute",
         "description": "Educational branch focused on AI, technology, mentorship, and future-ready learning."
+      },
+      {
+        "name": "Xenova Studio",
+        "description": "Digital marketing, branding, web development, lead generation, and creative solutions."
       }
     ]
   },
@@ -177,6 +173,8 @@
     "phoneLabel": "Phone",
     "phone": "(917) 582-2768",
     "whatsapp": "WhatsApp",
+    "whatsappLabel": "Chat on WhatsApp",
+    "whatsappMessage": "Hello RFALA, I'd like to get in touch.",
     "call": "Call",
     "response": "We review every message and respond with the right next step for your project, brand, or learning initiative.",
     "cards": [
@@ -292,143 +290,83 @@
     "titleAfter": "",
     "subtitle": "Building practical technology solutions powered by AI, data, and innovation.",
     "closing": "RFALA builds practical technology products that combine AI, data, automation, and domain-specific intelligence to solve real-world problems.",
-    "conceptPreview": "Concept preview",
+    "illustration": "Illustration",
     "backToProducts": "All technology products",
     "sections": {
       "overview": "Overview",
-      "capabilities": "Planned capabilities",
-      "capabilitiesNote": "In development. The capabilities below are planned and not yet available.",
-      "audience": "Who it is for",
-      "workflow": "Planned workflow"
+      "audience": "Who it is for"
     },
     "index": {
       "existingTitle": "Existing RFALA Products",
       "existingDescription": "Platforms already running across the RFALA ecosystem."
     },
-    "inDevelopment": {
-      "label": "In development",
-      "title": "Coming next from RFALA",
-      "description": "Two technology products are being built under the RFALA umbrella. They are not live yet."
-    },
     "meta": {
       "index": {
-        "title": "RFALA Technology Products | Water Intelligence and CareerAI",
-        "description": "Explore RFALA technology products in development: Water Intelligence for agricultural groundwater screening, and CareerAI, an AI job search assistant."
+        "title": "RFALA Technology Products | WaterAgent",
+        "description": "Explore RFALA technology products, including WaterAgent, a pilot groundwater evidence tool for locations in Morocco."
       },
       "water": {
-        "title": "RFALA Water Intelligence | Satellite and AI Groundwater Screening",
-        "description": "In development: a geospatial platform using satellite imagery, terrain data, and AI to help identify areas with potential groundwater resources before drilling."
-      },
-      "careerai": {
-        "title": "RFALA CareerAI | AI-Powered Job Search Assistant",
-        "description": "In development: CareerAI helps job seekers find relevant opportunities and prepare personalized applications and cover letters. Join the early access list."
+        "title": "WaterAgent by RFALA | Groundwater Evidence Reports for Morocco",
+        "description": "WaterAgent shows what groundwater evidence exists for a location in Morocco, what is missing, and what to investigate next, in a printable preliminary report. Pilot stage. It does not predict groundwater."
       }
     },
     "visuals": {
-      "candidateArea": "Candidate area",
-      "parcel": "Property boundary",
-      "drainage": "Drainage line",
-      "resume": "Resume",
-      "skills": "Skills",
-      "experience": "Experience",
-      "matches": "Ranked job matches",
-      "strong": "Strong match",
-      "good": "Good match",
-      "partial": "Partial match",
-      "roles": ["Data Analyst", "Operations Coordinator", "Project Assistant"]
+      "evidenceTitle": "Evidence summary",
+      "available": "Available",
+      "missing": "Missing",
+      "evidence": [
+        { "name": "Terrain", "available": true },
+        { "name": "Climate and rainfall", "available": true },
+        { "name": "Geology and aquifer", "available": true },
+        { "name": "Regional water-storage trend", "available": false },
+        { "name": "Wells and monitoring points", "available": false }
+      ],
+      "nextStep": "Next step",
+      "nextStepText": "Consult a qualified local hydrogeologist",
+      "evidenceAlt": "Illustration of a WaterAgent evidence summary, modelled on the sample report: terrain, climate and rainfall, and geology and aquifer are available; regional water-storage trend and wells and monitoring points are missing. Next step: consult a qualified local hydrogeologist."
     },
     "water": {
-      "name": "RFALA Water Intelligence",
-      "namePrefix": "RFALA Water",
-      "nameHighlight": "Intelligence",
-      "badge": "In development (pilot stage)",
-      "tagline": "Satellite & AI-Powered Water Intelligence for Agriculture",
-      "summary": "Combines satellite imagery, terrain analysis, and AI-assisted analysis to identify areas with potential groundwater resources and help reduce uncertainty before drilling.",
+      "name": "WaterAgent",
+      "namePrefix": "",
+      "nameHighlight": "WaterAgent",
+      "badge": "Live pilot · One test area",
+      "tagline": "Groundwater evidence reports for locations in Morocco",
+      "summary": "Pick a location in Morocco and WaterAgent shows which evidence exists for it, such as terrain, rainfall, and regional geology, what is missing, and what to investigate next, in a printable preliminary report. It does not predict groundwater. Pilot stage, covering one test area.",
       "description": [
-        "RFALA Water Intelligence is a geospatial intelligence platform designed to help farmers, agricultural investors, and landowners make better-informed decisions about groundwater exploration.",
-        "It combines satellite imagery, geographic data, environmental indicators, terrain analysis, and AI-assisted analysis to identify areas with potential groundwater resources, and to help users understand where further investigation may be appropriate before investing in costly drilling."
+        "WaterAgent is a decision-support web app for groundwater questions in Morocco. You pick a location, and it reports which evidence is available for that spot: terrain (elevation and slope), climate and rainfall, and regional geology and aquifer context.",
+        "It is just as clear about what is missing, such as records of nearby wells, and it lists what to investigate next, such as consulting a qualified local hydrogeologist or asking the Hydraulic Basin Agency (ABH) for existing records. The result is a printable preliminary report.",
+        "WaterAgent is at pilot stage. It currently covers one test area, Oulad Teima in Morocco, and its data layers have not yet been reviewed by a hydrogeologist."
       ],
+      "workflowTitle": "How it works",
+      "workflow": [
+        "Pick a location in the pilot area",
+        "See which evidence exists and what is missing",
+        "Review the recommended next steps",
+        "Print the preliminary report"
+      ],
+      "capabilitiesTitle": "What a report covers today",
+      "capabilitiesNote": "Pilot stage: one test area (Oulad Teima, Morocco). Data layers have not yet been reviewed by a hydrogeologist.",
       "capabilities": [
-        "Satellite imagery analysis",
-        "GIS and geospatial intelligence",
-        "AI-assisted groundwater-potential analysis",
-        "Terrain and elevation analysis",
-        "Historical environmental data",
-        "Vegetation and moisture indicators",
-        "Farm and property mapping",
-        "Candidate-area prioritization",
-        "Interactive maps",
-        "Exportable analysis reports"
+        "Terrain: elevation and slope",
+        "Climate and rainfall",
+        "Regional geology and aquifer context",
+        "Each input marked as available or missing",
+        "Uncertainty and limitations",
+        "Recommended next investigation steps",
+        "Printable preliminary report"
       ],
       "audience": [
         "Farmers",
-        "Agricultural investors",
-        "Large farm owners",
         "Landowners",
         "Agricultural consultants",
-        "Engineering and environmental companies",
-        "Water-resource planning organizations"
+        "Engineering and environmental firms",
+        "Water-resource planners"
       ],
-      "noteTitle": "Screening tool, not a guarantee.",
-      "noteBody": "Results support groundwater exploration decisions and prioritize areas for further investigation. They do not guarantee that water is present or that a well will produce. Confirm findings with a field survey and a qualified professional before drilling.",
-      "primaryCta": "Request a Pilot Analysis",
-      "secondaryCta": "Explore Water Intelligence",
-      "exploreCta": "Explore Water Intelligence"
-    },
-    "careerai": {
-      "name": "RFALA CareerAI",
-      "namePrefix": "RFALA",
-      "nameHighlight": "CareerAI",
-      "badge": "Early access · In development",
-      "tagline": "Your AI-Powered Job Search Assistant",
-      "summary": "Designed to help job seekers find relevant opportunities and prepare personalized applications, including job-specific cover letters.",
-      "description": [
-        "CareerAI helps job seekers find relevant opportunities and prepare personalized applications using AI. Users upload a resume and create an AI-powered career profile.",
-        "The platform can analyze job descriptions, compare requirements with the candidate's experience, and help prepare personalized application materials, including job-specific cover letters."
-      ],
-      "workflow": [
-        "Upload resume",
-        "Create AI career profile",
-        "Find relevant jobs",
-        "Analyze requirements",
-        "Match skills",
-        "Prepare application",
-        "Generate job-specific cover letter",
-        "Track applications"
-      ],
-      "capabilities": [
-        "Resume upload and analysis",
-        "AI-powered candidate profile",
-        "Job matching",
-        "Job-description analysis",
-        "Skill matching",
-        "Match scoring and explanation",
-        "Personalized cover letters",
-        "Resume recommendations",
-        "Application tracking",
-        "Job-search dashboard",
-        "Application history",
-        "Interview preparation"
-      ],
-      "audience": [
-        "Job seekers",
-        "Recent graduates",
-        "Career changers",
-        "International professionals",
-        "Students",
-        "Universities",
-        "Workforce development organizations",
-        "Career centers"
-      ],
-      "noteTitle": "You stay in control.",
-      "noteBody": "CareerAI helps you find relevant opportunities, prepare personalized applications, and streamline the process. It does not apply to every job automatically. Where automated submission is supported, it follows the applicable platform's terms and requires your authorization. Outcomes such as interviews or offers are not guaranteed.",
-      "dataNoteTitle": "About your resume",
-      "dataNoteBefore": "Resumes contain personal data. Details on how resumes will be stored, used, and deleted will be published before launch. This early-access form does not ask for your resume. See our ",
-      "dataNoteLink": "Privacy Policy",
-      "dataNoteAfter": ".",
-      "primaryCta": "Try CareerAI",
-      "secondaryCta": "Join the Early Access List",
-      "exploreCta": "Explore CareerAI"
+      "noteTitle": "Decision support, not a groundwater prediction.",
+      "noteBody": "WaterAgent does not predict whether groundwater is present, at what depth, or in what quantity, and it does not replace a qualified hydrogeological investigation. Use the report to prepare that investigation, not to decide where to drill.",
+      "primaryCta": "Open WaterAgent",
+      "secondaryCta": "View a sample report",
+      "exploreCta": "About WaterAgent"
     }
   },
   "advisory": {
@@ -503,8 +441,6 @@
       "propertySize": "Property size",
       "unit": "Unit",
       "need": "Briefly describe what you need",
-      "persona": "Who are you?",
-      "country": "Country",
       "company": "Company",
       "project": "Briefly describe your project or idea",
       "stage": "Current stage"
@@ -512,13 +448,6 @@
     "units": {
       "hectares": "Hectares",
       "acres": "Acres"
-    },
-    "personaPlaceholder": "Select one",
-    "personas": {
-      "jobSeeker": "Job seeker",
-      "student": "Student",
-      "careerChanger": "Career changer",
-      "institution": "Institution"
     },
     "stagePlaceholder": "Select one",
     "stages": {
@@ -541,18 +470,11 @@
     },
     "submitting": "Sending…",
     "water": {
-      "title": "Request a Pilot Analysis",
-      "intro": "Tell us about your property and what you want to learn. We will review your request and reply by email to discuss whether a pilot analysis is a good fit.",
+      "title": "Ask about your area",
+      "intro": "WaterAgent currently covers one pilot area. If your land is elsewhere in Morocco, or you want to discuss a site, tell us about it and we will reply by email.",
       "submit": "Send request",
       "successTitle": "Thank you, your request was received.",
       "successBody": "We will review it and reply by email."
-    },
-    "careerai": {
-      "title": "Join the Early Access List",
-      "intro": "CareerAI is still in development. Join the list and we will email you when early access opens.",
-      "submit": "Join the list",
-      "successTitle": "You are on the list.",
-      "successBody": "We will email you when CareerAI early access opens."
     },
     "advisory": {
       "title": "Schedule a Technology Discovery Session",

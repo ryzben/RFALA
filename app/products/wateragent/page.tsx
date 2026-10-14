@@ -4,6 +4,6 @@ import enMessages from "../../../messages/en.json";
 
 export const metadata = productPageMetadata("water", "en");
 
-export default function WaterIntelligencePage() {
+export default function WaterAgentPage() {
   return <ProductPage dictionary={enMessages} locale="en" product="water" />;
 }

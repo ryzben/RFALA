@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { CareerAIVisual, WaterIntelligenceVisual } from "./ProductVisuals";
-import { localizedPath, productPaths } from "./siteNav";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { WaterAgentVisual } from "./ProductVisuals";
+import { localizedPath, productExternalLinks, productPaths } from "./siteNav";
 import type { Locale, Messages, ProductKey } from "./siteNav";
 
 /* Shared building blocks for the technology products section and product pages. */
@@ -30,19 +30,55 @@ export function StatusBadge({ children }: { children: string }) {
   );
 }
 
-export function ProductVisual({ product, dictionary, className }: { product: ProductKey; dictionary: Messages; className?: string }) {
-  const p = dictionary.products;
-  return product === "water"
-    ? <WaterIntelligenceVisual labels={p.visuals} conceptLabel={p.conceptPreview} className={className} />
-    : <CareerAIVisual labels={p.visuals} conceptLabel={p.conceptPreview} className={className} />;
+/** Light-background version of StatusBadge for white cards: ink text keeps the small caps readable. */
+export function StatusBadgeLight({ children }: { children: string }) {
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full border border-emerald/30 bg-emerald/10 px-3 py-1.5">
+      <span aria-hidden="true" className="size-1.5 rounded-full bg-emerald" />
+      <span className="text-[0.66rem] font-extrabold uppercase tracking-[0.2em] text-ink">{children}</span>
+    </span>
+  );
 }
 
-const productOrder: ProductKey[] = ["water", "careerai"];
+/** Text stand-in for a brand without a logo file. Decorative: the card heading already names the brand. */
+export function EcosystemWordmark({ name }: { name: string }) {
+  return (
+    <span aria-hidden="true" className="text-2xl font-black tracking-tight text-white">
+      {name}
+    </span>
+  );
+}
+
+/**
+ * Five ecosystem cards: one column on phones; two columns from md with the first (featured) card spanning both,
+ * so the rows read 1 + 2 + 2; a single row of five from xl.
+ */
+export const ecosystemGrid = "grid gap-5 md:grid-cols-2 xl:grid-cols-5";
+export const ecosystemFeatured = "md:col-span-2 xl:col-span-1";
+
+export function ProductVisual({ dictionary, className }: { dictionary: Messages; className?: string }) {
+  const p = dictionary.products;
+  return <WaterAgentVisual labels={p.visuals} illustrationLabel={p.illustration} className={className} />;
+}
+
+/** Link to a live product, opened in a new tab the same way as the Ecosystem links. */
+export function ExternalButton({ href, className, newTab, children }: { href: string; className: string; newTab: string; children: string }) {
+  return (
+    <a href={href} target="_blank" rel="noopener" className={className}>
+      {children}
+      <ExternalLink aria-hidden="true" className="size-4" />
+      <span className="sr-only">({newTab})</span>
+    </a>
+  );
+}
 
 export function ProductsShowcase({ dictionary, locale, headingLevel = "h2" }: { dictionary: Messages; locale: Locale; headingLevel?: "h1" | "h2" }) {
   const p = dictionary.products;
   const Heading = headingLevel;
   const CardHeading = headingLevel === "h1" ? "h2" : "h3";
+  const key: ProductKey = "water";
+  const product = p[key];
+  const external = productExternalLinks[key];
 
   return (
     <section id="products" aria-labelledby="products-title" className="relative isolate overflow-hidden border-t border-white/10 bg-[#050d1a] py-24 text-white">
@@ -61,31 +97,32 @@ export function ProductsShowcase({ dictionary, locale, headingLevel = "h2" }: { 
           <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">{p.subtitle}</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {productOrder.map((key) => {
-            const product = p[key];
-            return (
-              <article
-                key={key}
-                className="group flex flex-col rounded-xl border border-white/10 bg-white/[0.06] p-5 transition hover:-translate-y-1 hover:border-mint/50 hover:bg-white/[0.09] focus-within:border-mint/50 sm:p-6"
-              >
-                <ProductVisual product={key} dictionary={dictionary} />
-                <div className="mt-6">
-                  <StatusBadge>{product.badge}</StatusBadge>
-                </div>
-                <CardHeading className="mt-4 text-2xl font-black tracking-tight text-white">{product.name}</CardHeading>
-                <p className="mt-2 text-lg font-bold leading-7 text-mint">{product.tagline}</p>
-                <p className="mt-3 flex-1 leading-7 text-slate-300">{product.summary}</p>
-                <div className="mt-6">
-                  <Link href={localizedPath(locale, productPaths[key])} className={primaryButton}>
-                    {product.exploreCta}
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+        {/* One product: a single wide card, visual beside the text on large screens. */}
+        <article className="group grid grid-cols-1 gap-6 rounded-xl border border-white/10 bg-white/[0.06] p-5 transition hover:border-mint/50 hover:bg-white/[0.09] focus-within:border-mint/50 sm:p-6 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-10 lg:p-8">
+          <ProductVisual dictionary={dictionary} />
+          <div className="flex flex-col">
+            <div>
+              <StatusBadge>{product.badge}</StatusBadge>
+            </div>
+            <CardHeading className="mt-4 text-2xl font-black tracking-tight text-white sm:text-3xl">{product.name}</CardHeading>
+            <p className="mt-2 text-lg font-bold leading-7 text-mint">{product.tagline}</p>
+            <p className="mt-3 leading-7 text-slate-300">{product.summary}</p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ExternalButton href={external.primary} className={primaryButton} newTab={dictionary.nav.productsMenu.newTab}>
+                {product.primaryCta}
+              </ExternalButton>
+              <ExternalButton href={external.secondary} className={secondaryButton} newTab={dictionary.nav.productsMenu.newTab}>
+                {product.secondaryCta}
+              </ExternalButton>
+            </div>
+            <Link
+              href={localizedPath(locale, productPaths[key])}
+              className="mt-4 inline-flex items-center gap-2 self-start rounded-md py-2 text-sm font-extrabold text-mint transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint"
+            >
+              {product.exploreCta} <ArrowRight className="size-4" />
+            </Link>
+          </div>
+        </article>
 
         <p className="mt-12 max-w-3xl border-l-2 border-mint/60 pl-5 text-lg font-bold leading-8 text-slate-200">{p.closing}</p>
       </div>

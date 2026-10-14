@@ -6,6 +6,7 @@ import {
   Code2,
   Compass,
   Database,
+  Droplets,
   ExternalLink,
   GraduationCap,
   Network,
@@ -17,17 +18,21 @@ import {
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { NavDropdown } from "./NavDropdown";
-import { StatusBadge } from "./ProductsShowcase";
-import { advisoryPath, capabilitiesMobileItem, capabilitiesNav, localizedPath, productPaths, productsMobileItem, productsNav } from "./siteNav";
+import { EcosystemWordmark, StatusBadge, ecosystemGrid, ecosystemFeatured } from "./ProductsShowcase";
+import { whatsappHref } from "../lib/contact";
+import { advisoryPath, capabilitiesMobileItem, capabilitiesNav, localizedPath, productsMobileItem, productsNav, wateragentUrl } from "./siteNav";
 import type { Locale, Messages } from "./siteNav";
 type PageKind = "about" | "ecosystem" | "institute" | "services" | "vision";
 
+/** Index-aligned with `ecosystem.items` in the messages; keep both in the same order. */
 export const ecosystemAssets = [
   {
-    href: "https://xenovastudio.com",
-    logo: "/assets/logos/xenova-studio.svg",
+    // No WaterAgent logo exists yet, so the logo tile shows the name as text (EcosystemWordmark).
+    href: wateragentUrl,
+    logo: undefined,
     logoClassName: "bg-ink",
-    icon: Palette
+    icon: Droplets,
+    showcased: true
   },
   {
     href: "https://maroclist.com",
@@ -46,6 +51,12 @@ export const ecosystemAssets = [
     logo: "/assets/logos/rfala-institute.svg",
     logoClassName: "bg-ink",
     icon: GraduationCap
+  },
+  {
+    href: "https://xenovastudio.com",
+    logo: "/assets/logos/xenova-studio.svg",
+    logoClassName: "bg-ink",
+    icon: Palette
   }
 ];
 
@@ -196,6 +207,10 @@ export function Footer({ dictionary, locale }: { dictionary: Messages; locale: L
           <div className="grid gap-2 text-slate-400">
             <a href="mailto:contact@rfala.com" className="hover:text-mint">contact@rfala.com</a>
             <a href="tel:+19175822768" className="hover:text-mint">{t.contact.phone}</a>
+            <a href={whatsappHref(t.contact.whatsappMessage)} target="_blank" rel="noopener noreferrer" className="rounded-sm hover:text-mint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint">
+              {t.contact.whatsappLabel}
+              <span className="sr-only"> ({t.nav.productsMenu.newTab})</span>
+            </a>
             <p className="pt-4 text-sm">{t.footer.copyright}</p>
           </div>
         </div>
@@ -274,16 +289,19 @@ function EcosystemBody({ dictionary, locale }: { dictionary: Messages; locale: L
           <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-5xl">{t.ecosystem.title}</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">{t.ecosystem.description}</p>
         </div>
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className={ecosystemGrid}>
           {t.ecosystem.items.map((item, index) => {
             const asset = ecosystemAssets[index];
             const href = asset.href.startsWith("/") ? localizedPath(locale, asset.href) : asset.href;
             return (
-              <article key={item.name} className="group flex min-h-[310px] flex-col rounded-lg border border-white/10 bg-white/[0.08] p-6 shadow-[0_24px_90px_rgba(0,0,0,0.22)] backdrop-blur-2xl transition hover:-translate-y-1 hover:border-mint/40 hover:bg-white/[0.12]">
+              <article key={item.name} className={`${index === 0 ? ecosystemFeatured : ""} group flex min-h-[310px] flex-col rounded-lg border border-white/10 bg-white/[0.08] p-6 shadow-[0_24px_90px_rgba(0,0,0,0.22)] backdrop-blur-2xl transition hover:-translate-y-1 hover:border-mint/40 hover:bg-white/[0.12]`}>
                 <div className={`mb-6 flex h-28 items-center justify-center overflow-hidden rounded-lg border border-slate-200 p-4 shadow-sm ${asset.logoClassName}`}>
-                  <img src={asset.logo} alt={`${item.name} logo`} className="max-h-20 max-w-full object-contain" />
+                  {asset.logo ? <img src={asset.logo} alt={`${item.name} logo`} className="max-h-20 max-w-full object-contain" /> : <EcosystemWordmark name={item.name} />}
                 </div>
-                <h2 className="text-xl font-black text-white">{item.name}</h2>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                  <h2 className="text-xl font-black text-white">{item.name}</h2>
+                  {"badge" in item && item.badge ? <StatusBadge>{item.badge}</StatusBadge> : null}
+                </div>
                 <p className="mt-3 flex-1 text-slate-300">{item.description}</p>
                 <Link href={href} target={asset.href.startsWith("http") ? "_blank" : undefined} rel={asset.href.startsWith("http") ? "noopener" : undefined} className="mt-6 inline-flex items-center gap-2 font-extrabold text-mint">
                   {t.ecosystem.learnMore} {asset.href.startsWith("http") ? <ExternalLink className="size-4" /> : <ArrowRight className="size-4" />}
@@ -291,30 +309,6 @@ function EcosystemBody({ dictionary, locale }: { dictionary: Messages; locale: L
               </article>
             );
           })}
-        </div>
-
-        {/* Products in development: kept apart from the live platforms above */}
-        <div className="mt-16 border-t border-white/10 pt-12">
-          <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.22em] text-mint">{t.products.inDevelopment.label}</p>
-          <h2 className="text-2xl font-black tracking-tight text-white sm:text-3xl">{t.products.inDevelopment.title}</h2>
-          <p className="mt-3 max-w-3xl text-lg leading-8 text-slate-300">{t.products.inDevelopment.description}</p>
-          <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
-            {(["water", "careerai"] as const).map((key) => {
-              const product = t.products[key];
-              return (
-                <li key={key} className="flex flex-col rounded-lg border border-dashed border-white/15 bg-white/[0.04] p-6 transition hover:border-mint/40 hover:bg-white/[0.08]">
-                  <div>
-                    <StatusBadge>{product.badge}</StatusBadge>
-                  </div>
-                  <h3 className="mt-4 text-xl font-black text-white">{product.name}</h3>
-                  <p className="mt-2 flex-1 text-slate-300">{product.tagline}</p>
-                  <Link href={localizedPath(locale, productPaths[key])} className="mt-5 inline-flex items-center gap-2 self-start rounded-md font-extrabold text-mint transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint">
-                    {product.exploreCta} <ArrowRight className="size-4" />
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
         </div>
       </div>
     </section>

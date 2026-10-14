@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import enMessages from "../../messages/en.json";
 import frMessages from "../../messages/fr.json";
 
-type ProductPage = "index" | "water" | "careerai" | "advisory";
+type ProductPage = "index" | "water" | "advisory";
 type Locale = "en" | "fr";
 
 const SITE = "https://www.rfala.com";
 const paths: Record<ProductPage, string> = {
   index: "/products",
-  water: "/products/water-intelligence",
-  careerai: "/products/careerai",
+  water: "/products/wateragent",
   advisory: "/services/technology-product-advisory"
 };
 

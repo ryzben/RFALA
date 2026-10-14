@@ -52,7 +52,7 @@ The site is bilingual. English pages live at the root (`/about`, `/services`, �
 
 ## Inquiry forms
 
-Three forms post to `/api/product-interest`: the Water Intelligence pilot request (`water`), the CareerAI early-access list (`careerai`), and the Technology & Product Advisory discovery session (`advisory`). The route validates the input, drops honeypot submissions, and forwards the result as JSON to the URL in the `PRODUCT_FORM_WEBHOOK_URL` environment variable:
+Two forms post to `/api/product-interest`: the WaterAgent area or site inquiry (`water`) and the Technology & Product Advisory discovery session (`advisory`). The route validates the input, drops honeypot submissions, and forwards the result as JSON to the URL in the `PRODUCT_FORM_WEBHOOK_URL` environment variable:
 
 ```json
 { "form": "advisory", "locale": "en", "submittedAt": "2026-09-28T12:00:00.000Z", "values": { "name": "…", "email": "…", "company": "…", "stage": "inDevelopment", "project": "…", "consent": true } }

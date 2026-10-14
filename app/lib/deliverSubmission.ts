@@ -1,7 +1,7 @@
 import type { FormKind, FormValues } from "./productInterest";
 
 export type Submission = {
-  /** Which form sent it: "water", "careerai", or "advisory". */
+  /** Which form sent it: "water" or "advisory". */
   form: FormKind;
   locale: "en" | "fr";
   submittedAt: string;

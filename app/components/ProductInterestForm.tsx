@@ -6,7 +6,6 @@ import { CheckCircle2, Send } from "lucide-react";
 import {
   maxLengths,
   formFields,
-  personas,
   projectStages,
   propertyUnits,
   validateInquiry
@@ -189,20 +188,6 @@ export function ProductInterestForm({ kind, dictionary, locale }: { kind: FormKi
             <textarea {...fieldProps("need")} rows={5} required maxLength={maxLengths.need} value={values.need ?? ""} onChange={onText("need")} />
           </FieldShell>
         </>
-      ) : kind === "careerai" ? (
-        <div className="grid gap-5 sm:grid-cols-2">
-          <FieldShell {...shell("persona", f.fields.persona, true)}>
-            <select {...fieldProps("persona")} required value={values.persona ?? ""} onChange={onText("persona")}>
-              <option value="" disabled>{f.personaPlaceholder}</option>
-              {personas.map((persona) => (
-                <option key={persona} value={persona}>{f.personas[persona]}</option>
-              ))}
-            </select>
-          </FieldShell>
-          <FieldShell {...shell("country", f.fields.country, false)}>
-            <input {...fieldProps("country")} type="text" autoComplete="country-name" maxLength={maxLengths.country} value={values.country ?? ""} onChange={onText("country")} />
-          </FieldShell>
-        </div>
       ) : (
         <>
           <div className="grid gap-5 sm:grid-cols-2">

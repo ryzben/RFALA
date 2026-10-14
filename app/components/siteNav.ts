@@ -2,7 +2,7 @@ import type enMessages from "../../messages/en.json";
 
 export type Messages = typeof enMessages;
 export type Locale = "en" | "fr";
-export type ProductKey = "water" | "careerai";
+export type ProductKey = "water";
 
 export type NavLink = {
   href: string;
@@ -21,29 +21,30 @@ export function localizedPath(locale: Locale, path: string) {
 }
 
 export const productPaths: Record<ProductKey, string> = {
-  water: "/products/water-intelligence",
-  careerai: "/products/careerai"
+  water: "/products/wateragent"
 };
 
-/** Same destinations the Ecosystem section links to today. */
+export const wateragentUrl = "https://www.wateragent.net";
+export const wateragentSampleReportUrl = "https://www.wateragent.net/report?lat=30.39500&lon=-9.20900";
+
+/** Live products: the primary and secondary calls to action open the product itself in a new tab. */
+export const productExternalLinks: Record<ProductKey, { primary: string; secondary: string }> = {
+  water: { primary: wateragentUrl, secondary: wateragentSampleReportUrl }
+};
+
+/** Same destinations, in the same order, as the Ecosystem section. */
 const existingProductHrefs = [
-  "https://xenovastudio.com",
+  wateragentUrl,
   "https://maroclist.com",
   "https://islamicschoolreview.com",
-  "/institute"
+  "/institute",
+  "https://xenovastudio.com"
 ];
 
 export function productNavGroups(t: Messages, locale: Locale): NavGroup[] {
   const menu = t.nav.productsMenu;
 
   return [
-    {
-      heading: menu.groupNew,
-      links: [
-        { href: localizedPath(locale, productPaths.water), label: menu.water.name, description: menu.water.description },
-        { href: localizedPath(locale, productPaths.careerai), label: menu.careerai.name, description: menu.careerai.description }
-      ]
-    },
     {
       heading: menu.groupExisting,
       links: existingProductHrefs.map((href, index) => ({
@@ -107,6 +108,8 @@ export function productsNav(t: Messages, locale: Locale): ProductsNav {
     href: localizedPath(locale, "/products"),
     viewAll: t.nav.productsMenu.viewAll,
     newTab: t.nav.productsMenu.newTab,
+    // A single group of links: the narrow panel avoids an empty second column.
+    compact: true,
     groups: productNavGroups(t, locale)
   };
 }

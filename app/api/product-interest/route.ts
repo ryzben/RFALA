@@ -5,7 +5,7 @@ import { isFormKind, pickInquiryValues, validateInquiry } from "../../lib/produc
 const MAX_BODY_BYTES = 16_000;
 
 /**
- * Receives all three site inquiry forms (water, careerai, advisory).
+ * Receives both site inquiry forms (water, advisory).
  * The route keeps its original path so existing forms keep working.
  */
 export async function POST(request: Request) {
