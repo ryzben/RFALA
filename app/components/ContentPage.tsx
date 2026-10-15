@@ -18,7 +18,7 @@ import {
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { NavDropdown } from "./NavDropdown";
-import { EcosystemWordmark, StatusBadge, ecosystemGrid, ecosystemFeatured } from "./ProductsShowcase";
+import { StatusBadge, ecosystemGrid, ecosystemFeatured } from "./ProductsShowcase";
 import { whatsappHref } from "../lib/contact";
 import { advisoryPath, capabilitiesMobileItem, capabilitiesNav, localizedPath, productsMobileItem, productsNav, wateragentUrl } from "./siteNav";
 import type { Locale, Messages } from "./siteNav";
@@ -27,10 +27,9 @@ type PageKind = "about" | "ecosystem" | "institute" | "services" | "vision";
 /** Index-aligned with `ecosystem.items` in the messages; keep both in the same order. */
 export const ecosystemAssets = [
   {
-    // No WaterAgent logo exists yet, so the logo tile shows the name as text (EcosystemWordmark).
     href: wateragentUrl,
-    logo: undefined,
-    logoClassName: "bg-ink",
+    logo: "/assets/logos/wateragent.svg",
+    logoClassName: "bg-white",
     icon: Droplets,
     showcased: true
   },
@@ -296,7 +295,7 @@ function EcosystemBody({ dictionary, locale }: { dictionary: Messages; locale: L
             return (
               <article key={item.name} className={`${index === 0 ? ecosystemFeatured : ""} group flex min-h-[310px] flex-col rounded-lg border border-white/10 bg-white/[0.08] p-6 shadow-[0_24px_90px_rgba(0,0,0,0.22)] backdrop-blur-2xl transition hover:-translate-y-1 hover:border-mint/40 hover:bg-white/[0.12]`}>
                 <div className={`mb-6 flex h-28 items-center justify-center overflow-hidden rounded-lg border border-slate-200 p-4 shadow-sm ${asset.logoClassName}`}>
-                  {asset.logo ? <img src={asset.logo} alt={`${item.name} logo`} className="max-h-20 max-w-full object-contain" /> : <EcosystemWordmark name={item.name} />}
+                  <img src={asset.logo} alt={`${item.name} logo`} className="max-h-20 max-w-full object-contain" />
                 </div>
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                   <h2 className="text-xl font-black text-white">{item.name}</h2>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, CircleCheck, ExternalLink, ShieldAlert } from "lucide-react";
 import { Footer, Header, ecosystemAssets } from "./ContentPage";
 import { ProductInterestForm } from "./ProductInterestForm";
-import { DotGrid, EcosystemWordmark, ExternalButton, ProductVisual, ProductsShowcase, StatusBadge, gradientText, primaryButton, secondaryButton } from "./ProductsShowcase";
+import { DotGrid, ExternalButton, ProductVisual, ProductsShowcase, StatusBadge, gradientText, primaryButton, secondaryButton } from "./ProductsShowcase";
 import { advisoryPath, localizedPath, productExternalLinks } from "./siteNav";
 import type { Locale, Messages, ProductKey } from "./siteNav";
 
@@ -170,7 +170,7 @@ export function ProductsIndexPage({ dictionary, locale }: { dictionary: Messages
               return (
                 <li key={item.name} className="flex flex-col rounded-lg border border-white/10 bg-white/[0.06] p-5 transition hover:-translate-y-1 hover:border-mint/40 hover:bg-white/[0.1]">
                   <div className={`mb-5 flex h-20 items-center justify-center overflow-hidden rounded-lg border border-slate-200 p-3 ${asset.logoClassName}`}>
-                    {asset.logo ? <img src={asset.logo} alt={`${item.name} logo`} className="max-h-14 max-w-full object-contain" /> : <EcosystemWordmark name={item.name} />}
+                    <img src={asset.logo} alt={`${item.name} logo`} className="max-h-14 max-w-full object-contain" />
                   </div>
                   <h3 className="text-lg font-black text-white">{item.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-6 text-slate-300">{item.description}</p>

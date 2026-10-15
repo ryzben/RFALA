@@ -40,15 +40,6 @@ export function StatusBadgeLight({ children }: { children: string }) {
   );
 }
 
-/** Text stand-in for a brand without a logo file. Decorative: the card heading already names the brand. */
-export function EcosystemWordmark({ name }: { name: string }) {
-  return (
-    <span aria-hidden="true" className="text-2xl font-black tracking-tight text-white">
-      {name}
-    </span>
-  );
-}
-
 /**
  * Five ecosystem cards: one column on phones; two columns from md with the first (featured) card spanning both,
  * so the rows read 1 + 2 + 2; a single row of five from xl.

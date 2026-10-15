@@ -19,7 +19,7 @@ import { MobileMenu } from "./components/MobileMenu";
 import { NavDropdown } from "./components/NavDropdown";
 import { AdvisorySection } from "./components/AdvisorySection";
 import { whatsappHref } from "./lib/contact";
-import { EcosystemWordmark, ProductsShowcase, StatusBadgeLight, ecosystemFeatured, ecosystemGrid } from "./components/ProductsShowcase";
+import { ProductsShowcase, StatusBadgeLight, ecosystemFeatured, ecosystemGrid } from "./components/ProductsShowcase";
 import { capabilitiesMobileItem, capabilitiesNav, productsMobileItem, productsNav, wateragentUrl } from "./components/siteNav";
 import enMessages from "../messages/en.json";
 
@@ -28,12 +28,12 @@ type Messages = typeof enMessages;
 type Locale = "en" | "fr";
 
 /** Index-aligned with `ecosystem.items` in the messages; keep both in the same order. */
-const ecosystem: { name: string; href: string; logo?: string; logoClassName?: string; description: string }[] = [
+const ecosystem: { name: string; href: string; logo: string; logoClassName?: string; description: string }[] = [
   {
-    // No WaterAgent logo exists yet, so the logo tile shows the name as text (EcosystemWordmark).
     name: "WaterAgent",
     href: wateragentUrl,
-    logoClassName: "bg-ink",
+    logo: "/assets/logos/wateragent.svg",
+    logoClassName: "bg-white",
     description: "Shows what groundwater evidence exists for a location in Morocco, what is missing, and what to investigate next. Pilot stage."
   },
   {
@@ -346,7 +346,7 @@ export function HomePage({ dictionary = enMessages, locale = "en" }: { dictionar
               return (
                 <motion.article key={item.name} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5, delay: index * 0.08 }} className={`${index === 0 ? ecosystemFeatured : ""} group flex min-h-[310px] flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-emerald/40 hover:shadow-soft`}>
                   <div className={`mb-6 flex h-28 items-center justify-center overflow-hidden rounded-lg border border-slate-200 p-4 shadow-sm ${item.logoClassName ?? "bg-white"}`}>
-                    {item.logo ? <img src={item.logo} alt={`${item.name} logo`} className="max-h-20 max-w-full object-contain" /> : <EcosystemWordmark name={item.name} />}
+                    <img src={item.logo} alt={`${item.name} logo`} className="max-h-20 max-w-full object-contain" />
                   </div>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
                     <h3 className="text-xl font-black text-ink">{item.name}</h3>
