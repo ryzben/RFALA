@@ -219,7 +219,7 @@ export function Footer({ dictionary, locale }: { dictionary: Messages; locale: L
 }
 
 const teamMembers = [
-  { name: "Abdellah", role: "Founder", description: "Visionary behind RFALA. Leading the ecosystem strategy, partnerships, and long-term direction since ryztech.com in 2006.", initials: "AB", gradient: "from-emerald to-sky" },
+  { name: "Dr. Abdellah", role: "Founder", description: "Visionary behind RFALA. Leading the ecosystem strategy, partnerships, and long-term direction since ryztech.com in 2006.", initials: "AB", gradient: "from-emerald to-sky" },
   { name: "Dr. Houda", role: "VP Customer Satisfaction", description: "Ensures every client, partner, and community member has an exceptional experience across all RFALA initiatives.", initials: "HO", gradient: "from-sky to-mint" },
   { name: "Ilyass", role: "Digital Marketing Director", description: "Leads RFALA's digital marketing strategy, brand growth, and online presence across all platforms and initiatives.", initials: "IL", gradient: "from-gold to-emerald" },
   { name: "Rayan", role: "IT Director", description: "Drives the technical architecture and engineering across RFALA's platforms, products, and digital infrastructure.", initials: "RA", gradient: "from-sky to-emerald" }
