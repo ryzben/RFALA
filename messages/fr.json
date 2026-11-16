@@ -23,7 +23,7 @@
     "productsMenu": {
       "groupExisting": "Produits RFALA existants",
       "viewAll": "Voir tous les produits",
-      "existing": ["WaterAgent", "Maroclist", "Islamic School Review", "RFALA Institute", "Xenova Studio"],
+      "existing": ["WaterAgent", "Maroclist", "Islamic School Review", "RFALA Institute", "RFALA Studio"],
       "newTab": "s’ouvre dans un nouvel onglet"
     },
     "capabilitiesMenu": {
@@ -83,7 +83,7 @@
         "description": "Branche éducative axée sur l’IA, la technologie, le mentorat et les compétences d’avenir."
       },
       {
-        "name": "Xenova Studio",
+        "name": "RFALA Studio",
         "description": "Marketing digital, branding, développement web, génération de prospects et solutions créatives."
       }
     ]

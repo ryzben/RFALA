@@ -57,9 +57,9 @@ const ecosystem: { name: string; href: string; logo: string; logoClassName?: str
     description: "Educational branch focused on AI, technology, mentorship, and future-ready learning."
   },
   {
-    name: "Xenova Studio",
-    href: "https://xenovastudio.com",
-    logo: "/assets/logos/xenova-studio.svg",
+    name: "RFALA Studio",
+    href: "https://studio.rfala.com",
+    logo: "/assets/logos/rfala-studio.svg",
     logoClassName: "bg-ink",
     description: "Digital marketing, branding, web development, lead generation, and creative solutions."
   }

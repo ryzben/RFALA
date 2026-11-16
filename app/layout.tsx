@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "Digital Learning",
     "Moroccan Innovation",
     "RFALA Institute",
-    "Xenova Studio",
+    "RFALA Studio",
     "Maroclist",
     "Islamic School Review",
     "WaterAgent"

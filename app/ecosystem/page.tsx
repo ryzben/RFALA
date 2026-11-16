@@ -3,7 +3,7 @@ import enMessages from "../../messages/en.json";
 
 export const metadata = {
   title: "RFALA Ecosystem | Platforms, Brands, and Innovation",
-  description: "Explore the RFALA ecosystem, including RFALA Institute, Xenova Studio, Maroclist, and Islamic School Review."
+  description: "Explore the RFALA ecosystem, including RFALA Institute, RFALA Studio, Maroclist, and Islamic School Review."
 };
 
 export default function EcosystemPage() {

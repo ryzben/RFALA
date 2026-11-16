@@ -38,7 +38,7 @@ const existingProductHrefs = [
   "https://maroclist.com",
   "https://islamicschoolreview.com",
   "/institute",
-  "https://xenovastudio.com"
+  "https://studio.rfala.com"
 ];
 
 export function productNavGroups(t: Messages, locale: Locale): NavGroup[] {

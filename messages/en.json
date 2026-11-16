@@ -12,7 +12,7 @@
     "productsMenu": {
       "groupExisting": "Existing RFALA Products",
       "viewAll": "View all products",
-      "existing": ["WaterAgent", "Maroclist", "Islamic School Review", "RFALA Institute", "Xenova Studio"],
+      "existing": ["WaterAgent", "Maroclist", "Islamic School Review", "RFALA Institute", "RFALA Studio"],
       "newTab": "opens in a new tab"
     },
     "capabilitiesMenu": {
@@ -43,7 +43,7 @@
     "paragraphs": [
       "What started in 2006 as ryztech.com has grown into RFALA, a full technology and innovation ecosystem with Moroccan roots and global ambitions.",
       "Over 20 years, we have built digital products, helped businesses grow online, developed platforms, and invested in education and community impact across multiple industries.",
-      "Today, RFALA operates through focused initiatives: Xenova Studio, Maroclist, Islamic School Review, and RFALA Institute, each solving real problems for businesses, learners, and communities.",
+      "Today, RFALA operates through focused initiatives: RFALA Studio, Maroclist, Islamic School Review, and RFALA Institute, each solving real problems for businesses, learners, and communities.",
       "RFALA is not just a company. It is an ecosystem built on two decades of experience, designed to create, innovate, and shape the future."
     ]
   },
@@ -71,7 +71,7 @@
         "description": "Educational branch focused on AI, technology, mentorship, and future-ready learning."
       },
       {
-        "name": "Xenova Studio",
+        "name": "RFALA Studio",
         "description": "Digital marketing, branding, web development, lead generation, and creative solutions."
       }
     ]

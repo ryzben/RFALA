@@ -52,8 +52,8 @@ export const ecosystemAssets = [
     icon: GraduationCap
   },
   {
-    href: "https://xenovastudio.com",
-    logo: "/assets/logos/xenova-studio.svg",
+    href: "https://studio.rfala.com",
+    logo: "/assets/logos/rfala-studio.svg",
     logoClassName: "bg-ink",
     icon: Palette
   }
