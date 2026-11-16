@@ -1,10 +1,11 @@
 import { ContentPage } from "../components/ContentPage";
 import enMessages from "../../messages/en.json";
+import { pageMeta } from "../lib/pageMeta";
 
-export const metadata = {
+export const metadata = pageMeta("/institute", "en", {
   title: "RFALA Institute | Guided Learning for the AI Era",
   description: "Explore RFALA Institute guided learning pathways, mentorship, AI literacy, and future-ready practical skills."
-};
+});
 
 export default function InstitutePage() {
   return <ContentPage dictionary={enMessages} locale="en" kind="institute" />;

@@ -37,7 +37,6 @@ export const metadata: Metadata = {
     title: "RFALA | AI Innovation Partner",
     description:
       "We transform ideas, data, and technology into intelligent solutions. AI strategy, data platforms, AI applications, auditing, and custom AI engineering.",
-    url: "https://www.rfala.com",
     siteName: "RFALA",
     images: [{ url: "/assets/rfala-hero.png", width: 1200, height: 630 }],
     locale: "en_US",
@@ -48,14 +47,8 @@ export const metadata: Metadata = {
     title: "RFALA | AI Innovation Partner",
     description: "We transform ideas, data, and technology into intelligent solutions.",
     images: ["/assets/rfala-hero.png"]
-  },
-  alternates: {
-    canonical: "https://www.rfala.com",
-    languages: {
-      en: "https://www.rfala.com",
-      fr: "https://www.rfala.com/fr"
-    }
   }
+  // No canonical/alternates here: they would be inherited by every page. Each page sets its own via pageMeta().
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

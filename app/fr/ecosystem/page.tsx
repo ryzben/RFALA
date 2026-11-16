@@ -1,10 +1,11 @@
 import { ContentPage } from "../../components/ContentPage";
 import frMessages from "../../../messages/fr.json";
+import { pageMeta } from "../../lib/pageMeta";
 
-export const metadata = {
+export const metadata = pageMeta("/ecosystem", "fr", {
   title: "Écosystème RFALA | Plateformes, marques et innovation",
   description: "Explorez l’écosystème RFALA, incluant RFALA Institute, RFALA Studio, Maroclist et Islamic School Review."
-};
+});
 
 export default function FrenchEcosystemPage() {
   return <ContentPage dictionary={frMessages} locale="fr" kind="ecosystem" />;

@@ -3,7 +3,8 @@ import { ArrowRight, BrainCircuit, ExternalLink, Globe2, GraduationCap, Mail, Me
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileMenu } from "./MobileMenu";
 import { NavDropdown } from "./NavDropdown";
-import { capabilitiesMobileItem, capabilitiesNav, productsMobileItem, productsNav } from "./siteNav";
+import { capabilitiesMobileItem, capabilitiesNav, productsMobileItem, productsNav, studioMobileItem } from "./siteNav";
+import { StudioNavLink } from "./ExternalLinks";
 import { Footer } from "./ContentPage";
 import { whatsappHref } from "../lib/contact";
 import enMessages from "../../messages/en.json";
@@ -29,6 +30,7 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
     { href: locale === "fr" ? "/fr/institute" : "/institute", label: t.nav.institute },
     productsMobileItem(products),
     capabilitiesMobileItem(capabilities),
+    studioMobileItem(t),
     { href: locale === "fr" ? "/fr/vision" : "/vision", label: t.nav.vision },
     { href: locale === "fr" ? "/fr/contact" : "/contact", label: t.nav.contact }
   ];
@@ -40,12 +42,13 @@ export function ContactPage({ dictionary, locale }: { dictionary: Messages; loca
           <Link href={homeHref} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
             <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain sm:h-16 sm:w-60" />
           </Link>
-          <div className="hidden items-center gap-7 text-sm font-bold text-white/80 lg:flex">
+          <div className="hidden items-center gap-5 whitespace-nowrap text-sm font-bold text-white/80 lg:flex xl:gap-7">
             <Link href={locale === "fr" ? "/fr/about" : "/about"} className="transition hover:text-mint">{t.nav.about}</Link>
             <Link href={locale === "fr" ? "/fr/ecosystem" : "/ecosystem"} className="transition hover:text-mint">{t.nav.ecosystem}</Link>
             <Link href={locale === "fr" ? "/fr/institute" : "/institute"} className="transition hover:text-mint">{t.nav.institute}</Link>
             <NavDropdown nav={products} />
             <NavDropdown nav={capabilities} />
+            <StudioNavLink dictionary={t} />
             <Link href={locale === "fr" ? "/fr/vision" : "/vision"} className="transition hover:text-mint">{t.nav.vision}</Link>
             <LanguageSwitcher locale={locale} />
           </div>

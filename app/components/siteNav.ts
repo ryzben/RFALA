@@ -27,6 +27,15 @@ export const productPaths: Record<ProductKey, string> = {
 export const wateragentUrl = "https://www.wateragent.net";
 export const wateragentSampleReportUrl = "https://www.wateragent.net/report?lat=30.39500&lon=-9.20900";
 
+export const studioUrl = "https://studio.rfala.com";
+export const linkedinUrl = "https://www.linkedin.com/company/rfala";
+export const youtubeUrl = "https://www.youtube.com/@rfalainstitute";
+
+/** RFALA Studio as a top-level MobileMenu entry; it is an external site, so it opens in a new tab. */
+export function studioMobileItem(t: Messages) {
+  return { href: studioUrl, label: t.nav.studio, external: true, newTabLabel: t.nav.productsMenu.newTab };
+}
+
 /** Live products: the primary and secondary calls to action open the product itself in a new tab. */
 export const productExternalLinks: Record<ProductKey, { primary: string; secondary: string }> = {
   water: { primary: wateragentUrl, secondary: wateragentSampleReportUrl }
@@ -38,7 +47,7 @@ const existingProductHrefs = [
   "https://maroclist.com",
   "https://islamicschoolreview.com",
   "/institute",
-  "https://studio.rfala.com"
+  studioUrl
 ];
 
 export function productNavGroups(t: Messages, locale: Locale): NavGroup[] {

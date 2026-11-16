@@ -17,6 +17,8 @@ type NavItem = {
   viewAllLabel?: string;
   /** Screen-reader hint appended to external links. */
   newTabLabel?: string;
+  /** Top-level link to another site: opens in a new tab. */
+  external?: boolean;
 };
 
 function MobileGroup({ item, onNavigate }: { item: NavItem & { groups: NavGroup[] }; onNavigate: () => void }) {
@@ -116,9 +118,17 @@ export function MobileMenu({ items, locale }: { items: NavItem[]; locale: Locale
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-4 py-3 text-sm font-black text-white/80 transition hover:bg-white/10 hover:text-mint"
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener" : undefined}
+                  className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-black text-white/80 transition hover:bg-white/10 hover:text-mint"
                 >
                   {item.label}
+                  {item.external ? (
+                    <>
+                      <ExternalLink className="size-3.5 text-white/50" />
+                      {item.newTabLabel ? <span className="sr-only">({item.newTabLabel})</span> : null}
+                    </>
+                  ) : null}
                 </Link>
               )
             )}

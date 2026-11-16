@@ -20,7 +20,8 @@ import { MobileMenu } from "./MobileMenu";
 import { NavDropdown } from "./NavDropdown";
 import { StatusBadge, ecosystemGrid, ecosystemFeatured } from "./ProductsShowcase";
 import { whatsappHref } from "../lib/contact";
-import { advisoryPath, capabilitiesMobileItem, capabilitiesNav, localizedPath, productsMobileItem, productsNav, wateragentUrl } from "./siteNav";
+import { advisoryPath, capabilitiesMobileItem, capabilitiesNav, localizedPath, productsMobileItem, productsNav, studioMobileItem, wateragentUrl } from "./siteNav";
+import { SocialLinks, StudioNavLink } from "./ExternalLinks";
 import type { Locale, Messages } from "./siteNav";
 type PageKind = "about" | "ecosystem" | "institute" | "services" | "vision";
 
@@ -101,6 +102,7 @@ export function Header({ dictionary, locale }: { dictionary: Messages; locale: L
     { href: localizedPath(locale, "/institute"), label: t.nav.institute },
     productsMobileItem(products),
     capabilitiesMobileItem(capabilities),
+    studioMobileItem(t),
     { href: localizedPath(locale, "/vision"), label: t.nav.vision },
     { href: localizedPath(locale, "/contact"), label: t.nav.contact }
   ];
@@ -111,12 +113,13 @@ export function Header({ dictionary, locale }: { dictionary: Messages; locale: L
         <Link href={localizedPath(locale, "/")} className="flex items-center gap-3 font-extrabold" aria-label="RFALA home">
           <img src="/assets/logos/rfala-logo.png" alt="RFALA" className="h-14 w-52 object-contain sm:h-16 sm:w-60" />
         </Link>
-        <div className="hidden items-center gap-7 text-sm font-bold text-white/80 lg:flex">
+        <div className="hidden items-center gap-5 whitespace-nowrap text-sm font-bold text-white/80 lg:flex xl:gap-7">
           <Link href={localizedPath(locale, "/about")} className="transition hover:text-mint">{t.nav.about}</Link>
           <Link href={localizedPath(locale, "/ecosystem")} className="transition hover:text-mint">{t.nav.ecosystem}</Link>
           <Link href={localizedPath(locale, "/institute")} className="transition hover:text-mint">{t.nav.institute}</Link>
           <NavDropdown nav={products} />
           <NavDropdown nav={capabilities} />
+          <StudioNavLink dictionary={t} />
           <Link href={localizedPath(locale, "/vision")} className="transition hover:text-mint">{t.nav.vision}</Link>
           <Link href={localizedPath(locale, "/contact")} className="transition hover:text-mint">{t.nav.contact}</Link>
           <LanguageSwitcher locale={locale} />
@@ -199,6 +202,7 @@ export function Footer({ dictionary, locale }: { dictionary: Messages; locale: L
             <Link href={localizedPath(locale, "/services")} className="hover:text-mint">{t.nav.services}</Link>
             <Link href={localizedPath(locale, "/vision")} className="hover:text-mint">{t.nav.vision}</Link>
             <Link href={localizedPath(locale, "/contact")} className="hover:text-mint">{t.footer.contact}</Link>
+            <Link href={localizedPath(locale, "/privacy")} className="hover:text-mint">{t.footer.privacy}</Link>
           </div>
         </div>
         <div>
@@ -210,6 +214,7 @@ export function Footer({ dictionary, locale }: { dictionary: Messages; locale: L
               {t.contact.whatsappLabel}
               <span className="sr-only"> ({t.nav.productsMenu.newTab})</span>
             </a>
+            <SocialLinks dictionary={t} />
             <p className="pt-4 text-sm">{t.footer.copyright}</p>
           </div>
         </div>

@@ -20,6 +20,7 @@
     "vision": "Vision",
     "contact": "Contact",
     "products": "Produits",
+    "studio": "RFALA Studio",
     "productsMenu": {
       "groupExisting": "Produits RFALA existants",
       "viewAll": "Voir tous les produits",
@@ -496,12 +497,30 @@
       "successBody": "Nous vous répondrons par e-mail pour convenir d’un créneau."
     }
   },
+  "studioCta": {
+    "label": "RFALA Studio",
+    "title": "Sites web, applications, IA et écosystèmes digitaux — construits sur la donnée.",
+    "cta": "Découvrir RFALA Studio"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Politique de confidentialité | RFALA",
+      "description": "Politique de confidentialité de RFALA."
+    },
+    "label": "Politique de confidentialité",
+    "title": "Politique de confidentialité de RFALA",
+    "use": "RFALA respecte votre vie privée. Les informations transmises via ce site sont utilisées uniquement pour répondre à votre message, soutenir les services RFALA et améliorer nos futures initiatives éducatives et d’innovation.",
+    "thirdParty": "Nous ne vendons pas de données personnelles. Si des services tiers sont ajoutés à l’avenir, cette page sera mise à jour pour expliquer comment ces services collectent et traitent les informations.",
+    "questions": "Pour toute question relative à la confidentialité, contactez"
+  },
   "footer": {
     "description": "RFALA LLC est un écosystème de technologie, IA, médias numériques, innovation et éducation qui construit des plateformes pour les apprenants, les communautés et les entreprises.",
     "quickLinks": "Liens rapides",
     "connect": "Contact",
     "privacy": "Politique de confidentialité",
     "contact": "Contactez-nous",
-    "copyright": "Copyright 2026 RFALA LLC. Tous droits réservés."
+    "copyright": "Copyright 2026 RFALA LLC. Tous droits réservés.",
+    "linkedin": "RFALA sur LinkedIn",
+    "youtube": "RFALA Institute sur YouTube"
   }
 }
