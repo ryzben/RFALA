@@ -9,7 +9,6 @@
     "export": "next build"
   },
   "dependencies": {
-    "@next/swc-linux-x64-gnu": "^16.2.6",
     "@tailwindcss/postcss": "4.3.0",
     "framer-motion": "12.38.0",
     "lucide-react": "1.16.0",
@@ -24,5 +23,8 @@
     "postcss": "8.5.14",
     "tailwindcss": "4.3.0",
     "typescript": "6.0.3"
+  },
+  "optionalDependencies": {
+    "@next/swc-linux-x64-gnu": "^16.2.6"
   }
 }
